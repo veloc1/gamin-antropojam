@@ -1,0 +1,35 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="Gamin-antropojam"
+run/main_scene="res://src/levels/main_menu.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+SaveLoad="*res://src/save_load.gd"
+
+[display]
+
+window/size/width=640
+window/size/height=480
+window/size/resizable=false
+
+[rendering]
+
+environment/default_clear_color=Color( 0.447059, 0.682353, 0.188235, 1 )
+environment/default_environment="res://default_env.tres"

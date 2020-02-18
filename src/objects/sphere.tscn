@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://assets/sprites/sphere1.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/sphere3.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/sphere4.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/sphere2.png" type="Texture" id=4]
+[ext_resource path="res://src/objects/sphere.gd" type="Script" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7.43319, 8.01905 )
+
+[node name="sphere" type="Area2D" groups=[
+"sphere",
+]]
+script = ExtResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 3
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_sphere_body_entered"]

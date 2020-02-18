@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/objects/camera.gd" type="Script" id=1]
+
+[node name="camera" type="Camera2D"]
+current = true
+zoom = Vector2( 0.5, 0.5 )
+drag_margin_h_enabled = true
+drag_margin_left = 0.4
+drag_margin_top = 0.4
+drag_margin_right = 0.4
+editor_draw_limits = true
+editor_draw_drag_margin = true
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="screenshake_timer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
