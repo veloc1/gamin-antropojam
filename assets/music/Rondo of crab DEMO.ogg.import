@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Rondo of crab DEMO.ogg-eeabad3e52809863b839efb2bf69bd56.oggstr"
+
+[deps]
+
+source_file="res://assets/music/Rondo of crab DEMO.ogg"
+dest_files=[ "res://.import/Rondo of crab DEMO.ogg-eeabad3e52809863b839efb2bf69bd56.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

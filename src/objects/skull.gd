@@ -22,4 +22,4 @@ func _process(delta):
 func _on_skull_body_entered(body):
   if body.is_in_group("player"):
     # self.queue_free()
-    emit_signal("skull_collide")
+    emit_signal("skull_collide", self)
