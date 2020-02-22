@@ -1,6 +1,6 @@
 extends Camera2D
 
-export (int) var shake_amount = 6
+export (int) var shake_amount = 4
 
 
 func _ready():

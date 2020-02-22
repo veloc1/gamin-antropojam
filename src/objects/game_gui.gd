@@ -8,6 +8,9 @@ func _ready():
 func on_spheres_changed(count):
   $spheres.text = "Spheres: %d" % count
 
+func on_keys_changed(count):
+  $keys.text = "Keys: %d" % count
+
 func on_lives_changed(count):
   for i in $hearts.get_children():
     i.queue_free()

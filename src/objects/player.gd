@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 signal spheres_count_changed
+signal keys_count_changed
 signal lives_count_shanged
 signal attack
 signal game_over
@@ -8,7 +9,7 @@ signal game_over
 export (int) var run_speed = 100
 export (int) var jump_speed = -200
 export (int) var gravity = 800
-export (Vector2) var default_impact = Vector2(100, -200)
+export (Vector2) var default_impact = Vector2(300, -200)
 
 var velocity = Vector2()
 var impact_force = Vector2()
@@ -17,44 +18,50 @@ var is_attacking = false
 var is_invulnerable = false
 var lives = 3
 var spheres = 0
+var keys = 0
 
 onready var sprite: AnimatedSprite = $AnimatedSprite
 
 func refresh_ui_state():
   emit_signal("spheres_count_changed", spheres)
+  emit_signal("keys_count_changed", keys)
   emit_signal("lives_count_shanged", lives)
 
 
 func process_input():
-    velocity.x = 0
-    var right = Input.is_action_pressed('ui_right')
-    var left = Input.is_action_pressed('ui_left')
-    var jump = Input.is_action_just_pressed('ui_select')
-    var attack = Input.is_action_just_pressed("ui_up")
-    var anim = 'idle'
+  velocity.x = 0
+  var right = Input.is_action_pressed('ui_right')
+  var left = Input.is_action_pressed('ui_left')
+  var jump = Input.is_action_just_pressed("game_action1")
+  var attack = Input.is_action_just_pressed("game_action2")
+  var anim = 'idle'
 
-    if jump and is_on_floor() and not is_attacking:
-        is_jumping = true
-        velocity.y = jump_speed
-        $sounds/jump.play()
-    if attack and not is_jumping:
-      is_attacking = true
-      anim = 'attack'
-      $camera.screenshake()
+  if (
+    jump 
+    and (is_on_floor() or $ghost_jump_timer.time_left > 0) 
+    and not is_attacking):
+      is_jumping = true
+      velocity.y = jump_speed
+      $ghost_jump_timer.stop()
+      $sounds/jump.play()
+      
+  if attack and not is_jumping:
+    is_attacking = true
+    anim = 'attack'
 
-    if right and not is_attacking:
-        velocity.x += run_speed
-        sprite.flip_h = false
-        anim = 'walk'
-    if left and not is_attacking:
-        velocity.x -= run_speed
-        sprite.flip_h = true
-        anim = 'walk'
+  if right and not is_attacking:
+    velocity.x += run_speed
+    sprite.flip_h = false
+    anim = 'walk'
+  if left and not is_attacking:
+    velocity.x -= run_speed
+    sprite.flip_h = true
+    anim = 'walk'
 
-    if is_jumping and not is_attacking:
-        anim = 'jump_start'
+  if is_jumping and not is_attacking:
+    anim = 'jump_start'
 
-    control_animation(anim)
+  control_animation(anim)
 
 
 func _physics_process(delta):
@@ -71,12 +78,25 @@ func _physics_process(delta):
     if is_jumping and is_on_floor():
         is_jumping = false
         sprite.play('jump_end')
+    
+    if is_on_floor():
+      $ghost_jump_timer.start()
 
 
 func on_sphere_pickup():
   $sounds/pickup.play()
   spheres = spheres + 1
   emit_signal("spheres_count_changed", spheres)
+
+func on_key_pickup():
+  $sounds/pickup.play()
+  keys = keys + 1
+  emit_signal("keys_count_changed", keys)
+
+func on_door_opened():
+  $sounds/pickup.play()
+  keys = keys - 1
+  emit_signal("keys_count_changed", keys)
 
 func on_skull_collide(skull: Node2D):
   if is_invulnerable:

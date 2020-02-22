@@ -18,7 +18,7 @@
 [ext_resource path="res://src/objects/camera.tscn" type="PackedScene" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.5, 8 )
+extents = Vector2( 7.5, 6.90909 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -27,25 +27,25 @@ animations = [ {
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "attack",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "walk",
-"speed": 7.0
+"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
+"loop": false,
+"name": "jump_end",
+"speed": 15.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 10 ) ],
 "loop": false,
 "name": "jump_start",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": false,
-"name": "jump_end",
-"speed": 15.0
+"frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "walk",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "attack",
+"speed": 12.0
 } ]
 
 [sub_resource type="Animation" id=3]
@@ -70,12 +70,13 @@ tracks/0/keys = {
 script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 1 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "idle"
-frame = 2
+frame = 1
 playing = true
 
 [node name="camera" parent="." instance=ExtResource( 17 )]
@@ -97,6 +98,10 @@ stream = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/invulnerable = SubResource( 3 )
+
+[node name="ghost_jump_timer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
 [connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_sprite_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite" to="." method="_on_sprite_frame_changed"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

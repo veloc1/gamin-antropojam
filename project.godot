@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Gamin-antropojam"
-run/main_scene="res://src/levels/main_menu.tscn"
+run/main_scene="res://src/levels/test.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -28,6 +28,19 @@ SaveLoad="*res://src/save_load.gd"
 window/size/width=640
 window/size/height=480
 window/size/resizable=false
+
+[input]
+
+game_action1={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
+ ]
+}
+game_action2={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":88,"unicode":0,"echo":false,"script":null)
+ ]
+}
 
 [rendering]
 

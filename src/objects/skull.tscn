@@ -18,6 +18,7 @@ animations = [ {
 [node name="skull" type="Area2D" groups=[
 "skull",
 ]]
+position = Vector2( 1.1904, -37.5757 )
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -26,4 +27,5 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 playing = true
+flip_h = true
 [connection signal="body_entered" from="." to="." method="_on_skull_body_entered"]
