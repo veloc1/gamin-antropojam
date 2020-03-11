@@ -17,5 +17,5 @@ __meta__ = {
 }
 
 [node name="screenshake_timer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.07
 one_shot = true

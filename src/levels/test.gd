@@ -28,11 +28,20 @@ func on_player_attack(turned_right):
   else:
     x = player.position.x - 16
     
-  var map_pos = tilemap.world_to_map(Vector2(x, player.position.y))
+  var attack_position = Vector2(x, player.position.y)
+  var map_pos = tilemap.world_to_map(attack_position)
   if tilemap.get_cellv(map_pos) == 1:
     tilemap.set_cellv(map_pos, 2)
+    play_destroy_particles(attack_position)
   elif tilemap.get_cellv(map_pos) == 2:
     tilemap.set_cellv(map_pos, -1)
+    play_destroy_particles(attack_position)
 
 func on_game_over():
   get_tree().change_scene("res://src/levels/game_over.tscn")
+
+func play_destroy_particles(pos):
+  $player/camera.screenshake()
+  $destroy_block_particles.position = pos
+  for c in $destroy_block_particles.get_children():
+    c.restart()
