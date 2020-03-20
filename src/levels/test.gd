@@ -42,6 +42,15 @@ func on_game_over():
 
 func play_destroy_particles(pos):
   $player/camera.screenshake()
-  $destroy_block_particles.position = pos
-  for c in $destroy_block_particles.get_children():
-    c.restart()
+  var dup = $destroy_block_particles.duplicate()
+  add_child(dup)
+  dup.position = pos
+  for c in dup.get_children():
+    if c.has_method("restart"):
+      c.restart()
+    if c is Timer:
+      c.connect("timeout", self, "on_destroy_particles_timeout", [dup])
+      c.start()
+
+func on_destroy_particles_timeout(particles):
+  particles.queue_free()
