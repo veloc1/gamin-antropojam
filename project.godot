@@ -8,20 +8,101 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Component",
+"class": "Attack",
+"language": "GDScript",
+"path": "res://src/components/attack/Attack.gd"
+}, {
+"base": "IdleState",
+"class": "AttackState",
+"language": "GDScript",
+"path": "res://src/components/movement/states/Attack.gd"
+}, {
+"base": "IdleState",
+"class": "AttackedState",
+"language": "GDScript",
+"path": "res://src/components/movement/states/Attacked.gd"
+}, {
+"base": "Node2D",
+"class": "Component",
+"language": "GDScript",
+"path": "res://src/components/Component.gd"
+}, {
+"base": "State",
+"class": "IdleState",
+"language": "GDScript",
+"path": "res://src/components/movement/states/Idle.gd"
+}, {
+"base": "Node2D",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://src/inventory/Inventory.gd"
+}, {
+"base": "Reference",
+"class": "InventoryItem",
+"language": "GDScript",
+"path": "res://src/inventory/InventoryItem.gd"
+}, {
+"base": "IdleState",
+"class": "JumpState",
+"language": "GDScript",
+"path": "res://src/components/movement/states/Jump.gd"
+}, {
+"base": "Component",
+"class": "Movement",
+"language": "GDScript",
+"path": "res://src/components/movement/Movement.gd"
+}, {
+"base": "Area2D",
+"class": "Pickable",
+"language": "GDScript",
+"path": "res://src/objects/Pickable.gd"
+}, {
+"base": "Component",
+"class": "Shooting",
+"language": "GDScript",
+"path": "res://src/components/shooting/Shooting.gd"
+}, {
+"base": "Node2D",
+"class": "State",
+"language": "GDScript",
+"path": "res://src/components/movement/states/State.gd"
+}, {
+"base": "IdleState",
+"class": "WalkState",
+"language": "GDScript",
+"path": "res://src/components/movement/states/Walk.gd"
+} ]
 _global_script_class_icons={
-
+"Attack": "res://assets/editor/attack.png",
+"AttackState": "",
+"AttackedState": "",
+"Component": "",
+"IdleState": "",
+"Inventory": "",
+"InventoryItem": "",
+"JumpState": "",
+"Movement": "res://assets/editor/movement.png",
+"Pickable": "",
+"Shooting": "res://assets/editor/shooting.png",
+"State": "",
+"WalkState": ""
 }
 
 [application]
 
 config/name="Gamin-antropojam"
-run/main_scene="res://src/levels/test.tscn"
+run/main_scene="res://src/levels/Level.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-SaveLoad="*res://src/save_load.gd"
+SaveLoad="*res://src/SaveLoad.gd"
+
+[debug]
+
+gdscript/warnings/return_value_discarded=false
 
 [display]
 
