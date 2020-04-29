@@ -1,0 +1,165 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://assets/sprites/blocks/block_solid.png" type="Texture" id=1]
+[ext_resource path="res://src/characters/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/objects/sphere.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/levels/test.gd" type="Script" id=4]
+[ext_resource path="res://src/characters/Skull.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/sprites/blocks/block_fragile1.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/blocks/block_fragile2.png" type="Texture" id=7]
+[ext_resource path="res://src/ui/GameGUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/objects/door.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/objects/key.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/sprites/blocks/brick_small.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/blocks/brick_big.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/blocks/brick_medium.png" type="Texture" id=13]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0.046936, 16, 0.046936 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="TileSet" id=5]
+0/name = "block_solid.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 16, 16 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 1 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "block_fragile1.png 1"
+1/texture = ExtResource( 6 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 16, 16 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 2 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "block_fragile2.png 2"
+2/texture = ExtResource( 7 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 16, 16 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+
+[sub_resource type="ParticlesMaterial" id=6]
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 100, 0 )
+initial_velocity = 80.0
+initial_velocity_random = 0.76
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[node name="main" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="game_gui" parent="." instance=ExtResource( 8 )]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 5 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -458754, 0, 0, -458753, 0, 0, -524288, 0, 0, -524287, 0, 0, -524286, 0, 0, -524285, 0, 0, -524284, 0, 0, -524283, 0, 0, -524282, 0, 0, -524281, 0, 0, -524280, 0, 0, -524279, 0, 0, -524278, 0, 0, -524277, 0, 0, -524276, 0, 0, -524275, 0, 0, -524274, 0, 0, -524273, 0, 0, -524272, 0, 0, -524271, 0, 0, -524270, 0, 0, -524269, 0, 0, -524268, 0, 0, -524267, 0, 0, -524266, 0, 0, -524265, 0, 0, -524264, 0, 0, -524263, 0, 0, -524262, 0, 0, -524261, 0, 0, -524260, 0, 0, -524259, 0, 0, -524258, 0, 0, -524257, 0, 0, -524256, 0, 0, -524255, 0, 0, -524254, 0, 0, -524253, 0, 0, -524252, 0, 0, -524251, 0, 0, -524250, 0, 0, -524249, 0, 0, -524248, 0, 0, -524247, 0, 0, -524246, 0, 0, -524245, 0, 0, -524244, 0, 0, -524243, 0, 0, -524242, 0, 0, -524241, 0, 0, -524240, 0, 0, -393218, 0, 0, -458720, 1, 0, -458716, 0, 0, -458704, 0, 0, -327682, 0, 0, -393184, 1, 0, -393180, 0, 0, -393168, 0, 0, -262146, 0, 0, -327648, 1, 0, -327646, 0, 0, -327644, 0, 0, -327632, 0, 0, -196610, 0, 0, -262132, 0, 0, -262128, 0, 0, -262124, 2, 0, -262113, 0, 0, -262112, 0, 0, -262111, 0, 0, -262110, 0, 0, -262109, 0, 0, -262108, 0, 0, -262107, 0, 0, -262106, 0, 0, -262105, 0, 0, -262104, 0, 0, -262103, 0, 0, -262101, 2, 0, -262096, 0, 0, -131074, 0, 0, -196598, 0, 0, -196597, 0, 0, -196590, 2, 0, -196586, 2, 0, -196582, 0, 0, -196581, 0, 0, -196580, 0, 0, -196579, 0, 0, -196578, 0, 0, -196577, 0, 0, -196576, 0, 0, -196567, 0, 0, -196562, 2, 0, -196560, 0, 0, -65538, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131031, 0, 0, -131029, 2, 0, -131024, 0, 0, -2, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65495, 0, 0, -65490, 2, 0, -65488, 0, 0, 65534, 0, 0, 65535, 2, 0, 0, 1, 0, 41, 0, 0, 43, 2, 0, 48, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 65577, 0, 0, 65582, 2, 0, 65584, 0, 0, 196606, 0, 0, 131080, 0, 0, 131082, 2, 0, 131084, 0, 0, 131086, 0, 0, 131088, 0, 0, 131090, 2, 0, 131091, 2, 0, 131092, 2, 0, 131093, 2, 0, 131094, 2, 0, 131095, 2, 0, 131096, 2, 0, 131097, 2, 0, 131098, 0, 0, 131099, 0, 0, 131100, 0, 0, 131101, 0, 0, 131113, 0, 0, 131115, 2, 0, 131120, 0, 0, 262142, 0, 0, 196638, 0, 0, 196639, 0, 0, 196640, 0, 0, 196641, 0, 0, 196642, 0, 0, 196643, 0, 0, 196644, 0, 0, 196645, 0, 0, 196646, 0, 0, 196649, 0, 0, 196654, 2, 0, 196656, 0, 0, 327678, 0, 0, 262183, 1, 0, 262184, 1, 0, 262185, 0, 0, 262187, 2, 0, 262192, 0, 0, 393214, 0, 0, 327695, 0, 0, 327696, 0, 0, 327697, 0, 0, 327698, 0, 0, 327699, 0, 0, 327700, 0, 0, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 327704, 0, 0, 327705, 0, 0, 327706, 0, 0, 327707, 0, 0, 327718, 1, 0, 327719, 1, 0, 327720, 1, 0, 327721, 0, 0, 327726, 2, 0, 327728, 0, 0, 458750, 0, 0, 458751, 0, 0, 393218, 1, 0, 393227, 0, 0, 393230, 0, 0, 393231, 0, 0, 393243, 0, 0, 393244, 0, 0, 393253, 1, 0, 393254, 1, 0, 393255, 1, 0, 393257, 0, 0, 393259, 2, 0, 393264, 0, 0, 524286, 0, 0, 524287, 0, 0, 458752, 0, 0, 458753, 0, 0, 458754, 0, 0, 458755, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 458759, 0, 0, 458760, 0, 0, 458761, 0, 0, 458762, 0, 0, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458780, 0, 0, 458781, 0, 0, 458782, 0, 0, 458783, 0, 0, 458784, 0, 0, 458787, 0, 0, 458788, 0, 0, 458789, 0, 0, 458790, 0, 0, 458791, 0, 0, 458792, 0, 0, 458793, 0, 0, 458798, 2, 0, 458800, 0, 0, 524320, 0, 0, 524321, 0, 0, 524331, 2, 0, 524336, 0, 0, 589857, 0, 0, 589858, 0, 0, 589870, 2, 0, 589872, 0, 0, 655394, 0, 0, 655395, 0, 0, 655396, 0, 0, 655397, 0, 0, 655398, 0, 0, 655399, 0, 0, 655400, 0, 0, 655401, 0, 0, 655402, 0, 0, 655403, 0, 0, 655404, 0, 0, 655405, 0, 0, 655406, 0, 0, 655407, 0, 0, 655408, 0, 0 )
+
+[node name="player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 16, 88 )
+
+[node name="sphere" parent="." instance=ExtResource( 3 )]
+position = Vector2( 135.613, 104 )
+
+[node name="sphere3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 688, 152 )
+
+[node name="sphere4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 704, 152 )
+
+[node name="sphere5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 647.609, 104.234 )
+
+[node name="sphere2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 184, 88 )
+
+[node name="skull" parent="." instance=ExtResource( 5 )]
+position = Vector2( 378.861, 32.9353 )
+bounds_left = 320
+bounds_right = 416
+
+[node name="door" parent="." instance=ExtResource( 9 )]
+position = Vector2( 656, 144 )
+
+[node name="key" parent="." instance=ExtResource( 10 )]
+position = Vector2( 550.438, -84.4111 )
+
+[node name="destroy_block_particles" type="Node2D" parent="."]
+
+[node name="particles_large" type="Particles2D" parent="destroy_block_particles"]
+emitting = false
+amount = 10
+one_shot = true
+speed_scale = 10.0
+explosiveness = 1.0
+process_material = SubResource( 6 )
+texture = ExtResource( 12 )
+
+[node name="particles_medium" type="Particles2D" parent="destroy_block_particles"]
+emitting = false
+amount = 10
+one_shot = true
+speed_scale = 10.0
+explosiveness = 1.0
+process_material = SubResource( 6 )
+texture = ExtResource( 13 )
+
+[node name="particles_small" type="Particles2D" parent="destroy_block_particles"]
+emitting = false
+amount = 10
+one_shot = true
+speed_scale = 10.0
+explosiveness = 1.0
+process_material = SubResource( 6 )
+texture = ExtResource( 11 )
+
+[node name="Timer" type="Timer" parent="destroy_block_particles"]
+wait_time = 3.0
+one_shot = true

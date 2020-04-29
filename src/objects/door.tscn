@@ -18,7 +18,6 @@ script = ExtResource( 3 )
 [node name="Opened" type="Sprite" parent="."]
 position = Vector2( 7.01717, 0 )
 z_index = -1
-z_as_relative = false
 texture = ExtResource( 1 )
 
 [node name="Closed" type="Sprite" parent="."]
