@@ -34,25 +34,25 @@ animations = [ {
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 18 ), ExtResource( 16 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": false,
-"name": "stun",
-"speed": 5.0
+"name": "attack",
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 10 ) ],
 "loop": false,
 "name": "jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 14 ) ],
-"loop": false,
-"name": "attack",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "walk",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 16 ) ],
+"loop": false,
+"name": "stun",
+"speed": 12.0
 } ]
 
 [sub_resource type="Animation" id=4]
@@ -68,6 +68,8 @@ script = ExtResource( 4 )
 [node name="Movement" parent="Components" instance=ExtResource( 6 )]
 animated_sprite = NodePath("../../AnimatedSprite")
 kinematic_body = NodePath("../..")
+gravity = 2000
+move_speed = 90
 
 [node name="Attack" parent="Components" instance=ExtResource( 19 )]
 attack_area_node = NodePath("../../AttackArea")
@@ -86,8 +88,7 @@ shape = SubResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
-animation = "attack"
-frame = 2
+animation = "jump"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/invulnerable = SubResource( 4 )

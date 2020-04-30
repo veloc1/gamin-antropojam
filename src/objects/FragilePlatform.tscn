@@ -39,7 +39,7 @@ position = Vector2( 0.466072, -8.67691 )
 shape = SubResource( 2 )
 
 [node name="DestroyTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.35
 one_shot = true
 
 [node name="DestroyAnimation" type="AnimationPlayer" parent="."]
