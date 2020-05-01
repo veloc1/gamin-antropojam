@@ -6,6 +6,7 @@ export(NodePath) var kinematic_body
 
 export (int) var gravity = 1200
 export (int) var move_speed = 100
+export (int) var jump_speed = -150
 
 var states = {}
 var current_state: State = null
@@ -31,7 +32,7 @@ func set_state(name, params=null):
 
 		var spr = get_node(animated_sprite)
 		var b = get_node(kinematic_body)
-		current_state.setup(self, spr, b, move_speed, params)
+		current_state.setup(self, spr, b, move_speed, jump_speed, params)
 
 		current_state.name = name
 

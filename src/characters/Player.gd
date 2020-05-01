@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 onready var movement = $Components/Movement
 onready var attack = $Components/Attack
+onready var camera = $Camera
 
 func _physics_process(_delta):
 	var action_right = Input.is_action_pressed('ui_right')
@@ -18,9 +19,11 @@ func _physics_process(_delta):
 	if action_right:
 		movement.move_right()
 		attack.look_right()
+		camera.look_right()
 	elif action_left:
 		movement.move_left()
 		attack.look_left()
+		camera.look_left()
 	else:
 		movement.still()
 

@@ -1,7 +1,7 @@
 extends IdleState
 class_name AttackedState
 
-export (Vector2) var default_impact = Vector2(200, -400)
+export (Vector2) var default_impact = Vector2(120, -400)
 
 onready var from_left: bool
 onready var impact_force = Vector2()

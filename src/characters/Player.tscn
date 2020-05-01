@@ -22,7 +22,7 @@
 [ext_resource path="res://src/inventory/Inventory.tscn" type="PackedScene" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.5, 6.90909 )
+extents = Vector2( 6.91804, 6.47657 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 4.53317, 3.38181 )
@@ -68,13 +68,13 @@ script = ExtResource( 4 )
 [node name="Movement" parent="Components" instance=ExtResource( 6 )]
 animated_sprite = NodePath("../../AnimatedSprite")
 kinematic_body = NodePath("../..")
-gravity = 2000
+jump_speed = -300
 
 [node name="Attack" parent="Components" instance=ExtResource( 19 )]
 attack_area_node = NodePath("../../AttackArea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 1 )
+position = Vector2( 0, 1.42789 )
 shape = SubResource( 1 )
 
 [node name="AttackArea" type="Area2D" parent="."]
@@ -93,7 +93,11 @@ animation = "walk"
 anims/invulnerable = SubResource( 4 )
 
 [node name="Camera" parent="." instance=ExtResource( 17 )]
-drag_margin_v_enabled = true
+limit_smoothed = true
+drag_margin_h_enabled = false
+smoothing_enabled = true
+offset_h = 0.4
+offset_v = -0.7
 drag_margin_bottom = 0.8
 
 [node name="Sounds" type="Node2D" parent="."]

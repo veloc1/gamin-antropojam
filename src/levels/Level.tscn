@@ -200,55 +200,63 @@ script = ExtResource( 4 )
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 90.2934, 168.178 )
 
-[node name="FragilePlatform" parent="." instance=ExtResource( 8 )]
+[node name="Camera" parent="Player" index="6"]
+limit_left = 0
+limit_top = -96
+limit_right = 912
+limit_bottom = 272
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="FragilePlatform" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 200, 184 )
 
-[node name="FragilePlatform2" parent="." instance=ExtResource( 8 )]
+[node name="FragilePlatform2" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 440, 88 )
 
-[node name="FragilePlatform7" parent="." instance=ExtResource( 8 )]
+[node name="FragilePlatform7" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 504, 88 )
 
-[node name="FragilePlatform3" parent="." instance=ExtResource( 8 )]
+[node name="FragilePlatform3" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 424, 88 )
 
-[node name="FragilePlatform4" parent="." instance=ExtResource( 8 )]
+[node name="FragilePlatform4" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 408, 88 )
 
-[node name="FragilePlatform5" parent="." instance=ExtResource( 8 )]
+[node name="FragilePlatform5" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 392, 88 )
 
-[node name="FragilePlatform6" parent="." instance=ExtResource( 8 )]
+[node name="FragilePlatform6" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 344, 88 )
 
-[node name="FragilePlatform8" parent="." instance=ExtResource( 8 )]
+[node name="FragilePlatform8" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 192, 24 )
 
-[node name="FragilePlatform9" parent="." instance=ExtResource( 8 )]
+[node name="FragilePlatform9" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 232, 24 )
 
-[node name="FragilePlatform10" parent="." instance=ExtResource( 8 )]
+[node name="FragilePlatform10" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 280, 8 )
 
-[node name="FragilePlatform11" parent="." instance=ExtResource( 8 )]
+[node name="FragilePlatform11" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 312, 24 )
 
-[node name="FragilePlatform12" parent="." instance=ExtResource( 8 )]
+[node name="FragilePlatform12" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 360, 16 )
 
-[node name="FragilePlatform13" parent="." instance=ExtResource( 8 )]
+[node name="FragilePlatform13" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 408, 24 )
 
-[node name="FragilePlatform14" parent="." instance=ExtResource( 8 )]
+[node name="FragilePlatform14" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 456, 24 )
 
-[node name="FragilePlatform15" parent="." instance=ExtResource( 8 )]
+[node name="FragilePlatform15" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 488, 24 )
 
-[node name="FragilePlatform16" parent="." instance=ExtResource( 8 )]
+[node name="FragilePlatform16" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 520, 24 )
 
-[node name="FragilePlatform17" parent="." instance=ExtResource( 8 )]
+[node name="FragilePlatform17" parent="Platforms" instance=ExtResource( 8 )]
 position = Vector2( 552, 24 )
 
 [node name="Skull" parent="." instance=ExtResource( 9 )]
@@ -264,62 +272,66 @@ bounds_right = 464
 [node name="Key" parent="." instance=ExtResource( 19 )]
 position = Vector2( 664, -8 )
 
-[node name="Sphere" parent="." instance=ExtResource( 20 )]
-position = Vector2( 136, 184 )
-
-[node name="Sphere2" parent="." instance=ExtResource( 20 )]
-position = Vector2( 760, 136 )
-
-[node name="Sphere15" parent="." instance=ExtResource( 20 )]
-position = Vector2( 808, 248 )
-
-[node name="Sphere16" parent="." instance=ExtResource( 20 )]
-position = Vector2( 824, 248 )
-
-[node name="Sphere17" parent="." instance=ExtResource( 20 )]
-position = Vector2( 840, 248 )
-
-[node name="Sphere18" parent="." instance=ExtResource( 20 )]
-position = Vector2( 856, 248 )
-
-[node name="Sphere19" parent="." instance=ExtResource( 20 )]
-position = Vector2( 872, 248 )
-
-[node name="Sphere3" parent="." instance=ExtResource( 20 )]
-position = Vector2( 456, 152 )
-
-[node name="Sphere4" parent="." instance=ExtResource( 20 )]
-position = Vector2( 488, 152 )
-
-[node name="Sphere5" parent="." instance=ExtResource( 20 )]
-position = Vector2( 520, 152 )
-
-[node name="Sphere6" parent="." instance=ExtResource( 20 )]
-position = Vector2( 472, 72 )
-
-[node name="Sphere7" parent="." instance=ExtResource( 20 )]
-position = Vector2( 264, 72 )
-
-[node name="Sphere8" parent="." instance=ExtResource( 20 )]
-position = Vector2( 136, 8 )
-
-[node name="Sphere9" parent="." instance=ExtResource( 20 )]
-position = Vector2( 128, 72 )
-
-[node name="Sphere10" parent="." instance=ExtResource( 20 )]
-position = Vector2( 232, 8 )
-
-[node name="Sphere11" parent="." instance=ExtResource( 20 )]
-position = Vector2( 312, 8 )
-
-[node name="Sphere12" parent="." instance=ExtResource( 20 )]
-position = Vector2( 456, 8 )
-
-[node name="Sphere13" parent="." instance=ExtResource( 20 )]
-position = Vector2( 648, 8 )
-
-[node name="Sphere14" parent="." instance=ExtResource( 20 )]
-position = Vector2( 680, 8 )
-
 [node name="Door" parent="." instance=ExtResource( 21 )]
 position = Vector2( 776, 240 )
+
+[node name="Spheres" type="Node2D" parent="."]
+
+[node name="Sphere" parent="Spheres" instance=ExtResource( 20 )]
+position = Vector2( 136, 184 )
+
+[node name="Sphere2" parent="Spheres" instance=ExtResource( 20 )]
+position = Vector2( 760, 136 )
+
+[node name="Sphere15" parent="Spheres" instance=ExtResource( 20 )]
+position = Vector2( 808, 248 )
+
+[node name="Sphere16" parent="Spheres" instance=ExtResource( 20 )]
+position = Vector2( 824, 248 )
+
+[node name="Sphere17" parent="Spheres" instance=ExtResource( 20 )]
+position = Vector2( 840, 248 )
+
+[node name="Sphere18" parent="Spheres" instance=ExtResource( 20 )]
+position = Vector2( 856, 248 )
+
+[node name="Sphere19" parent="Spheres" instance=ExtResource( 20 )]
+position = Vector2( 872, 248 )
+
+[node name="Sphere3" parent="Spheres" instance=ExtResource( 20 )]
+position = Vector2( 456, 152 )
+
+[node name="Sphere4" parent="Spheres" instance=ExtResource( 20 )]
+position = Vector2( 488, 152 )
+
+[node name="Sphere5" parent="Spheres" instance=ExtResource( 20 )]
+position = Vector2( 520, 152 )
+
+[node name="Sphere6" parent="Spheres" instance=ExtResource( 20 )]
+position = Vector2( 472, 72 )
+
+[node name="Sphere7" parent="Spheres" instance=ExtResource( 20 )]
+position = Vector2( 264, 72 )
+
+[node name="Sphere8" parent="Spheres" instance=ExtResource( 20 )]
+position = Vector2( 136, 8 )
+
+[node name="Sphere9" parent="Spheres" instance=ExtResource( 20 )]
+position = Vector2( 128, 72 )
+
+[node name="Sphere10" parent="Spheres" instance=ExtResource( 20 )]
+position = Vector2( 232, 8 )
+
+[node name="Sphere11" parent="Spheres" instance=ExtResource( 20 )]
+position = Vector2( 312, 8 )
+
+[node name="Sphere12" parent="Spheres" instance=ExtResource( 20 )]
+position = Vector2( 456, 8 )
+
+[node name="Sphere13" parent="Spheres" instance=ExtResource( 20 )]
+position = Vector2( 648, 8 )
+
+[node name="Sphere14" parent="Spheres" instance=ExtResource( 20 )]
+position = Vector2( 680, 8 )
+
+[editable path="Player"]

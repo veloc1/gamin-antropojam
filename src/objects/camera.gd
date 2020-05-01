@@ -2,10 +2,8 @@ extends Camera2D
 
 export (int) var shake_amount = 4
 
-
 func _ready():
 	refresh_zoom()
-
 
 func refresh_zoom():
 	var save_load = get_node("/root/SaveLoad")
@@ -22,6 +20,14 @@ func _process(_delta):
 
 func screenshake():
 	$ScreenshakeTimer.start()
+
+func look_left():
+	if offset_h > 0:
+		offset_h = -offset_h
+
+func look_right():
+	if offset_h < 0:
+		offset_h = -offset_h
 
 func _shake():
 	offset.x = rand_range(-shake_amount, shake_amount)

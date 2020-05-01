@@ -1,8 +1,6 @@
 extends IdleState
 class_name JumpState
 
-export (int) var jump_speed = -450
-
 func _ready():
 	set_velocity(get_velocity().x, jump_speed)
 	ghost_jump_timer.stop()

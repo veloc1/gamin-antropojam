@@ -6,6 +6,7 @@ var body: KinematicBody2D
 var movement
 var _is_active = false
 var run_speed: int
+var jump_speed: int
 var params
 
 func _ready():
@@ -23,12 +24,14 @@ func setup(
 	animation_sprite: AnimatedSprite,
 	kinematic_body: KinematicBody2D,
 	move_speed,
+	jump_value,
 	params_dict
 ):
 	animation = animation_sprite
 	body = kinematic_body
 	movement = parent_movement
 	run_speed = move_speed
+	jump_speed = jump_value
 	params = params_dict
 
 func change_state(name, params_dict=null):
