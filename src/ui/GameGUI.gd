@@ -1,8 +1,7 @@
 extends CanvasLayer
 
 func _ready():
-	var save_load = get_node("/root/SaveLoad")
-	var v = save_load.get_video_magnifier()
+	var v = SaveLoad.get_video_magnifier()
 	scale = Vector2(v, v)
 
 func on_spheres_changed(count):

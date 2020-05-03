@@ -33,6 +33,8 @@ func _physics_process(_delta):
 func attacked(from):
 	movement.attacked(from.global_position.x < global_position.x)
 
+	Events.emit_signal("start_screenshake")
+
 func pickup(object):
 	$Inventory.add_game_item(object)
 

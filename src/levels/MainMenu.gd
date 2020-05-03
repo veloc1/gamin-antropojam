@@ -3,12 +3,11 @@ extends Control
 var current_resolution = 2
 
 func _ready():
-	var save_load = get_node("/root/SaveLoad")
-	current_resolution = save_load.get_video_magnifier()
+	current_resolution = SaveLoad.get_video_magnifier()
 	setup_window()
 
 func _on_start_pressed():
-	get_tree().change_scene("res://src/levels/level.tscn")
+	SceneChanger.change_scene("res://src/levels/Level.tscn")
 
 func _on_exit_pressed():
 	get_tree().quit()
@@ -31,9 +30,9 @@ func setup_window():
 
 	OS.center_window()
 	refresh_resolution_text()
-	var save_load = get_node("/root/SaveLoad")
-	save_load.save(current_resolution)
-	$camera.refresh_zoom()
+
+	SaveLoad.save(current_resolution)
+	$Camera.refresh_zoom()
 
 func refresh_resolution_text():
 	$VBoxContainer/Resolution.text = 'Resolution: x%d' % current_resolution

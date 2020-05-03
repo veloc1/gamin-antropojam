@@ -1,1 +1,3 @@
-signal do_something
+extends Node
+
+signal start_screenshake()

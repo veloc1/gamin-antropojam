@@ -5,9 +5,10 @@ export (int) var shake_amount = 4
 func _ready():
 	refresh_zoom()
 
+	Events.connect("start_screenshake", self, "screenshake")
+
 func refresh_zoom():
-	var save_load = get_node("/root/SaveLoad")
-	var v = save_load.get_video_magnifier()
+	var v = SaveLoad.get_video_magnifier()
 	var z = float(1 / float(v))
 	zoom = Vector2(z, z)
 
