@@ -381,6 +381,6 @@ position = Vector2( 680, 8 )
 
 [node name="ExitToLevel" parent="." instance=ExtResource( 26 )]
 position = Vector2( 896, 240 )
-level_name = "Level"
+level_name = "Leve_forestl"
 
 [editable path="Player"]
