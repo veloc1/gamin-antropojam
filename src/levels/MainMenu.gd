@@ -7,7 +7,7 @@ func _ready():
 	setup_window()
 
 func _on_start_pressed():
-	SceneChanger.change_scene("res://src/levels/Level.tscn")
+	SceneChanger.change_scene("res://src/levels/Castle1.tscn")
 
 func _on_exit_pressed():
 	get_tree().quit()

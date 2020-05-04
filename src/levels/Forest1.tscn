@@ -1,39 +1,39 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://src/levels/Level.gd" type="Script" id=1]
-[ext_resource path="res://src/levels/tilesets/BlocksTileSet.tres" type="TileSet" id=2]
-[ext_resource path="res://src/characters/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/levels/TileMap.gd" type="Script" id=4]
-[ext_resource path="res://src/levels/tilesets/BackTileSet.tres" type="TileSet" id=5]
-[ext_resource path="res://src/levels/BackTileMap.gd" type="Script" id=7]
-[ext_resource path="res://src/characters/Skull.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/objects/Key.tscn" type="PackedScene" id=19]
-[ext_resource path="res://src/objects/Sphere.tscn" type="PackedScene" id=20]
-[ext_resource path="res://src/objects/Door.tscn" type="PackedScene" id=21]
-[ext_resource path="res://src/objects/ExitToLevel.tscn" type="PackedScene" id=26]
+[ext_resource path="res://src/levels/tilesets/BlocksTileSet.tres" type="TileSet" id=1]
+[ext_resource path="res://src/objects/Key.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/objects/ExitToLevel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/objects/Door.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/objects/Sphere.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/characters/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/characters/Skull.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/levels/tilesets/BackTileSet.tres" type="TileSet" id=8]
+[ext_resource path="res://src/levels/Level.gd" type="Script" id=9]
+[ext_resource path="res://src/levels/TileMap.gd" type="Script" id=10]
+[ext_resource path="res://src/levels/BackTileMap.gd" type="Script" id=11]
 
 [node name="Level" type="Node2D"]
-script = ExtResource( 1 )
+script = ExtResource( 9 )
 
 [node name="BackTileMap" type="TileMap" parent="."]
 z_index = -100
-tile_set = ExtResource( 5 )
+tile_set = ExtResource( 8 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 131074, 13, 0, 131075, 13, 0, 131076, 13, 0, 131077, 13, 0, 131078, 13, 0, 131079, 13, 0, 131080, 13, 0, 131081, 13, 0, 131082, 13, 0, 131083, 13, 0, 131084, 13, 0, 131085, 13, 0, 131086, 13, 0, 131087, 13, 0, 196610, 13, 0, 196611, 13, 0, 196612, 13, 0, 196613, 19, 0, 196614, 13, 0, 196615, 13, 0, 196616, 13, 0, 196617, 13, 0, 196618, 13, 0, 196619, 13, 0, 196620, 13, 0, 196621, 13, 0, 196622, 13, 0, 196623, 13, 0, 262146, 13, 0, 262147, 13, 0, 262148, 13, 0, 262149, 18, 0, 262150, 13, 0, 262151, 13, 0, 262152, 13, 0, 262153, 13, 0, 262154, 13, 0, 262155, 13, 0, 262156, 13, 0, 262157, 13, 0, 262158, 13, 0, 262159, 13, 0, 327682, 13, 0, 327683, 13, 0, 327684, 13, 0, 327685, 18, 0, 327686, 13, 0, 327687, 13, 0, 327688, 13, 0, 327689, 13, 0, 327690, 13, 0, 327691, 13, 0, 327692, 13, 0, 327693, 13, 0, 327694, 13, 0, 327695, 13, 0, 393218, 13, 0, 393219, 13, 0, 393220, 13, 0, 393221, 18, 0, 393222, 13, 0, 393223, 13, 0, 393224, 13, 0, 393225, 13, 0, 393226, 13, 0, 393227, 13, 0, 393228, 13, 0, 393229, 13, 0, 393230, 13, 0, 393231, 13, 0, 458754, 14, 0, 458755, 14, 0, 458756, 14, 0, 458757, 16, 0, 458758, 14, 0, 458759, 14, 0, 458760, 14, 0, 458761, 14, 0, 458762, 14, 0, 458763, 15, 0, 458764, 15, 0, 458765, 14, 0, 458766, 14, 0, 458767, 14, 0 )
-script = ExtResource( 7 )
+script = ExtResource( 11 )
 
 [node name="TileMap" type="TileMap" parent="." groups=[
 "attackable",
 ]]
-tile_set = ExtResource( 2 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
 tile_data = PoolIntArray( 393221, 0, 0, 393246, 0, 0, 458757, 0, 0, 458782, 0, 0, 524293, 0, 0, 524318, 0, 0, 589829, 0, 0, 589854, 0, 0, 655365, 0, 0, 655390, 0, 0, 720901, 0, 0, 720926, 0, 0, 786437, 0, 0, 786462, 0, 0, 851973, 0, 0, 851998, 0, 0, 917509, 0, 0, 917534, 0, 0, 983045, 0, 0, 983070, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1048606, 0, 0 )
-script = ExtResource( 4 )
+script = ExtResource( 10 )
 
-[node name="Player" parent="." instance=ExtResource( 3 )]
+[node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( 120.784, 208 )
 
 [node name="Camera" parent="Player" index="6"]
@@ -43,23 +43,23 @@ limit_bottom = 272
 
 [node name="Platforms" type="Node2D" parent="."]
 
-[node name="Skull" parent="." instance=ExtResource( 9 )]
+[node name="Skull" parent="." instance=ExtResource( 7 )]
 position = Vector2( 304, 224 )
 bounds_left = 240
 bounds_right = 464
 
-[node name="Key" parent="." instance=ExtResource( 19 )]
+[node name="Key" parent="." instance=ExtResource( 2 )]
 position = Vector2( 352, 232 )
 
-[node name="Door" parent="." instance=ExtResource( 21 )]
+[node name="Door" parent="." instance=ExtResource( 4 )]
 position = Vector2( 448, 240 )
 
 [node name="Spheres" type="Node2D" parent="."]
 
-[node name="Sphere" parent="Spheres" instance=ExtResource( 20 )]
+[node name="Sphere" parent="Spheres" instance=ExtResource( 5 )]
 position = Vector2( 272, 240 )
 
-[node name="ExitToLevel" parent="." instance=ExtResource( 26 )]
+[node name="ExitToLevel" parent="." instance=ExtResource( 3 )]
 position = Vector2( 896, 240 )
 level_name = "Level"
 
