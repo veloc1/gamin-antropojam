@@ -1,10 +1,9 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/sprites/characters/crab/crab_walk2.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/characters/crab/crab_inaction1.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/characters/crab/crab_walk1.png" type="Texture" id=3]
 [ext_resource path="res://src/characters/Player.gd" type="Script" id=4]
-[ext_resource path="res://assets/sounds/pickup.wav" type="AudioStream" id=5]
 [ext_resource path="res://src/components/movement/Movement.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/sounds/jump.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/sounds/walk.wav" type="AudioStream" id=8]
@@ -103,16 +102,9 @@ drag_margin_bottom = 0.8
 
 [node name="Sounds" type="Node2D" parent="."]
 
-[node name="Pickup" type="AudioStreamPlayer2D" parent="Sounds"]
-stream = ExtResource( 5 )
-
-[node name="Walk" type="AudioStreamPlayer2D" parent="Sounds"]
+[node name="Walk" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 8 )
-volume_db = -25.732
+volume_db = -7.975
 
-[node name="Timer" type="Timer" parent="Sounds/Walk"]
-wait_time = 0.857
-
-[node name="Jump" type="AudioStreamPlayer2D" parent="Sounds"]
+[node name="Jump" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 7 )
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

@@ -101,6 +101,8 @@ config/icon="res://icon.png"
 SaveLoad="*res://src/SaveLoad.gd"
 Events="*res://src/Events.gd"
 SceneChanger="*res://src/SceneChanger.gd"
+Music="*res://src/Music.gd"
+Sounds="*res://src/Sounds.gd"
 
 [debug]
 

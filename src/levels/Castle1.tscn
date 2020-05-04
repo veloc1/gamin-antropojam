@@ -35,7 +35,7 @@ tile_data = PoolIntArray( -393216, 0, 0, -393215, 0, 0, -393214, 0, 0, -393213, 
 script = ExtResource( 11 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 90.2934, 168.178 )
+position = Vector2( 64, 161.428 )
 
 [node name="Camera" parent="Player" index="6"]
 limit_left = 0
@@ -110,7 +110,7 @@ bounds_right = 464
 position = Vector2( 664, -8 )
 
 [node name="Door" parent="." instance=ExtResource( 6 )]
-position = Vector2( 775.017, 224 )
+position = Vector2( 775.017, 240 )
 
 [node name="Spheres" type="Node2D" parent="."]
 

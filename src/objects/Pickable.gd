@@ -12,4 +12,8 @@ func on_body_entered(body):
 	if body.is_in_group("player"):
 		self.queue_free()
 		body.pickup(self)
+		play_sound()
+
+func play_sound():
+	Sounds.play_sound("pickup")
 

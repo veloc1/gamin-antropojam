@@ -4,6 +4,9 @@ onready var movement = $Components/Movement
 onready var attack = $Components/Attack
 onready var camera = $Camera
 
+func _ready():
+	$AnimatedSprite.connect("frame_changed", self, "on_sprite_frame_changed")
+
 func _physics_process(_delta):
 	var action_right = Input.is_action_pressed('ui_right')
 	var action_left = Input.is_action_pressed('ui_left')
@@ -12,6 +15,7 @@ func _physics_process(_delta):
 
 	if action_jump and movement.can_jump():
 		movement.jump()
+		$Sounds/Jump.play()
 
 	if action_attack:
 		movement.attack()
@@ -43,6 +47,12 @@ func at_door(door):
 		door.open()
 		$Inventory.take_item("Key")
 
+
+func on_sprite_frame_changed():
+	if $AnimatedSprite.animation == 'walk':
+		$Sounds/Walk.play()
+
+
 # signal spheres_count_changed
 # signal keys_count_changed
 # signal lives_count_shanged
@@ -57,8 +67,6 @@ func at_door(door):
 #   emit_signal("spheres_count_changed", spheres)
 #   emit_signal("keys_count_changed", keys)
 #   emit_signal("lives_count_shanged", lives)
-
-
 
 # func on_sphere_pickup():
 #   $sounds/pickup.play()
@@ -97,23 +105,6 @@ func at_door(door):
 # 	impact_force.x = -default_impact.x
 #   else:
 # 	impact_force.x = default_impact.x
-
-
-# func _on_sprite_frame_changed():
-#   if sprite.animation == 'walk':
-# 	$sounds/walk.play()
-#   if sprite.animation == 'attack' and sprite.frame == 2:
-# 	emit_signal("attack", not sprite.flip_h)
-
-
-# func _on_sprite_animation_finished():
-#   if sprite.animation == 'jump_start':
-# 	sprite.stop()
-#   if sprite.animation == 'jump_end':
-# 	sprite.play('idle')
-#   if sprite.animation == 'attack':
-# 	sprite.play('idle')
-# 	is_attacking= false
 
 
 # func _on_AnimationPlayer_animation_finished(anim_name):
