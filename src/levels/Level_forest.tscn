@@ -1,463 +1,63 @@
-[gd_scene load_steps=40 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/levels/Level.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/blocks/block_solid.png" type="Texture" id=2]
+[ext_resource path="res://src/levels/tilesets/BlocksTileSet.tres" type="TileSet" id=2]
 [ext_resource path="res://src/characters/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/levels/TileMap.gd" type="Script" id=4]
-[ext_resource path="res://assets/sprites/blocks/block_fragile1.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprites/blocks/block_fragile2.png" type="Texture" id=6]
+[ext_resource path="res://src/levels/tilesets/BackTileSet.tres" type="TileSet" id=5]
 [ext_resource path="res://src/levels/BackTileMap.gd" type="Script" id=7]
-[ext_resource path="res://src/objects/FragilePlatform.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/characters/Skull.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/sprites/blocks/bg/column_brckwll_dwn.png" type="Texture" id=10]
-[ext_resource path="res://assets/sprites/blocks/bg/torch_brckwll_2.png" type="Texture" id=11]
-[ext_resource path="res://assets/sprites/blocks/bg/brckwll_left_end.png" type="Texture" id=12]
-[ext_resource path="res://assets/sprites/blocks/bg/torch_brckwll_3.png" type="Texture" id=13]
-[ext_resource path="res://assets/sprites/blocks/bg/brckwll_left_basic.png" type="Texture" id=14]
-[ext_resource path="res://assets/sprites/blocks/bg/column_brckwll_mid.png" type="Texture" id=15]
-[ext_resource path="res://assets/sprites/blocks/bg/column_brckwll_up.png" type="Texture" id=16]
-[ext_resource path="res://assets/sprites/blocks/bg/brckwll_rght_end.png" type="Texture" id=17]
-[ext_resource path="res://assets/sprites/blocks/bg/torch_brckwll_1.png" type="Texture" id=18]
 [ext_resource path="res://src/objects/Key.tscn" type="PackedScene" id=19]
 [ext_resource path="res://src/objects/Sphere.tscn" type="PackedScene" id=20]
 [ext_resource path="res://src/objects/Door.tscn" type="PackedScene" id=21]
-[ext_resource path="res://assets/sprites/blocks/bg/shade_tile_semi.png" type="Texture" id=22]
-[ext_resource path="res://assets/sprites/blocks/bg/shade_tile_out_angle.png" type="Texture" id=23]
-[ext_resource path="res://assets/sprites/blocks/bg/shade_tile_in_angle.png" type="Texture" id=24]
-[ext_resource path="res://assets/sprites/blocks/bg/shade_tile_full.png" type="Texture" id=25]
 [ext_resource path="res://src/objects/ExitToLevel.tscn" type="PackedScene" id=26]
-[ext_resource path="res://assets/sprites/blocks/bg/tree_down.png" type="Texture" id=27]
-[ext_resource path="res://assets/sprites/blocks/bg/tree_mid.png" type="Texture" id=28]
-[ext_resource path="res://assets/sprites/blocks/bg/tree_up.png" type="Texture" id=29]
-[ext_resource path="res://assets/sprites/blocks/bg/tree_leafage.png" type="Texture" id=30]
-[ext_resource path="res://assets/sprites/blocks/bg/forest_back.png" type="Texture" id=31]
-[ext_resource path="res://assets/sprites/blocks/bg/forest_grass_1.png" type="Texture" id=32]
-[ext_resource path="res://assets/sprites/blocks/bg/forest_grass_2.png" type="Texture" id=33]
-
-[sub_resource type="TileSet" id=1]
-0/name = "brckwll_left_basic.png 0"
-0/texture = ExtResource( 14 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 32, 32 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shapes = [  ]
-0/z_index = 0
-1/name = "brckwll_left_end.png 1"
-1/texture = ExtResource( 12 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 0, 0, 32, 32 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shapes = [  ]
-1/z_index = 0
-2/name = "brckwll_rght_end.png 2"
-2/texture = ExtResource( 17 )
-2/tex_offset = Vector2( 0, 0 )
-2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 0, 0, 32, 32 )
-2/tile_mode = 0
-2/occluder_offset = Vector2( 0, 0 )
-2/navigation_offset = Vector2( 0, 0 )
-2/shapes = [  ]
-2/z_index = 0
-3/name = "column_brckwll_dwn.png 3"
-3/texture = ExtResource( 10 )
-3/tex_offset = Vector2( 0, 0 )
-3/modulate = Color( 1, 1, 1, 1 )
-3/region = Rect2( 0, 0, 32, 32 )
-3/tile_mode = 0
-3/occluder_offset = Vector2( 0, 0 )
-3/navigation_offset = Vector2( 0, 0 )
-3/shapes = [  ]
-3/z_index = 0
-4/name = "column_brckwll_mid.png 4"
-4/texture = ExtResource( 15 )
-4/tex_offset = Vector2( 0, 0 )
-4/modulate = Color( 1, 1, 1, 1 )
-4/region = Rect2( 0, 0, 32, 32 )
-4/tile_mode = 0
-4/occluder_offset = Vector2( 0, 0 )
-4/navigation_offset = Vector2( 0, 0 )
-4/shapes = [  ]
-4/z_index = 0
-5/name = "column_brckwll_up.png 5"
-5/texture = ExtResource( 16 )
-5/tex_offset = Vector2( 0, 0 )
-5/modulate = Color( 1, 1, 1, 1 )
-5/region = Rect2( 0, 0, 32, 32 )
-5/tile_mode = 0
-5/occluder_offset = Vector2( 0, 0 )
-5/navigation_offset = Vector2( 0, 0 )
-5/shapes = [  ]
-5/z_index = 0
-6/name = "torch1"
-6/texture = ExtResource( 18 )
-6/tex_offset = Vector2( 0, 0 )
-6/modulate = Color( 1, 1, 1, 1 )
-6/region = Rect2( 0, 0, 32, 32 )
-6/tile_mode = 0
-6/occluder_offset = Vector2( 0, 0 )
-6/navigation_offset = Vector2( 0, 0 )
-6/shapes = [  ]
-6/z_index = 0
-7/name = "torch2"
-7/texture = ExtResource( 11 )
-7/tex_offset = Vector2( 0, 0 )
-7/modulate = Color( 1, 1, 1, 1 )
-7/region = Rect2( 0, 0, 32, 32 )
-7/tile_mode = 0
-7/occluder_offset = Vector2( 0, 0 )
-7/navigation_offset = Vector2( 0, 0 )
-7/shapes = [  ]
-7/z_index = 0
-8/name = "torch3"
-8/texture = ExtResource( 13 )
-8/tex_offset = Vector2( 0, 0 )
-8/modulate = Color( 1, 1, 1, 1 )
-8/region = Rect2( 0, 0, 32, 32 )
-8/tile_mode = 0
-8/occluder_offset = Vector2( 0, 0 )
-8/navigation_offset = Vector2( 0, 0 )
-8/shapes = [  ]
-8/z_index = 0
-9/name = "shade_tile_full.png 9"
-9/texture = ExtResource( 25 )
-9/tex_offset = Vector2( 0, 0 )
-9/modulate = Color( 1, 1, 1, 1 )
-9/region = Rect2( 0, 0, 32, 32 )
-9/tile_mode = 0
-9/occluder_offset = Vector2( 0, 0 )
-9/navigation_offset = Vector2( 0, 0 )
-9/shapes = [  ]
-9/z_index = 0
-10/name = "shade_tile_in_angle.png 10"
-10/texture = ExtResource( 24 )
-10/tex_offset = Vector2( 0, 0 )
-10/modulate = Color( 1, 1, 1, 1 )
-10/region = Rect2( 0, 0, 32, 32 )
-10/tile_mode = 0
-10/occluder_offset = Vector2( 0, 0 )
-10/navigation_offset = Vector2( 0, 0 )
-10/shapes = [  ]
-10/z_index = 0
-11/name = "shade_tile_out_angle.png 11"
-11/texture = ExtResource( 23 )
-11/tex_offset = Vector2( 0, 0 )
-11/modulate = Color( 1, 1, 1, 1 )
-11/region = Rect2( 0, 0, 32, 32 )
-11/tile_mode = 0
-11/occluder_offset = Vector2( 0, 0 )
-11/navigation_offset = Vector2( 0, 0 )
-11/shapes = [  ]
-11/z_index = 0
-12/name = "shade_tile_semi.png 12"
-12/texture = ExtResource( 22 )
-12/tex_offset = Vector2( 0, 0 )
-12/modulate = Color( 1, 1, 1, 1 )
-12/region = Rect2( 0, 0, 32, 32 )
-12/tile_mode = 0
-12/occluder_offset = Vector2( 0, 0 )
-12/navigation_offset = Vector2( 0, 0 )
-12/shapes = [  ]
-12/z_index = 0
-13/name = "tree_down.png 13"
-13/texture = ExtResource( 27 )
-13/tex_offset = Vector2( 0, 0 )
-13/modulate = Color( 1, 1, 1, 1 )
-13/region = Rect2( 0, 0, 32, 32 )
-13/tile_mode = 0
-13/occluder_offset = Vector2( 0, 0 )
-13/navigation_offset = Vector2( 0, 0 )
-13/shapes = [  ]
-13/z_index = 0
-14/name = "tree_mid.png 14"
-14/texture = ExtResource( 28 )
-14/tex_offset = Vector2( 0, 0 )
-14/modulate = Color( 1, 1, 1, 1 )
-14/region = Rect2( 0, 0, 32, 32 )
-14/tile_mode = 0
-14/occluder_offset = Vector2( 0, 0 )
-14/navigation_offset = Vector2( 0, 0 )
-14/shapes = [  ]
-14/z_index = 0
-15/name = "tree_up.png 15"
-15/texture = ExtResource( 29 )
-15/tex_offset = Vector2( 0, 0 )
-15/modulate = Color( 1, 1, 1, 1 )
-15/region = Rect2( 0, 0, 32, 32 )
-15/tile_mode = 0
-15/occluder_offset = Vector2( 0, 0 )
-15/navigation_offset = Vector2( 0, 0 )
-15/shapes = [  ]
-15/z_index = 0
-16/name = "tree_leafage.png 16"
-16/texture = ExtResource( 30 )
-16/tex_offset = Vector2( 0, 0 )
-16/modulate = Color( 1, 1, 1, 1 )
-16/region = Rect2( 0, 0, 32, 32 )
-16/tile_mode = 0
-16/occluder_offset = Vector2( 0, 0 )
-16/navigation_offset = Vector2( 0, 0 )
-16/shapes = [  ]
-16/z_index = 0
-17/name = "forest_back.png 17"
-17/texture = ExtResource( 31 )
-17/tex_offset = Vector2( 0, 0 )
-17/modulate = Color( 1, 1, 1, 1 )
-17/region = Rect2( 0, 0, 32, 32 )
-17/tile_mode = 0
-17/occluder_offset = Vector2( 0, 0 )
-17/navigation_offset = Vector2( 0, 0 )
-17/shapes = [  ]
-17/z_index = 0
-18/name = "forest_grass_1.png 18"
-18/texture = ExtResource( 32 )
-18/tex_offset = Vector2( 0, 0 )
-18/modulate = Color( 1, 1, 1, 1 )
-18/region = Rect2( 0, 0, 32, 32 )
-18/tile_mode = 0
-18/occluder_offset = Vector2( 0, 0 )
-18/navigation_offset = Vector2( 0, 0 )
-18/shapes = [  ]
-18/z_index = 0
-19/name = "forest_grass_2.png 19"
-19/texture = ExtResource( 33 )
-19/tex_offset = Vector2( 0, 0 )
-19/modulate = Color( 1, 1, 1, 1 )
-19/region = Rect2( 0, 0, 32, 32 )
-19/tile_mode = 0
-19/occluder_offset = Vector2( 0, 0 )
-19/navigation_offset = Vector2( 0, 0 )
-19/shapes = [  ]
-19/z_index = 0
-
-[sub_resource type="ConvexPolygonShape2D" id=2]
-points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=3]
-points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="ConvexPolygonShape2D" id=4]
-points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
-
-[sub_resource type="GDScript" id=5]
-
-[sub_resource type="TileSet" id=6]
-0/name = "block_solid.png 0"
-0/texture = ExtResource( 2 )
-0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 16, 16 )
-0/tile_mode = 0
-0/occluder_offset = Vector2( 0, 0 )
-0/navigation_offset = Vector2( 0, 0 )
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 2 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-0/z_index = 0
-1/name = "block_fragile1.png 1"
-1/texture = ExtResource( 5 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 0, 0, 16, 16 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 3 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-1/z_index = 0
-2/name = "block_fragile2.png 2"
-2/texture = ExtResource( 6 )
-2/tex_offset = Vector2( 0, 0 )
-2/modulate = Color( 1, 1, 1, 1 )
-2/region = Rect2( 0, 0, 16, 16 )
-2/tile_mode = 0
-2/occluder_offset = Vector2( 0, 0 )
-2/navigation_offset = Vector2( 0, 0 )
-2/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": SubResource( 4 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
-2/z_index = 0
-script = SubResource( 5 )
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="BackTileMap" type="TileMap" parent="."]
 z_index = -100
-tile_set = SubResource( 1 )
+tile_set = ExtResource( 5 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( 196611, 16, 0, 196612, 16, 0, 196613, 16, 0, 196614, 15, 0, 196615, 16, 0, 196616, 15, 0, 196617, 16, 0, 196618, 15, 0, 196619, 16, 0, 196620, 15, 0, 196621, 16, 0, 196622, 15, 0, 262147, 17, 0, 262148, 17, 0, 262149, 17, 0, 262150, 14, 0, 262151, 17, 0, 262152, 14, 0, 262153, 17, 0, 262154, 14, 0, 262155, 17, 0, 262156, 14, 0, 262157, 17, 0, 262158, 14, 0, 327683, 17, 0, 327684, 17, 0, 327685, 17, 0, 327686, 14, 0, 327687, 17, 0, 327688, 14, 0, 327689, 17, 0, 327690, 14, 0, 327691, 17, 0, 327692, 14, 0, 327693, 17, 0, 327694, 14, 0, 393219, 17, 0, 393220, 17, 0, 393221, 17, 0, 393222, 14, 0, 393223, 17, 0, 393224, 14, 0, 393225, 17, 0, 393226, 14, 0, 393227, 17, 0, 393228, 14, 0, 393229, 17, 0, 393230, 14, 0, 458755, 18, 0, 458756, 18, 0, 458757, 18, 0, 458758, 13, 0, 458759, 18, 0, 458760, 13, 0, 458761, 18, 0, 458762, 13, 0, 458763, 18, 0, 458764, 13, 0, 458765, 18, 0, 458766, 13, 0 )
+tile_data = PoolIntArray( 131074, 13, 0, 131075, 13, 0, 131076, 13, 0, 131077, 13, 0, 131078, 13, 0, 131079, 13, 0, 131080, 13, 0, 131081, 13, 0, 131082, 13, 0, 131083, 13, 0, 131084, 13, 0, 131085, 13, 0, 131086, 13, 0, 131087, 13, 0, 196610, 13, 0, 196611, 13, 0, 196612, 13, 0, 196613, 19, 0, 196614, 13, 0, 196615, 13, 0, 196616, 13, 0, 196617, 13, 0, 196618, 13, 0, 196619, 13, 0, 196620, 13, 0, 196621, 13, 0, 196622, 13, 0, 196623, 13, 0, 262146, 13, 0, 262147, 13, 0, 262148, 13, 0, 262149, 18, 0, 262150, 13, 0, 262151, 13, 0, 262152, 13, 0, 262153, 13, 0, 262154, 13, 0, 262155, 13, 0, 262156, 13, 0, 262157, 13, 0, 262158, 13, 0, 262159, 13, 0, 327682, 13, 0, 327683, 13, 0, 327684, 13, 0, 327685, 18, 0, 327686, 13, 0, 327687, 13, 0, 327688, 13, 0, 327689, 13, 0, 327690, 13, 0, 327691, 13, 0, 327692, 13, 0, 327693, 13, 0, 327694, 13, 0, 327695, 13, 0, 393218, 13, 0, 393219, 13, 0, 393220, 13, 0, 393221, 18, 0, 393222, 13, 0, 393223, 13, 0, 393224, 13, 0, 393225, 13, 0, 393226, 13, 0, 393227, 13, 0, 393228, 13, 0, 393229, 13, 0, 393230, 13, 0, 393231, 13, 0, 458754, 14, 0, 458755, 14, 0, 458756, 14, 0, 458757, 16, 0, 458758, 14, 0, 458759, 14, 0, 458760, 14, 0, 458761, 14, 0, 458762, 14, 0, 458763, 15, 0, 458764, 15, 0, 458765, 14, 0, 458766, 14, 0, 458767, 14, 0 )
 script = ExtResource( 7 )
 
 [node name="TileMap" type="TileMap" parent="." groups=[
 "attackable",
 ]]
-tile_set = SubResource( 6 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
 format = 1
-tile_data = PoolIntArray( 393222, 0, 0, 393245, 0, 0, 458758, 0, 0, 458781, 0, 0, 524294, 0, 0, 524317, 0, 0, 589830, 0, 0, 589853, 0, 0, 655366, 0, 0, 655389, 0, 0, 720902, 0, 0, 720925, 0, 0, 786438, 0, 0, 786461, 0, 0, 851974, 0, 0, 851997, 0, 0, 917510, 0, 0, 917533, 0, 0, 983046, 0, 0, 983069, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0 )
+tile_data = PoolIntArray( 393221, 0, 0, 393246, 0, 0, 458757, 0, 0, 458782, 0, 0, 524293, 0, 0, 524318, 0, 0, 589829, 0, 0, 589854, 0, 0, 655365, 0, 0, 655390, 0, 0, 720901, 0, 0, 720926, 0, 0, 786437, 0, 0, 786462, 0, 0, 851973, 0, 0, 851998, 0, 0, 917509, 0, 0, 917534, 0, 0, 983045, 0, 0, 983070, 0, 0, 1048581, 0, 0, 1048582, 0, 0, 1048583, 0, 0, 1048584, 0, 0, 1048585, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0, 1048594, 0, 0, 1048595, 0, 0, 1048596, 0, 0, 1048597, 0, 0, 1048598, 0, 0, 1048599, 0, 0, 1048600, 0, 0, 1048601, 0, 0, 1048602, 0, 0, 1048603, 0, 0, 1048604, 0, 0, 1048605, 0, 0, 1048606, 0, 0 )
 script = ExtResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 90.2934, 168.178 )
-
-[node name="AnimatedSprite" parent="Player" index="4"]
-position = Vector2( 69.7066, 79.822 )
+position = Vector2( 120.784, 208 )
 
 [node name="Camera" parent="Player" index="6"]
-limit_left = 0
-limit_top = -96
-limit_right = 912
+limit_left = 80
+limit_right = 496
 limit_bottom = 272
 
 [node name="Platforms" type="Node2D" parent="."]
 
-[node name="FragilePlatform" parent="Platforms" instance=ExtResource( 8 )]
-position = Vector2( 200, 184 )
-
-[node name="FragilePlatform2" parent="Platforms" instance=ExtResource( 8 )]
-position = Vector2( 440, 88 )
-
-[node name="FragilePlatform7" parent="Platforms" instance=ExtResource( 8 )]
-position = Vector2( 504, 88 )
-
-[node name="FragilePlatform3" parent="Platforms" instance=ExtResource( 8 )]
-position = Vector2( 424, 88 )
-
-[node name="FragilePlatform4" parent="Platforms" instance=ExtResource( 8 )]
-position = Vector2( 408, 88 )
-
-[node name="FragilePlatform5" parent="Platforms" instance=ExtResource( 8 )]
-position = Vector2( 392, 88 )
-
-[node name="FragilePlatform6" parent="Platforms" instance=ExtResource( 8 )]
-position = Vector2( 344, 88 )
-
-[node name="FragilePlatform8" parent="Platforms" instance=ExtResource( 8 )]
-position = Vector2( 192, 24 )
-
-[node name="FragilePlatform9" parent="Platforms" instance=ExtResource( 8 )]
-position = Vector2( 232, 24 )
-
-[node name="FragilePlatform10" parent="Platforms" instance=ExtResource( 8 )]
-position = Vector2( 280, 8 )
-
-[node name="FragilePlatform11" parent="Platforms" instance=ExtResource( 8 )]
-position = Vector2( 312, 24 )
-
-[node name="FragilePlatform12" parent="Platforms" instance=ExtResource( 8 )]
-position = Vector2( 360, 16 )
-
-[node name="FragilePlatform13" parent="Platforms" instance=ExtResource( 8 )]
-position = Vector2( 408, 24 )
-
-[node name="FragilePlatform14" parent="Platforms" instance=ExtResource( 8 )]
-position = Vector2( 456, 24 )
-
-[node name="FragilePlatform15" parent="Platforms" instance=ExtResource( 8 )]
-position = Vector2( 488, 24 )
-
-[node name="FragilePlatform16" parent="Platforms" instance=ExtResource( 8 )]
-position = Vector2( 520, 24 )
-
-[node name="FragilePlatform17" parent="Platforms" instance=ExtResource( 8 )]
-position = Vector2( 552, 24 )
-
 [node name="Skull" parent="." instance=ExtResource( 9 )]
-position = Vector2( 354.683, 64.0776 )
-bounds_left = 240
-bounds_right = 464
-
-[node name="Skull2" parent="." instance=ExtResource( 9 )]
-position = Vector2( 365.133, -10.9725 )
+position = Vector2( 304, 224 )
 bounds_left = 240
 bounds_right = 464
 
 [node name="Key" parent="." instance=ExtResource( 19 )]
-position = Vector2( 664, -8 )
+position = Vector2( 352, 232 )
 
 [node name="Door" parent="." instance=ExtResource( 21 )]
-position = Vector2( 776, 240 )
+position = Vector2( 448, 240 )
 
 [node name="Spheres" type="Node2D" parent="."]
 
 [node name="Sphere" parent="Spheres" instance=ExtResource( 20 )]
-position = Vector2( 136, 184 )
-
-[node name="Sphere2" parent="Spheres" instance=ExtResource( 20 )]
-position = Vector2( 760, 136 )
-
-[node name="Sphere15" parent="Spheres" instance=ExtResource( 20 )]
-position = Vector2( 808, 248 )
-
-[node name="Sphere16" parent="Spheres" instance=ExtResource( 20 )]
-position = Vector2( 824, 248 )
-
-[node name="Sphere17" parent="Spheres" instance=ExtResource( 20 )]
-position = Vector2( 840, 248 )
-
-[node name="Sphere18" parent="Spheres" instance=ExtResource( 20 )]
-position = Vector2( 856, 248 )
-
-[node name="Sphere19" parent="Spheres" instance=ExtResource( 20 )]
-position = Vector2( 872, 248 )
-
-[node name="Sphere3" parent="Spheres" instance=ExtResource( 20 )]
-position = Vector2( 456, 152 )
-
-[node name="Sphere4" parent="Spheres" instance=ExtResource( 20 )]
-position = Vector2( 488, 152 )
-
-[node name="Sphere5" parent="Spheres" instance=ExtResource( 20 )]
-position = Vector2( 520, 152 )
-
-[node name="Sphere6" parent="Spheres" instance=ExtResource( 20 )]
-position = Vector2( 472, 72 )
-
-[node name="Sphere7" parent="Spheres" instance=ExtResource( 20 )]
-position = Vector2( 264, 72 )
-
-[node name="Sphere8" parent="Spheres" instance=ExtResource( 20 )]
-position = Vector2( 136, 8 )
-
-[node name="Sphere9" parent="Spheres" instance=ExtResource( 20 )]
-position = Vector2( 128, 72 )
-
-[node name="Sphere10" parent="Spheres" instance=ExtResource( 20 )]
-position = Vector2( 232, 8 )
-
-[node name="Sphere11" parent="Spheres" instance=ExtResource( 20 )]
-position = Vector2( 312, 8 )
-
-[node name="Sphere12" parent="Spheres" instance=ExtResource( 20 )]
-position = Vector2( 456, 8 )
-
-[node name="Sphere13" parent="Spheres" instance=ExtResource( 20 )]
-position = Vector2( 648, 8 )
-
-[node name="Sphere14" parent="Spheres" instance=ExtResource( 20 )]
-position = Vector2( 680, 8 )
+position = Vector2( 272, 240 )
 
 [node name="ExitToLevel" parent="." instance=ExtResource( 26 )]
 position = Vector2( 896, 240 )
