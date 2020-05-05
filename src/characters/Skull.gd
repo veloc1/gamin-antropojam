@@ -1,7 +1,5 @@
 extends Area2D
 
-signal skull_collide
-
 export var bounds_left: int = 0
 export var bounds_right: int = 100
 
@@ -32,7 +30,6 @@ func _on_skull_body_entered(body):
 
 	if body.is_in_group("player"):
 		body.attacked(self)
-		emit_signal("skull_collide", self)
 
 func attacked(from):
 	is_attacked = true
