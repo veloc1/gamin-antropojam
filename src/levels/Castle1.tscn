@@ -44,6 +44,15 @@ limit_top = -96
 limit_right = 912
 limit_bottom = 272
 
+[node name="Walk" parent="Player/Sounds" index="0"]
+volume_db = -6.966
+pitch_scale = 5.72
+mix_target = 2
+
+[node name="Jump" parent="Player/Sounds" index="1"]
+volume_db = -28.272
+mix_target = 2
+
 [node name="Platforms" type="Node2D" parent="."]
 
 [node name="FragilePlatform2" parent="Platforms" instance=ExtResource( 7 )]
