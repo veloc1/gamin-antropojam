@@ -49,7 +49,7 @@ func _physics_process(delta):
 	var b = get_node(kinematic_body)
 
 	velocity.y += gravity * delta
-	velocity = b.move_and_slide(velocity, Vector2.UP)
+	velocity = b.move_and_slide_with_snap(velocity, Vector2(0, 0), Vector2.UP, false, 4, 0.785398, false)
 
 func can_jump():
 	return current_state.can_jump()
