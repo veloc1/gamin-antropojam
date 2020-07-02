@@ -185,8 +185,11 @@ limit_top = -96
 limit_right = 912
 limit_bottom = 272
 
+[node name="Jump" parent="Player/Sounds" index="1"]
+volume_db = -7.0
+
 [node name="Elevator" parent="." instance=ExtResource( 14 )]
-position = Vector2( 208, 112 )
+position = Vector2( 210, 112 )
 paddles_count = 5
 button_name = NodePath("../Button")
 
