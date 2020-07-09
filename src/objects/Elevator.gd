@@ -13,7 +13,7 @@ func _ready():
 	setup()
 	
 	var button = get_node_or_null(button_name)
-	if button:
+	if button != null:
 		if button.is_pressed:
 			on()
 		else:

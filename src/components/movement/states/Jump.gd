@@ -1,13 +1,18 @@
 extends IdleState
 class_name JumpState
 
+var is_double_jumped = false
+
 func _ready():
-	set_velocity(get_velocity().x, jump_speed)
-	ghost_jump_timer.stop()
-	set_active(true)
+	_actual_jump()
 
 func jump():
-	pass
+	if not is_double_jumped:
+		_actual_jump()
+		is_double_jumped = true
+
+func can_jump():
+	return not is_double_jumped
 
 func move_left():
 	look_left()
@@ -33,3 +38,8 @@ func _physics_process(_delta):
 
 func get_animation_name():
 	return "jump"
+
+func _actual_jump():
+	set_velocity(get_velocity().x, jump_speed)
+	ghost_jump_timer.stop()
+	set_active(true)
