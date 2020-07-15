@@ -18,5 +18,5 @@ func on_body_entered(body):
 func play_sound():
 	Sounds.play_sound("pickup")
 
-func on_player_pickup(player):
+func on_player_pickup(_player):
 	pass
