@@ -47,6 +47,8 @@ func at_door(door):
 		door.open()
 		$Inventory.take_item("Key")
 
+func enable_double_jump():
+	movement.enable_double_jump()
 
 func on_sprite_frame_changed():
 	if $AnimatedSprite.animation == 'walk':

@@ -2,9 +2,10 @@ extends Node2D
 
 var DestroyBlockParticles = preload("res://src/objects/DestroyBlockParticles.tscn")
 
-func _ready():
-	$TileMap.connect("block_destroyed", self, "on_block_destroyed")
+export(NodePath) var tilemap
 
+func _ready():
+	get_node(tilemap).connect("block_destroyed", self, "on_block_destroyed")
 
 func on_block_destroyed(pos):
 	# $player/camera.screenshake()

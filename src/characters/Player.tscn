@@ -20,7 +20,7 @@
 [ext_resource path="res://src/components/attack/Attack.tscn" type="PackedScene" id=19]
 [ext_resource path="res://src/inventory/Inventory.tscn" type="PackedScene" id=20]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.21337, 7.48183 )
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -32,6 +32,11 @@ animations = [ {
 "loop": true,
 "name": "idle",
 "speed": 2.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 16 ) ],
+"loop": false,
+"name": "stun",
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": false,
@@ -47,11 +52,6 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 7.0
-}, {
-"frames": [ ExtResource( 18 ), ExtResource( 16 ) ],
-"loop": false,
-"name": "stun",
-"speed": 12.0
 } ]
 
 [sub_resource type="Animation" id=4]
@@ -74,7 +74,7 @@ attack_area_node = NodePath("../../AttackArea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.339371, 0.409774 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="AttackArea" type="Area2D" parent="."]
 position = Vector2( 8.78381, -0.322834 )

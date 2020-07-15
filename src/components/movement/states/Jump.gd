@@ -7,12 +7,12 @@ func _ready():
 	_actual_jump()
 
 func jump():
-	if not is_double_jumped:
+	if can_jump():
 		_actual_jump()
 		is_double_jumped = true
 
 func can_jump():
-	return not is_double_jumped
+	return not is_double_jumped and movement.is_double_jump_enabled
 
 func move_left():
 	look_left()
