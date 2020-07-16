@@ -7,6 +7,8 @@ onready var camera = $Camera
 func _ready():
 	$AnimatedSprite.connect("frame_changed", self, "on_sprite_frame_changed")
 
+# *** Every frame ***
+
 func _physics_process(_delta):
 	var action_right = Input.is_action_pressed('ui_right')
 	var action_left = Input.is_action_pressed('ui_left')
@@ -34,6 +36,8 @@ func _physics_process(_delta):
 	if not movement.is_active():
 		movement.idle()
 
+# *** INTERACTIONS ***
+
 func attacked(from):
 	movement.attacked(from.global_position.x < global_position.x)
 
@@ -47,6 +51,15 @@ func at_door(door):
 		door.open()
 		$Inventory.take_item("Key")
 
+func change_color(new_color):
+	$AnimatedSprite.set_modulate(new_color)
+
+# *** ABILITIES ***
+
+func enable_double_jump():
+	movement.enable_double_jump()
+
+# *** SIGNALS ***
 
 func on_sprite_frame_changed():
 	if $AnimatedSprite.animation == 'walk':

@@ -11,6 +11,7 @@ export (int) var jump_speed = -150
 var states = {}
 var current_state: State = null
 var velocity = Vector2(0, 0)
+var is_double_jump_enabled = false
 
 func _ready():
 	states["idle"]=  IdleState
@@ -87,3 +88,6 @@ func set_velocity(new_velocity):
 
 func get_velocity():
 	return velocity
+
+func enable_double_jump():
+	is_double_jump_enabled = true

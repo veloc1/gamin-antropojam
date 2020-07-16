@@ -93,7 +93,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Gamin-antropojam"
-run/main_scene="res://src/levels/Castle1.tscn"
+run/main_scene="res://src/levels/TestRoom.tscn"
 config/icon="res://icon.png"
 
 [autoload]
