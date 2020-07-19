@@ -1,6 +1,6 @@
 extends Node2D
 
-var DestroyBlockParticles = preload("res://src/objects/DestroyBlockParticles.tscn")
+var DestroyBlockParticles = preload("res://src/effects/DestroyBlockParticles.tscn")
 var DoubleJumpEffect = preload("res://src/effects/DoubleJumpEffect.tscn")
 
 func _ready():

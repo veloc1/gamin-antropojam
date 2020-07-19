@@ -103,6 +103,7 @@ Events="*res://src/Events.gd"
 SceneChanger="*res://src/SceneChanger.gd"
 Music="*res://src/Music.gd"
 Sounds="*res://src/Sounds.gd"
+DebugInfo="*res://src/ui/DebugInfo.tscn"
 
 [debug]
 

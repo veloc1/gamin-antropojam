@@ -6,6 +6,9 @@ onready var camera = $Camera
 
 func _ready():
 	$AnimatedSprite.connect("frame_changed", self, "on_sprite_frame_changed")
+	
+	DebugInfo.add_property_monitor("Player pos", self, ":global_position")
+	DebugInfo.add_method_monitor("Inventory", $Inventory, "debug_str")
 
 # *** Every frame ***
 

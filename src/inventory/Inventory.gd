@@ -51,3 +51,11 @@ func debug_print():
 
 	print("=======")
 	print(" ")
+
+func debug_str():
+	var text = "\n"
+	for i in items:
+		text += "    " + i.name + ": " + str(i.count)
+		text += "\n"
+	return text
+	

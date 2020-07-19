@@ -3,7 +3,6 @@
 [ext_resource path="res://src/ui/GameGUI.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/objects/heart.png" type="Texture" id=2]
 
-
 [node name="GameGUI" type="CanvasLayer"]
 script = ExtResource( 1 )
 
@@ -12,16 +11,6 @@ margin_left = 238.422
 margin_top = 7.84212
 margin_right = 289.422
 margin_bottom = 21.8421
-text = "Spheres"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Keys" type="Label" parent="."]
-margin_left = 239.53
-margin_top = 28.8947
-margin_right = 290.53
-margin_bottom = 42.8947
 text = "Spheres"
 __meta__ = {
 "_edit_use_anchors_": false

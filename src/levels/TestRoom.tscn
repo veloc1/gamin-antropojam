@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/levels/tilesets/BlocksTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://src/levels/Level.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://src/levels/BackTileMap.gd" type="Script" id=7]
 [ext_resource path="res://src/objects/pickables/abilities/DoubeJumpAbility.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/objects/ModulateBox.tscn" type="PackedScene" id=9]
+[ext_resource path="res://src/objects/Sphere.tscn" type="PackedScene" id=10]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
@@ -38,6 +39,7 @@ tile_set = ExtResource( 6 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 65561, 0, 0, 65562, 0, 0, 65563, 0, 0, 65564, 0, 0, 65565, 0, 0, 65566, 0, 0, 131097, 0, 0, 131098, 6, 0, 131099, 0, 0, 131100, 0, 0, 131101, 0, 0, 131102, 0, 0, 196633, 0, 0, 196634, 5, 0, 196635, 0, 0, 196636, 0, 0, 196637, 0, 0, 196638, 0, 0, 262169, 0, 0, 262170, 5, 0, 262171, 0, 0, 262172, 0, 0, 262173, 0, 0, 262174, 0, 0, 327705, 1, 0, 327706, 3, 0, 327707, 2, 0, 327708, 2, 0, 327709, 2, 0, 327710, 1, 0 )
+script = ExtResource( 7 )
 
 [node name="Labels" type="Node2D" parent="."]
 
@@ -90,8 +92,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MovementSection" type="Node2D" parent="."]
-
 [node name="Abilities" type="Node2D" parent="."]
 
 [node name="DoubeJumpAbility" parent="Abilities" instance=ExtResource( 8 )]
@@ -110,6 +110,11 @@ modulate_color = Color( 0, 0.984314, 0.0392157, 1 )
 [node name="ModulateBox3" parent="ModulateBoxes" instance=ExtResource( 9 )]
 position = Vector2( 0, 88 )
 modulate_color = Color( 0.12549, 0, 1, 1 )
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="Sphere" parent="Items" instance=ExtResource( 10 )]
+position = Vector2( 208, -24 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( -80, 112 )

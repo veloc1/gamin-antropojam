@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/sprites/characters/crab/crab_walk2.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/characters/crab/crab_inaction1.png" type="Texture" id=2]
 [ext_resource path="res://assets/sprites/characters/crab/crab_walk1.png" type="Texture" id=3]
 [ext_resource path="res://src/characters/Player.gd" type="Script" id=4]
+[ext_resource path="res://src/ui/GameGUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/components/movement/Movement.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/sounds/jump.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/sounds/walk.wav" type="AudioStream" id=8]
@@ -33,15 +34,15 @@ animations = [ {
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 10 ) ],
-"loop": false,
-"name": "jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 11 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": false,
 "name": "attack",
 "speed": 18.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "jump",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
 "loop": true,
@@ -104,3 +105,5 @@ volume_db = -7.975
 
 [node name="Jump" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource( 7 )
+
+[node name="GameGUI" parent="." instance=ExtResource( 5 )]
