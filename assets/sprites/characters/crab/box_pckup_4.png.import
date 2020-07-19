@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/djmp_3.png-d3400ee8db13e146e4f411201a2de166.stex"
+path="res://.import/box_pckup_4.png-20a2443ebbb122cab89c3aa7f79ea2c6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/effects/Double jump/djmp_3.png"
-dest_files=[ "res://.import/djmp_3.png-d3400ee8db13e146e4f411201a2de166.stex" ]
+source_file="res://assets/sprites/characters/crab/box_pckup_4.png"
+dest_files=[ "res://.import/box_pckup_4.png-20a2443ebbb122cab89c3aa7f79ea2c6.stex" ]
 
 [params]
 

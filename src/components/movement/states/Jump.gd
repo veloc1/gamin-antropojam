@@ -10,6 +10,7 @@ func jump():
 	if can_jump():
 		_actual_jump()
 		is_double_jumped = true
+		Events.emit_signal("double_jump", body.position, animation.flip_h)
 
 func can_jump():
 	return not is_double_jumped and movement.is_double_jump_enabled
