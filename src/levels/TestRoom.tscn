@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/levels/tilesets/BlocksTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://src/levels/Level.gd" type="Script" id=2]
@@ -9,7 +9,13 @@
 [ext_resource path="res://src/levels/BackTileMap.gd" type="Script" id=7]
 [ext_resource path="res://src/objects/pickables/abilities/DoubeJumpAbility.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/objects/ModulateBox.tscn" type="PackedScene" id=9]
-[ext_resource path="res://src/objects/Sphere.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/objects/pickables/Sphere.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/objects/pickables/Heart.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/characters/Skull.tscn" type="PackedScene" id=12]
+[ext_resource path="res://src/objects/Button.tscn" type="PackedScene" id=13]
+[ext_resource path="res://src/objects/Key.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/objects/Door.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/objects/Elevator.tscn" type="PackedScene" id=16]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
@@ -114,7 +120,32 @@ modulate_color = Color( 0.12549, 0, 1, 1 )
 [node name="Items" type="Node2D" parent="."]
 
 [node name="Sphere" parent="Items" instance=ExtResource( 10 )]
-position = Vector2( 208, -24 )
+position = Vector2( 192, -24 )
+
+[node name="Heart" parent="Items" instance=ExtResource( 11 )]
+position = Vector2( 240, -27 )
+
+[node name="Key" parent="Items" instance=ExtResource( 14 )]
+position = Vector2( 288, -27 )
+
+[node name="Door" parent="Items" instance=ExtResource( 15 )]
+position = Vector2( 336, -32 )
+
+[node name="Button" parent="Items" instance=ExtResource( 13 )]
+position = Vector2( 368, -24 )
+
+[node name="Elevator" parent="Items" instance=ExtResource( 16 )]
+position = Vector2( 416, -100 )
+height = 1
+paddles_count = 2
+button_name = NodePath("../Button")
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Skull" parent="Enemies" instance=ExtResource( 12 )]
+position = Vector2( 496, -48 )
+bounds_left = 320
+bounds_right = 512
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( -80, 112 )

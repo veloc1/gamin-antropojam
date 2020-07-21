@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/objects/pickables/Sphere.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/objects/sphere1.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/objects/sphere2.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/objects/sphere4.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/objects/sphere3.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7.43319, 8.01905 )
+
+[node name="Sphere" type="Area2D" groups=[
+"sphere",
+]]
+script = ExtResource( 1 )
+item_name = "Sphere"
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 1
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )

@@ -8,6 +8,8 @@ func _ready():
 	var effects = Effects.instance()
 	add_child(effects)
 	
+	Events.connect("game_over", self, "on_game_over")
+	
 	VisualServer.set_default_clear_color(bg_color)
 
 func _process(_delta):
@@ -17,3 +19,6 @@ func _process(_delta):
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
 		get_tree().quit()
+
+func on_game_over():
+	get_tree().change_scene("res://src/levels/GameOver.tscn")
