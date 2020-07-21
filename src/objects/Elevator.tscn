@@ -1,13 +1,14 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/objects/Elevator.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/blocks/chain_mov_platform.png" type="Texture" id=2]
-[ext_resource path="res://assets/sprites/blocks/bg/chain_bl_dwn_1.png" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/blocks/bg/chain_bl_up_1.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/blocks/bg/chain_mid_1.png" type="Texture" id=5]
-[ext_resource path="res://assets/sprites/blocks/bg/chain_bl_dwn_2.png" type="Texture" id=6]
-[ext_resource path="res://assets/sprites/blocks/bg/chain_mid_2.png" type="Texture" id=7]
-[ext_resource path="res://assets/sprites/blocks/bg/chain_bl_up_2.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/objects/elevator/chain_mov_platform.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/objects/elevator/chain_bl_dwn_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/objects/elevator/chain_bl_up_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/objects/elevator/chain_mid_1.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/objects/elevator/chain_bl_dwn_2.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/objects/elevator/chain_mid_2.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/objects/elevator/chain_bl_up_2.png" type="Texture" id=8]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {

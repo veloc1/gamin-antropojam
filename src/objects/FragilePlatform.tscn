@@ -2,7 +2,8 @@
 
 [ext_resource path="res://assets/sprites/blocks/block_fragile2.png" type="Texture" id=1]
 [ext_resource path="res://src/objects/FragilePlatform.gd" type="Script" id=2]
-[ext_resource path="res://assets/sprites/blocks/brick_medium.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/effects/block_blast/brick_medium.png" type="Texture" id=3]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.54279, 7.89574 )
