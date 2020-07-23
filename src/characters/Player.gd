@@ -2,13 +2,16 @@ extends KinematicBody2D
 
 onready var movement = $Components/Movement
 onready var attack = $Components/Attack
+onready var health = $Components/Health
 onready var camera = $Camera
 
 func _ready():
-	$AnimatedSprite.connect("frame_changed", self, "on_sprite_frame_changed")
-	
 	DebugInfo.add_property_monitor("Player pos", self, ":global_position")
 	DebugInfo.add_method_monitor("Inventory", $Inventory, "debug_str")
+	
+	$AnimatedSprite.connect("frame_changed", self, "on_sprite_frame_changed")
+	
+	Events.emit_signal("player_health_changed", health.value())
 
 # *** Every frame ***
 
@@ -44,7 +47,16 @@ func _physics_process(_delta):
 func attacked(from):
 	movement.attacked(from.global_position.x < global_position.x)
 
+	health.damage()
+	Events.emit_signal("player_health_changed", health.value())
 	Events.emit_signal("start_screenshake")
+	
+	if health.value() == 0:
+		Events.emit_signal("game_over")
+
+func on_heal_pickup():
+	health.heal()
+	Events.emit_signal("player_health_changed", health.value())
 
 func pickup(object):
 	$Inventory.add_game_item(object)

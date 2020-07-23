@@ -57,7 +57,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Pickable",
 "language": "GDScript",
-"path": "res://src/objects/Pickable.gd"
+"path": "res://src/objects/pickables/Pickable.gd"
 }, {
 "base": "Component",
 "class": "Shooting",

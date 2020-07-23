@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/sprites/characters/crab/crab_walk2.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/characters/crab/crab_inaction1.png" type="Texture" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://assets/sprites/characters/crab/crab_hit.png" type="Texture" id=18]
 [ext_resource path="res://src/components/attack/Attack.tscn" type="PackedScene" id=19]
 [ext_resource path="res://src/inventory/Inventory.tscn" type="PackedScene" id=20]
+[ext_resource path="res://src/components/Health.tscn" type="PackedScene" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.21337, 7.48183 )
@@ -69,6 +70,8 @@ jump_speed = -300
 
 [node name="Attack" parent="Components" instance=ExtResource( 19 )]
 attack_area_node = NodePath("../../AttackArea")
+
+[node name="Health" parent="Components" instance=ExtResource( 21 )]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.339371, 0.409774 )
