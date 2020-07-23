@@ -4,7 +4,6 @@
 [ext_resource path="res://assets/sprites/objects/button/button_pressed.png" type="Texture" id=2]
 [ext_resource path="res://src/objects/Button.gd" type="Script" id=3]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.92898, 5.12327 )
 

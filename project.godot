@@ -152,6 +152,13 @@ game_action2={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Static Block"
+2d_physics/layer_3="Enemies"
+2d_physics/layer_4="Enemies, not collide with player"
+
 [rendering]
 
 environment/default_clear_color=Color( 0.447059, 0.682353, 0.188235, 1 )

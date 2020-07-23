@@ -14,7 +14,7 @@ func _ready():
 	
 	var button = get_node_or_null(button_name)
 	if button != null:
-		if button.is_pressed:
+		if "is_pressed" in button and button.is_pressed:
 			on()
 		else:
 			button.connect("on_pressed", self, "on")
