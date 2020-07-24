@@ -3,7 +3,7 @@ extends TileMap
 const TileAnimator = preload("res://src/effects/TileAnimator.gd")
 
 const tile_animations = [
-	["torch1", "torch2", "torch3"],
+	["torch_1", "torch_2", "torch_3"],
 	["forest_grass_1", "forest_grass_2"]
 ]
 # you should also change tilenames accordingly in inspector:

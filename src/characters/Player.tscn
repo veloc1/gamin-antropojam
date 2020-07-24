@@ -35,15 +35,15 @@ animations = [ {
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 14 ) ],
-"loop": false,
-"name": "attack",
-"speed": 18.0
-}, {
 "frames": [ ExtResource( 12 ), ExtResource( 10 ) ],
 "loop": false,
 "name": "jump",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": false,
+"name": "attack",
+"speed": 18.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
 "loop": true,
@@ -59,6 +59,7 @@ animations = [ {
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
 ]]
+collision_mask = 7
 script = ExtResource( 4 )
 
 [node name="Components" type="Node2D" parent="."]
@@ -95,7 +96,6 @@ animation = "walk"
 limit_smoothed = true
 drag_margin_h_enabled = false
 smoothing_enabled = true
-smoothing_speed = 1.0
 offset_h = 0.4
 offset_v = -0.7
 drag_margin_bottom = 0.8
