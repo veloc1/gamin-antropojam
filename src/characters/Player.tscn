@@ -23,7 +23,7 @@
 [ext_resource path="res://src/components/Health.tscn" type="PackedScene" id=21]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.21337, 7.48183 )
+extents = Vector2( 8.59031, 7.48183 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 4.53317, 3.38181 )
@@ -35,15 +35,15 @@ animations = [ {
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 10 ) ],
-"loop": false,
-"name": "jump",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 11 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": false,
 "name": "attack",
 "speed": 18.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "jump",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
 "loop": true,
