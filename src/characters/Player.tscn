@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://assets/sprites/characters/crab/crab_walk2.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/characters/crab/crab_inaction1.png" type="Texture" id=2]
@@ -21,28 +21,47 @@
 [ext_resource path="res://src/components/attack/Attack.tscn" type="PackedScene" id=19]
 [ext_resource path="res://src/inventory/Inventory.tscn" type="PackedScene" id=20]
 [ext_resource path="res://src/components/Health.tscn" type="PackedScene" id=21]
+[ext_resource path="res://src/components/interact/Interact.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/sprites/characters/crab/box_pckup_3.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/characters/crab/box_pckup_2.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/characters/crab/box_pckup_1.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/characters/crab/box_pckup_4.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/objects/Chest.png" type="Texture" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.59031, 7.48183 )
+extents = Vector2( 8, 7 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 4.53317, 3.38181 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 2.89789, 6.60917 )
+
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 2 ), ExtResource( 9 ), ExtResource( 2 ) ],
 "loop": true,
 "name": "idle",
 "speed": 2.0
 }, {
+"frames": [ ExtResource( 26 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": false,
+"name": "putdown",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "jump",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 11 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": false,
 "name": "attack",
 "speed": 18.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 25 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 26 ) ],
 "loop": false,
-"name": "jump",
+"name": "pickup",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
@@ -55,6 +74,125 @@ animations = [ {
 "name": "stun",
 "speed": 12.0
 } ]
+
+[sub_resource type="Animation" id=5]
+resource_name = "pickup_box_left"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CarriedSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 16.334, 0 ), Vector2( 12.3849, -11.6669 ), Vector2( 0, -15.7952 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("AnimatedSprite")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "pickup", false ],
+"method": "play"
+} ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "pickup_box_right"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CarriedSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( -16.334, 0 ), Vector2( -12.385, -11.667 ), Vector2( 0, -15.795 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("AnimatedSprite")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "pickup", false ],
+"method": "play"
+} ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "putdown_box_left"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CarriedSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, -15.7952 ), Vector2( 12.3849, -11.6669 ), Vector2( 16.334, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("AnimatedSprite")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "putdown", false ],
+"method": "play"
+} ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "putdown_box_right"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CarriedSprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ Vector2( 0, -15.7952 ), Vector2( -12.385, -11.667 ), Vector2( -16.334, 0 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("AnimatedSprite")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "putdown", false ],
+"method": "play"
+} ]
+}
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 8, 8 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
@@ -74,8 +212,11 @@ attack_area_node = NodePath("../../AttackArea")
 
 [node name="Health" parent="Components" instance=ExtResource( 21 )]
 
+[node name="Interact" parent="Components" instance=ExtResource( 22 )]
+interact_area_node = NodePath("../../InteractArea")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.339371, 0.409774 )
+position = Vector2( 0, 1 )
 shape = SubResource( 1 )
 
 [node name="AttackArea" type="Area2D" parent="."]
@@ -84,13 +225,23 @@ position = Vector2( 8.78381, -0.322834 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 shape = SubResource( 2 )
 
+[node name="InteractArea" type="Area2D" parent="."]
+position = Vector2( 10.1568, 0.461674 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractArea"]
+shape = SubResource( 3 )
+
 [node name="Inventory" parent="." instance=ExtResource( 20 )]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 3 )
-animation = "walk"
+frames = SubResource( 4 )
+animation = "idle"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/pickup_box_left = SubResource( 5 )
+anims/pickup_box_right = SubResource( 6 )
+anims/putdown_box_left = SubResource( 7 )
+anims/putdown_box_right = SubResource( 9 )
 
 [node name="Camera" parent="." instance=ExtResource( 17 )]
 limit_smoothed = true
@@ -110,3 +261,13 @@ volume_db = -7.975
 stream = ExtResource( 7 )
 
 [node name="GameGUI" parent="." instance=ExtResource( 5 )]
+
+[node name="CarriedSprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 0, -15.7952 )
+texture = ExtResource( 27 )
+
+[node name="CarriedShape" type="CollisionShape2D" parent="."]
+position = Vector2( -0.223625, -15.5501 )
+shape = SubResource( 8 )
+disabled = true

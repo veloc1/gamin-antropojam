@@ -1,6 +1,9 @@
 extends IdleState
 class_name WalkState
 
+func _ready():
+	set_active(true)
+
 func move_left():
 	look_left()
 	set_velocity(-run_speed, get_velocity().y)

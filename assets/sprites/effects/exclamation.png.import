@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cave_block_single.png-3c25afae76f01a038fefdd28135ff0bc.stex"
+path="res://.import/exclamation.png-c7b3d9cfc32d94b49e8e7de0adc85eb9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/blocks/Cave_block_single.png"
-dest_files=[ "res://.import/Cave_block_single.png-3c25afae76f01a038fefdd28135ff0bc.stex" ]
+source_file="res://assets/sprites/effects/exclamation.png"
+dest_files=[ "res://.import/exclamation.png-c7b3d9cfc32d94b49e8e7de0adc85eb9.stex" ]
 
 [params]
 

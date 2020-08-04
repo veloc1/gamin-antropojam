@@ -7,6 +7,7 @@ func _ready():
 	ghost_jump_timer = Timer.new()
 	ghost_jump_timer.wait_time = 0.2
 	add_child(ghost_jump_timer)
+	set_active(false)
 
 func can_jump():
 	return body.is_on_floor() or ghost_jump_timer.time_left > 0
