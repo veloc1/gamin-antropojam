@@ -29,7 +29,7 @@
 [ext_resource path="res://assets/sprites/objects/Chest.png" type="Texture" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8, 7 )
+extents = Vector2( 7, 7 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 4.53317, 3.38181 )
@@ -47,27 +47,27 @@ animations = [ {
 "frames": [ ExtResource( 26 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
 "loop": false,
 "name": "putdown",
-"speed": 5.0
+"speed": 6.0
 }, {
-"frames": [ ExtResource( 12 ), ExtResource( 10 ) ],
-"loop": false,
-"name": "jump",
-"speed": 5.0
+"frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "walk",
+"speed": 7.0
 }, {
 "frames": [ ExtResource( 11 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": false,
 "name": "attack",
 "speed": 18.0
 }, {
+"frames": [ ExtResource( 12 ), ExtResource( 10 ) ],
+"loop": false,
+"name": "jump",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 25 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 26 ) ],
 "loop": false,
 "name": "pickup",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 1 ) ],
-"loop": true,
-"name": "walk",
-"speed": 7.0
+"speed": 6.0
 }, {
 "frames": [ ExtResource( 18 ), ExtResource( 16 ) ],
 "loop": false,
@@ -84,10 +84,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4 ),
+"times": PoolRealArray( 0, 0.2, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 16.334, 0 ), Vector2( 12.3849, -11.6669 ), Vector2( 0, -15.7952 ) ]
+"values": [ Vector2( 16.334, 0 ), Vector2( 7, -5 ), Vector2( 0, -15.7952 ) ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath("AnimatedSprite")
@@ -113,10 +113,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4 ),
+"times": PoolRealArray( 0, 0.2, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( -16.334, 0 ), Vector2( -12.385, -11.667 ), Vector2( 0, -15.795 ) ]
+"values": [ Vector2( -16.334, 0 ), Vector2( -7, -5 ), Vector2( 0, -15.795 ) ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath("AnimatedSprite")
@@ -145,7 +145,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 0, -15.7952 ), Vector2( 12.3849, -11.6669 ), Vector2( 16.334, 0 ) ]
+"values": [ Vector2( 0, -15.7952 ), Vector2( 7, -5 ), Vector2( 16.334, 0 ) ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath("AnimatedSprite")
@@ -162,7 +162,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 resource_name = "putdown_box_right"
 tracks/0/type = "value"
 tracks/0/path = NodePath("CarriedSprite:position")
@@ -174,7 +174,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ Vector2( 0, -15.7952 ), Vector2( -12.385, -11.667 ), Vector2( -16.334, 0 ) ]
+"values": [ Vector2( 0, -15.7952 ), Vector2( -7, -5 ), Vector2( -16.334, 0 ) ]
 }
 tracks/1/type = "method"
 tracks/1/path = NodePath("AnimatedSprite")
@@ -191,7 +191,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 8, 8 )
 
 [node name="Player" type="KinematicBody2D" groups=[
@@ -241,7 +241,7 @@ animation = "idle"
 anims/pickup_box_left = SubResource( 5 )
 anims/pickup_box_right = SubResource( 6 )
 anims/putdown_box_left = SubResource( 7 )
-anims/putdown_box_right = SubResource( 9 )
+anims/putdown_box_right = SubResource( 8 )
 
 [node name="Camera" parent="." instance=ExtResource( 17 )]
 limit_smoothed = true
@@ -264,10 +264,10 @@ stream = ExtResource( 7 )
 
 [node name="CarriedSprite" type="Sprite" parent="."]
 visible = false
-position = Vector2( 0, -15.7952 )
+position = Vector2( -16.334, 0 )
 texture = ExtResource( 27 )
 
 [node name="CarriedShape" type="CollisionShape2D" parent="."]
 position = Vector2( -0.223625, -15.5501 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 disabled = true

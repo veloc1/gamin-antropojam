@@ -52,6 +52,9 @@ func move_right():
 func still():
 	pass
 
+func stop():
+	pass
+
 func attack():
 	pass
 

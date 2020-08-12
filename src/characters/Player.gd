@@ -36,7 +36,7 @@ func _physics_process(_delta):
 			if action_attack:
 				movement.attack()
 	
-		if action_use and not movement.is_active():
+		if action_use:
 			if interact.can_interact():
 				interact.interact(self)
 			elif _is_carring():
@@ -86,27 +86,14 @@ func pickup(object):
 func pickup_box(box):
 	carried_box = box
 	
-	movement.still()
-	movement.idle()
 	is_input_active = false
 	
-	$CarriedShape.disabled = false
-	$CarriedSprite.texture = box.get_texture()
-	$CarriedSprite.show()
-	if !$AnimatedSprite.flip_h:
-		$AnimationPlayer.play("pickup_box_left")
-	else:
-		$AnimationPlayer.play("pickup_box_right")
+	call_deferred("_start_pickup_box", box)
 
 func putdown_box():
-	movement.still()
-	movement.idle()
 	is_input_active = false
 	
-	if !$AnimatedSprite.flip_h:
-		$AnimationPlayer.play("putdown_box_left")
-	else:
-		$AnimationPlayer.play("putdown_box_right")
+	call_deferred("_start_putdown_box")
 
 func at_door(door):
 	if $Inventory.has_item("Key"):
@@ -131,7 +118,6 @@ func on_sprite_animation_finished():
 	if $AnimatedSprite.animation == 'pickup':
 		is_input_active = true
 		movement.still()
-		movement.idle()
 		$AnimatedSprite.play("idle")
 		
 	if $AnimatedSprite.animation == 'putdown':
@@ -144,8 +130,35 @@ func on_sprite_animation_finished():
 		carried_box = null
 		
 		movement.still()
-		movement.idle()
 		$AnimatedSprite.play("idle")
 
 func _is_carring():
 	return carried_box != null
+
+func _start_pickup_box(box):
+	movement.stop()
+	movement.still()
+	
+	movement.modify_speed(0.7)
+	
+	$CarriedShape.disabled = false
+	$CarriedSprite.texture = box.get_texture()
+	$CarriedSprite.show()
+	
+	if !$AnimatedSprite.flip_h:
+		$AnimationPlayer.play("pickup_box_left")
+	else:
+		$AnimationPlayer.play("pickup_box_right")
+
+
+func _start_putdown_box():
+	movement.stop()
+	movement.idle()
+	movement.still()
+	
+	movement.modify_speed(1)
+	
+	if !$AnimatedSprite.flip_h:
+		$AnimationPlayer.play("putdown_box_left")
+	else:
+		$AnimationPlayer.play("putdown_box_right")

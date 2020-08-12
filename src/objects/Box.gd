@@ -8,7 +8,6 @@ var player = null
 func _ready():
 	add_to_group("interactable")
 
-
 func _physics_process(delta):
 	if is_carried:
 		pass

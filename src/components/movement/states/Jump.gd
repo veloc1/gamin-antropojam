@@ -17,14 +17,16 @@ func can_jump():
 
 func move_left():
 	look_left()
-	set_velocity(-run_speed, get_velocity().y)
+	var x = lerp(get_velocity().x, -run_speed, 0.05)
+	set_velocity(x, get_velocity().y)
 
 func move_right():
 	look_right()
-	set_velocity(run_speed, get_velocity().y)
+	var x = lerp(get_velocity().x, run_speed, 0.05)
+	set_velocity(x, get_velocity().y)
 
 func still():
-	set_velocity(0, get_velocity().y)
+	set_velocity(lerp(get_velocity().x, 0, 0.01), get_velocity().y)
 
 func attack():
 	change_state("attack")

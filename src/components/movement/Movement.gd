@@ -8,6 +8,8 @@ export (int) var gravity = 1200
 export (int) var move_speed = 100
 export (int) var jump_speed = -150
 
+var move_speed_modifier = 1
+
 var states = {}
 var current_state: State = null
 var velocity = Vector2(0, 0)
@@ -33,7 +35,8 @@ func set_state(name, params=null):
 
 		var spr = get_node(animated_sprite)
 		var b = get_node(kinematic_body)
-		current_state.setup(self, spr, b, move_speed, jump_speed, params)
+		var speed = move_speed * move_speed_modifier
+		current_state.setup(self, spr, b, speed, jump_speed, params)
 
 		current_state.name = name
 
@@ -67,6 +70,9 @@ func move_right():
 func still():
 	current_state.still()
 
+func stop():
+	current_state.stop()
+
 func idle():
 	if current_state.name != "idle":
 		set_state("idle")
@@ -91,3 +97,6 @@ func get_velocity():
 
 func enable_double_jump():
 	is_double_jump_enabled = true
+
+func modify_speed(modifier):
+	move_speed_modifier = modifier

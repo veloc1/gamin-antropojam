@@ -24,6 +24,9 @@ func move_right():
 	change_state("walk")
 
 func still():
+	set_velocity(lerp(get_velocity().x, 0, 0.15), get_velocity().y)
+
+func stop():
 	set_velocity(0, get_velocity().y)
 
 func attack():
