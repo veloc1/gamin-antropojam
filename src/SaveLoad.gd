@@ -6,7 +6,7 @@ func load_save():
 
 func get_video_magnifier():
 	var c = get_config()
-	return c.get_value('game', 'video_magnifier', 2)
+	return c.get_value('game', 'video_magnifier', 1)
 
 func save(video_magnifier):
 	var c = get_config()
