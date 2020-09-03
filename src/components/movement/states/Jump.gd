@@ -3,6 +3,9 @@ class_name JumpState
 
 var is_double_jumped = false
 
+var lerp_value_acceleration = 0.1
+var lerp_value_decceleration = 0.03
+
 func _ready():
 	_actual_jump()
 
@@ -17,16 +20,16 @@ func can_jump():
 
 func move_left():
 	look_left()
-	var x = lerp(get_velocity().x, -run_speed, 0.05)
+	var x = lerp(get_velocity().x, -run_speed, lerp_value_acceleration)
 	set_velocity(x, get_velocity().y)
 
 func move_right():
 	look_right()
-	var x = lerp(get_velocity().x, run_speed, 0.05)
+	var x = lerp(get_velocity().x, run_speed, lerp_value_acceleration)
 	set_velocity(x, get_velocity().y)
 
 func still():
-	set_velocity(lerp(get_velocity().x, 0, 0.01), get_velocity().y)
+	set_velocity(lerp(get_velocity().x, 0, lerp_value_decceleration), get_velocity().y)
 
 func attack():
 	change_state("attack")
