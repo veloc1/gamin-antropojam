@@ -158,7 +158,6 @@ position = Vector2( 377.654, -7.81298 )
 
 [node name="Elevator" parent="Items" instance=ExtResource( 16 )]
 position = Vector2( 416, -100 )
-height = 1
 paddles_count = 2
 button_name = NodePath("../Button")
 
