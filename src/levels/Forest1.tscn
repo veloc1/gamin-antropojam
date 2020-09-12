@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/levels/tilesets/ForestBlocks.tres" type="TileSet" id=1]
 [ext_resource path="res://src/levels/Level.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://src/characters/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/sprites/blocks/bg/forest/Sky cloudy.png" type="Texture" id=7]
 [ext_resource path="res://src/levels/tilesets/ForestTileSet.tres" type="TileSet" id=8]
+[ext_resource path="res://src/effects/ForestParallax.gd" type="Script" id=9]
 [ext_resource path="res://src/levels/BackTileMap.gd" type="Script" id=11]
 
 [node name="Node2D" type="Node2D"]
@@ -15,6 +16,7 @@ script = ExtResource( 2 )
 bg_color = Color( 0.356863, 0.431373, 0.882353, 1 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource( 9 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 1.4, 1 )
