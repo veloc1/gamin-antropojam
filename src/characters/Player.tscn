@@ -44,16 +44,6 @@ animations = [ {
 "name": "idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 26 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
-"loop": false,
-"name": "putdown",
-"speed": 6.0
-}, {
-"frames": [ ExtResource( 25 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 26 ) ],
-"loop": false,
-"name": "pickup",
-"speed": 6.0
-}, {
 "frames": [ ExtResource( 11 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": false,
 "name": "attack",
@@ -68,6 +58,16 @@ animations = [ {
 "loop": true,
 "name": "walk",
 "speed": 7.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 26 ) ],
+"loop": false,
+"name": "pickup",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": false,
+"name": "putdown",
+"speed": 6.0
 }, {
 "frames": [ ExtResource( 18 ), ExtResource( 16 ) ],
 "loop": false,
