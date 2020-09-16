@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/levels/tilesets/ForestBlocks.tres" type="TileSet" id=1]
 [ext_resource path="res://src/levels/Level.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/sprites/blocks/bg/forest/Sky cloudy.png" type="Texture" id=7]
 [ext_resource path="res://src/levels/tilesets/ForestTileSet.tres" type="TileSet" id=8]
 [ext_resource path="res://src/effects/ForestParallax.gd" type="Script" id=9]
+[ext_resource path="res://src/objects/Box.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/levels/BackTileMap.gd" type="Script" id=11]
 
 [node name="Node2D" type="Node2D"]
@@ -19,16 +20,16 @@ bg_color = Color( 0.356863, 0.431373, 0.882353, 1 )
 script = ExtResource( 9 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 1.4, 1 )
+motion_scale = Vector2( 1.9, 0.8 )
 motion_mirroring = Vector2( 320, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 4, -240 )
+position = Vector2( 0, -240 )
 texture = ExtResource( 7 )
 centered = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 1.2, 1 )
+motion_scale = Vector2( 1.2, 0.5 )
 motion_mirroring = Vector2( 320, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
@@ -66,6 +67,9 @@ tile_data = PoolIntArray( -14, 0, 0, -9, 0, 0, -3, 0, 3 )
 
 [node name="DoubeJumpAbility" parent="Items" instance=ExtResource( 3 )]
 position = Vector2( 768, 144 )
+
+[node name="Box" parent="Items" instance=ExtResource( 10 )]
+position = Vector2( -152, -16 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
 position = Vector2( -192, -32 )

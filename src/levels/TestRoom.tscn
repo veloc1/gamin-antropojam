@@ -169,7 +169,7 @@ position = Vector2( 222.384, -65.6336 )
 position = Vector2( -600, 200 )
 
 [node name="Box" parent="Items" instance=ExtResource( 20 )]
-position = Vector2( -72, 112 )
+position = Vector2( -80, 112 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
