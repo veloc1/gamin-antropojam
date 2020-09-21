@@ -10,8 +10,8 @@ var is_input_active = true
 var carried_box = null
 
 func _ready():
-	DebugInfo.add_property_monitor("Player pos", self, ":global_position")
-	DebugInfo.add_method_monitor("Inventory", $Inventory, "debug_str")
+	#DebugInfo.add_property_monitor("Player pos", self, ":global_position")
+	#DebugInfo.add_method_monitor("Inventory", $Inventory, "debug_str")
 	
 	$AnimatedSprite.connect("frame_changed", self, "on_sprite_frame_changed")
 	$AnimatedSprite.connect("animation_finished", self, "on_sprite_animation_finished")

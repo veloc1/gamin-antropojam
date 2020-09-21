@@ -23,8 +23,7 @@ func _process(_delta):
 	var text = ""
 	
 	text += formatted("FPS", Engine.get_frames_per_second())
-	text += formatted("Static Memory", String.humanize_size( OS.get_static_memory_usage()))
-	
+	text += formatted("Static Memory", String.humanize_size(OS.get_static_memory_usage()))
 	for monitor in monitors:
 		var node = monitor["object"]
 		if node and weakref(node).get_ref():
