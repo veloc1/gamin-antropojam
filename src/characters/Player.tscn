@@ -44,35 +44,35 @@ region = Rect2( 48, 32, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 0, 24, 16 )
+region = Rect2( 72, 0, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 16, 24, 16 )
+region = Rect2( 72, 16, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 32, 24, 16 )
+region = Rect2( 72, 32, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 48, 24, 16 )
+region = Rect2( 72, 48, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 72, 0, 24, 16 )
+region = Rect2( 96, 0, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
-region = Rect2( 72, 16, 24, 16 )
+region = Rect2( 96, 16, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
-region = Rect2( 72, 32, 24, 16 )
+region = Rect2( 96, 32, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
-region = Rect2( 72, 48, 24, 16 )
+region = Rect2( 96, 48, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 1 )
@@ -120,13 +120,13 @@ animations = [ {
 }, {
 "frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": false,
-"name": "pickup",
-"speed": 6.0
+"name": "attack",
+"speed": 18.0
 }, {
 "frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": false,
-"name": "attack",
-"speed": 18.0
+"name": "pickup",
+"speed": 6.0
 }, {
 "frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": false,

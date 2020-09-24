@@ -5,7 +5,7 @@ onready var ghost_jump_timer
 
 func _ready():
 	ghost_jump_timer = Timer.new()
-	ghost_jump_timer.wait_time = 0.2
+	ghost_jump_timer.wait_time = 0.015 # 0.02 - хорошее значение
 	add_child(ghost_jump_timer)
 	set_active(false)
 

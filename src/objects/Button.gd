@@ -12,8 +12,7 @@ func _ready():
 func press():
 	is_pressed = true
 	
-	$Pressed.show()
-	$UnPressed.hide()
+	$Sprite.frame = 0
 	
 	$ShapePressed.disabled = false
 	$ShapeUnpressed.disabled = true
@@ -23,8 +22,7 @@ func press():
 func unpress():
 	is_pressed = false
 	
-	$Pressed.hide()
-	$UnPressed.show()
+	$Sprite.frame = 1
 	
 	$ShapePressed.disabled = true
 	$ShapeUnpressed.disabled = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://src/levels/tilesets/ForestBlocks.tres" type="TileSet" id=1]
 [ext_resource path="res://src/levels/Level.gd" type="Script" id=2]
@@ -15,6 +15,36 @@
 [ext_resource path="res://src/objects/Door.tscn" type="PackedScene" id=13]
 [ext_resource path="res://src/objects/Key.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/characters/Skull.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/objects/ReturnZone.tscn" type="PackedScene" id=16]
+
+[sub_resource type="GDScript" id=1]
+script/source = "tool
+extends Area2D
+
+
+func _ready():
+	connect(\"body_entered\", self, \"on_body_entered\")
+
+func _process(_delta):
+	update()
+
+func on_body_entered(body):
+	if body.is_in_group(\"player\"):
+		body.position = $RespawnPoint.global_position
+
+func _draw():
+	if Engine.editor_hint:
+		var dims = $CollisionShape2D.shape.extents
+		draw_rect(Rect2(-dims.x, -dims.y, dims.x * 2, dims.y * 2), Color.red)
+		
+		var rp = $RespawnPoint.position
+		draw_circle(Vector2(rp.x, rp.y), 4, Color.green)
+		
+		draw_line(Vector2(0, 0), Vector2(rp.x, rp.y), Color.green, 3)
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 114, 10 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
@@ -27,7 +57,7 @@ bg_color = Color( 0.356863, 0.431373, 0.882353, 1 )
 script = ExtResource( 9 )
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 1.9, 0.8 )
+motion_scale = Vector2( 1, 0.8 )
 motion_mirroring = Vector2( 320, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
@@ -127,8 +157,18 @@ position = Vector2( 1117, -182 )
 [node name="Box" parent="Items" instance=ExtResource( 10 )]
 position = Vector2( -152, -16 )
 
+[node name="ReturnZone" parent="Items" instance=ExtResource( 16 )]
+position = Vector2( 1328, 72 )
+script = SubResource( 1 )
+
+[node name="CollisionShape2D" parent="Items/ReturnZone" index="0"]
+shape = SubResource( 2 )
+
+[node name="RespawnPoint" parent="Items/ReturnZone" index="1"]
+position = Vector2( -128, -183 )
+
 [node name="Player" parent="." instance=ExtResource( 6 )]
-position = Vector2( -192, -32 )
+position = Vector2( 1184, -112 )
 
 [node name="Skull" parent="." instance=ExtResource( 15 )]
 position = Vector2( 381.846, -24.9957 )
@@ -155,3 +195,5 @@ bounds_right = 1400
 position = Vector2( 1327.94, -429.832 )
 bounds_left = 1250
 bounds_right = 1400
+
+[editable path="Items/ReturnZone"]

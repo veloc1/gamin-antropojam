@@ -1,9 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/sprites/objects/door/door_open.png" type="Texture" id=1]
-[ext_resource path="res://assets/sprites/objects/door/door_close.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/objects/door/door-sheet.png" type="Texture" id=1]
 [ext_resource path="res://src/objects/Door.gd" type="Script" id=3]
-
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2.30588, 16 )
@@ -20,9 +18,12 @@ script = ExtResource( 3 )
 position = Vector2( 7.01717, 0 )
 z_index = -1
 texture = ExtResource( 1 )
+hframes = 2
+frame = 1
 
 [node name="Closed" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+texture = ExtResource( 1 )
+hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
