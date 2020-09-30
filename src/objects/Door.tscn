@@ -22,6 +22,7 @@ hframes = 2
 frame = 1
 
 [node name="Closed" type="Sprite" parent="."]
+z_index = -1
 texture = ExtResource( 1 )
 hframes = 2
 
