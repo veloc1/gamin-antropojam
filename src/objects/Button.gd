@@ -6,26 +6,24 @@ var is_pressed
 
 func _ready():
 	$Area2D.connect("body_entered", self, "on_body_entered")
-	
+
 	unpress()
 
 func press():
 	is_pressed = true
-	
-	$Pressed.show()
-	$UnPressed.hide()
-	
+
+	$Sprite.frame = 0
+
 	$ShapePressed.disabled = false
 	$ShapeUnpressed.disabled = true
-	
+
 	emit_signal("on_pressed")
 
 func unpress():
 	is_pressed = false
-	
-	$Pressed.hide()
-	$UnPressed.show()
-	
+
+	$Sprite.frame = 1
+
 	$ShapePressed.disabled = true
 	$ShapeUnpressed.disabled = false
 

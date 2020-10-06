@@ -1,20 +1,33 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/objects/pickables/Sphere.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/objects/sphere1.png" type="Texture" id=2]
-[ext_resource path="res://assets/sprites/objects/sphere2.png" type="Texture" id=3]
-[ext_resource path="res://assets/sprites/objects/sphere4.png" type="Texture" id=4]
-[ext_resource path="res://assets/sprites/objects/sphere3.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/objects/sphere-sheet.png" type="Texture" id=2]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 5 ), ExtResource( 4 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "default",
 "speed": 7.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 7.43319, 8.01905 )
 
 [node name="Sphere" type="Area2D" groups=[
@@ -24,9 +37,8 @@ script = ExtResource( 1 )
 item_name = "Sphere"
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 1 )
-frame = 1
+frames = SubResource( 5 )
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 6 )
