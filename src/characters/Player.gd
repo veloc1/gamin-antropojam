@@ -17,6 +17,8 @@ func _ready():
 	$AnimatedSprite.connect("animation_finished", self, "on_sprite_animation_finished")
 	
 	Events.emit_signal("player_health_changed", health.value())
+	
+	movement.set_gravity(_get_world_gravity_scale())
 
 # *** Every frame ***
 
@@ -103,6 +105,14 @@ func at_door(door):
 func change_color(new_color):
 	$AnimatedSprite.set_modulate(new_color)
 
+func enter_to_area(area: Area2D):
+	movement.set_gravity(area.gravity)
+	movement.modify_speed(0.8)
+
+func exit_from_area(_area):
+	movement.set_gravity(_get_world_gravity_scale())
+	movement.modify_speed(1)
+
 # *** ABILITIES ***
 
 func enable_double_jump():
@@ -162,3 +172,9 @@ func _start_putdown_box():
 		$AnimationPlayer.play("putdown_box_left")
 	else:
 		$AnimationPlayer.play("putdown_box_right")
+
+func _get_gravity_vector():
+	return Physics2DServer.area_get_param(get_world_2d().space, Physics2DServer.AREA_PARAM_GRAVITY_VECTOR)
+
+func _get_world_gravity_scale():
+	return Physics2DServer.area_get_param(get_world_2d().space, Physics2DServer.AREA_PARAM_GRAVITY)

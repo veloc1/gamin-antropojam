@@ -36,7 +36,8 @@ func set_state(name, params=null):
 		var spr = get_node(animated_sprite)
 		var b = get_node(kinematic_body)
 		var speed = move_speed * move_speed_modifier
-		current_state.setup(self, spr, b, speed, jump_speed, params)
+		var jump = jump_speed * move_speed_modifier
+		current_state.setup(self, spr, b, speed, jump, params)
 
 		current_state.name = name
 
@@ -88,6 +89,9 @@ func is_active():
 
 func reset_active():
 	current_state.set_active(false)
+
+func set_gravity(new_gravity):
+	gravity = new_gravity * 10
 
 func set_velocity(new_velocity):
 	velocity = new_velocity

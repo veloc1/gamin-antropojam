@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://src/levels/tilesets/BlocksTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://src/levels/Level.gd" type="Script" id=2]
@@ -24,6 +24,8 @@
 [ext_resource path="res://src/objects/FragilePlatform.tscn" type="PackedScene" id=22]
 [ext_resource path="res://src/objects/ExitToLevel.tscn" type="PackedScene" id=23]
 [ext_resource path="res://src/levels/tilesets/CaveBg.tres" type="TileSet" id=24]
+[ext_resource path="res://src/levels/tilesets/WaterTileSet.tres" type="TileSet" id=25]
+[ext_resource path="res://src/objects/Water.gd" type="Script" id=26]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Castle_bg"
@@ -43,6 +45,9 @@
 0/navigation_offset = Vector2( 0, 0 )
 0/shapes = [  ]
 0/z_index = -1
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 263, 80 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 48, 16 )
@@ -98,6 +103,26 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 65551, 0, 0, 65552, 0, 2, 65553, 0, 1, 65554, 0, 1, 65555, 0, 1, 65556, 0, 1, 65557, 0, 1, 65558, 0, 1, 65559, 0, 3, 131087, 0, 0, 131088, 0, 65538, 131089, 0, 1, 131090, 0, 1, 131091, 0, 65536, 131092, 0, 1, 131093, 0, 1, 131094, 0, 65536, 131095, 0, 3, 196623, 0, 0, 196624, 0, 65538, 196625, 0, 196609, 196626, 0, 1, 196627, 0, 131072, 196628, 0, 1, 196629, 0, 1, 196630, 0, 131072, 196631, 0, 3, 262159, 0, 0, 262160, 0, 65538, 262161, 0, 1, 262162, 0, 1, 262163, 0, 196608, 262164, 0, 1, 262165, 0, 1, 262166, 0, 196608, 262167, 0, 3, 327695, 0, 0, 327696, 0, 131074, 327697, 0, 1, 327698, 0, 1, 327699, 0, 1, 327700, 0, 1, 327701, 0, 1, 327702, 0, 1, 327703, 0, 3, 393231, 0, 1, 393232, 0, 1, 393233, 0, 1, 393234, 0, 1, 393235, 0, 1, 393236, 0, 1, 393237, 0, 1, 393238, 0, 1, 393239, 0, 1 )
 script = ExtResource( 7 )
+
+[node name="Water" type="TileMap" parent="TileMaps"]
+modulate = Color( 1, 1, 1, 0.647059 )
+z_index = 2
+z_as_relative = false
+tile_set = ExtResource( 25 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -2621418, 0, 0, -1376257, 0, 0, -1441792, 0, 1, -1441791, 0, 2, -1441790, 0, 3, -1441789, 0, 0, -1441788, 0, 1, -1441787, 0, 2, -1441786, 0, 2, -1441785, 0, 0, -1441784, 0, 1, -1441783, 0, 2, -1441782, 0, 3, -1441781, 0, 0, -1441780, 0, 1, -1441779, 0, 2, -1441778, 0, 3, -1310721, 0, 4, -1376256, 0, 4, -1376255, 0, 4, -1376254, 0, 4, -1376253, 0, 4, -1376252, 0, 4, -1376251, 0, 4, -1376250, 0, 4, -1376249, 0, 4, -1376248, 0, 4, -1376247, 0, 4, -1376246, 0, 4, -1376245, 0, 4, -1376244, 0, 4, -1376243, 0, 4, -1376242, 0, 4, -1245185, 0, 4, -1310720, 0, 4, -1310719, 0, 4, -1310718, 0, 4, -1310717, 0, 4, -1310716, 0, 4, -1310715, 0, 4, -1310714, 0, 4, -1310713, 0, 4, -1310712, 0, 4, -1310711, 0, 4, -1310710, 0, 4, -1310709, 0, 4, -1310708, 0, 4, -1310707, 0, 4, -1310706, 0, 4, -1179649, 0, 4, -1245184, 0, 4, -1245183, 0, 4, -1245182, 0, 4, -1245181, 0, 4, -1245180, 0, 4, -1245179, 0, 4, -1245178, 0, 4, -1245177, 0, 4, -1245176, 0, 4, -1245175, 0, 4, -1245174, 0, 4, -1245173, 0, 4, -1245172, 0, 4, -1245171, 0, 4, -1245170, 0, 4, -1114113, 0, 4, -1179648, 0, 4, -1179647, 0, 4, -1179646, 0, 4, -1179645, 0, 4, -1179644, 0, 4, -1179643, 0, 4, -1179642, 0, 4, -1179641, 0, 4, -1179640, 0, 4, -1179639, 0, 4, -1179638, 0, 4, -1179637, 0, 4, -1179636, 0, 4, -1179635, 0, 4, -1179634, 0, 4, -655353, 0, 0 )
+script = ExtResource( 7 )
+
+[node name="Zones" type="Node2D" parent="."]
+
+[node name="Water" type="Area2D" parent="Zones"]
+position = Vector2( 217, -624 )
+gravity = 70.0
+script = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zones/Water"]
+shape = SubResource( 3 )
 
 [node name="Labels" type="Node2D" parent="."]
 

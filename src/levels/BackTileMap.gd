@@ -13,6 +13,7 @@ var tile_animations = [
 			Vector2(3, 3)
 		], 
 		0.15),
+	# Cave
 	TileAnimator.new(
 		"Cave_bg", 
 		[
@@ -58,6 +59,45 @@ var tile_animations = [
 			Vector2(6, 3)
 		], 
 		0.15),
+		
+	# Water
+	TileAnimator.new(
+		"Water", 
+		[
+			Vector2(0, 0),
+			Vector2(1, 0), 
+			Vector2(2, 0),
+			Vector2(3, 0)
+		], 
+		0.1),
+	TileAnimator.new(
+		"Water", 
+		[
+			Vector2(1, 0),
+			Vector2(2, 0), 
+			Vector2(3, 0),
+			Vector2(0, 0)
+		], 
+		0.1),
+	TileAnimator.new(
+		"Water", 
+		[
+			Vector2(2, 0),
+			Vector2(3, 0), 
+			Vector2(0, 0),
+			Vector2(1, 0)
+		], 
+		0.1),
+	TileAnimator.new(
+		"Water", 
+		[
+			Vector2(3, 0),
+			Vector2(0, 0), 
+			Vector2(1, 0),
+			Vector2(2, 0)
+		], 
+		0.1),
+		
 ]
 # you should also change tilenames accordingly in inspector:
 # TileMap -> TileSet -> select tile -> change name -> hit enter

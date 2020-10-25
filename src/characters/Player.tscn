@@ -60,51 +60,51 @@ region = Rect2( 72, 48, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 0, 24, 16 )
+region = Rect2( 24, 0, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 16, 24, 16 )
+region = Rect2( 24, 16, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 32, 24, 16 )
+region = Rect2( 96, 48, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 48, 24, 16 )
+region = Rect2( 96, 32, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 48, 24, 16 )
+region = Rect2( 96, 16, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 32, 24, 16 )
+region = Rect2( 96, 0, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 16, 24, 16 )
+region = Rect2( 120, 0, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 1 )
-region = Rect2( 96, 0, 24, 16 )
+region = Rect2( 120, 16, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 1 )
-region = Rect2( 24, 0, 24, 16 )
+region = Rect2( 96, 0, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 1 )
-region = Rect2( 24, 16, 24, 16 )
+region = Rect2( 96, 16, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 1 )
-region = Rect2( 120, 0, 24, 16 )
+region = Rect2( 96, 32, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 1 )
-region = Rect2( 120, 16, 24, 16 )
+region = Rect2( 96, 48, 24, 16 )
 
 [sub_resource type="SpriteFrames" id=25]
 animations = [ {
@@ -123,25 +123,25 @@ animations = [ {
 "name": "attack",
 "speed": 18.0
 }, {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
-"loop": false,
-"name": "pickup",
-"speed": 6.0
-}, {
-"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
-"loop": false,
-"name": "putdown",
-"speed": 6.0
-}, {
-"frames": [ SubResource( 21 ), SubResource( 22 ) ],
+"frames": [ SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "walk",
 "speed": 7.0
 }, {
-"frames": [ SubResource( 23 ), SubResource( 24 ) ],
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": false,
+"name": "putdown",
+"speed": 6.0
+}, {
+"frames": [ SubResource( 19 ), SubResource( 20 ) ],
 "loop": false,
 "name": "stun",
 "speed": 12.0
+}, {
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": false,
+"name": "pickup",
+"speed": 6.0
 } ]
 
 [sub_resource type="Animation" id=26]
