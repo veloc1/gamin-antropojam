@@ -98,64 +98,64 @@ cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -14, 0, 0, -9, 0, 0, -3, 0, 3 )
 
-[node name="Items" type="Node2D" parent="Tilemaps"]
+[node name="Items" type="Node2D" parent="."]
 
-[node name="DoubeJumpAbility" parent="Tilemaps/Items" instance=ExtResource( 3 )]
+[node name="DoubeJumpAbility" parent="Items" instance=ExtResource( 3 )]
 position = Vector2( 768.25, 152.261 )
 
-[node name="Box" parent="Tilemaps/Items" instance=ExtResource( 10 )]
+[node name="Box" parent="Items" instance=ExtResource( 10 )]
 position = Vector2( 976, -88 )
 
-[node name="Box2" parent="Tilemaps/Items" instance=ExtResource( 10 )]
+[node name="Box2" parent="Items" instance=ExtResource( 10 )]
 position = Vector2( 1223, -104 )
 
-[node name="Spikes" parent="Tilemaps/Items" instance=ExtResource( 12 )]
+[node name="Spikes" parent="Items" instance=ExtResource( 12 )]
 position = Vector2( 1016, -72 )
 
-[node name="Spikes2" parent="Tilemaps/Items" instance=ExtResource( 12 )]
+[node name="Spikes2" parent="Items" instance=ExtResource( 12 )]
 position = Vector2( 1032, -72 )
 
-[node name="Spikes3" parent="Tilemaps/Items" instance=ExtResource( 12 )]
+[node name="Spikes3" parent="Items" instance=ExtResource( 12 )]
 position = Vector2( 1048, -72 )
 
-[node name="Spikes4" parent="Tilemaps/Items" instance=ExtResource( 12 )]
+[node name="Spikes4" parent="Items" instance=ExtResource( 12 )]
 position = Vector2( 1064, -72 )
 
-[node name="Spikes5" parent="Tilemaps/Items" instance=ExtResource( 12 )]
+[node name="Spikes5" parent="Items" instance=ExtResource( 12 )]
 position = Vector2( 1240, 72 )
 
-[node name="Spikes6" parent="Tilemaps/Items" instance=ExtResource( 12 )]
+[node name="Spikes6" parent="Items" instance=ExtResource( 12 )]
 position = Vector2( 1256, 72 )
 
-[node name="Spikes7" parent="Tilemaps/Items" instance=ExtResource( 12 )]
+[node name="Spikes7" parent="Items" instance=ExtResource( 12 )]
 position = Vector2( 1272, 72 )
 
-[node name="Spikes8" parent="Tilemaps/Items" instance=ExtResource( 12 )]
+[node name="Spikes8" parent="Items" instance=ExtResource( 12 )]
 position = Vector2( 1288, 72 )
 
-[node name="Spikes9" parent="Tilemaps/Items" instance=ExtResource( 12 )]
+[node name="Spikes9" parent="Items" instance=ExtResource( 12 )]
 position = Vector2( 1368, 72 )
 
-[node name="Spikes10" parent="Tilemaps/Items" instance=ExtResource( 12 )]
+[node name="Spikes10" parent="Items" instance=ExtResource( 12 )]
 position = Vector2( 1384, 72 )
 
-[node name="Spikes11" parent="Tilemaps/Items" instance=ExtResource( 12 )]
+[node name="Spikes11" parent="Items" instance=ExtResource( 12 )]
 position = Vector2( 1400, 72 )
 
-[node name="Spikes12" parent="Tilemaps/Items" instance=ExtResource( 12 )]
+[node name="Spikes12" parent="Items" instance=ExtResource( 12 )]
 position = Vector2( 1416, 72 )
 
-[node name="Door" parent="Tilemaps/Items" instance=ExtResource( 13 )]
+[node name="Door" parent="Items" instance=ExtResource( 13 )]
 position = Vector2( 656, 72 )
 z_index = 1
 
-[node name="Key" parent="Tilemaps/Items" instance=ExtResource( 14 )]
+[node name="Key" parent="Items" instance=ExtResource( 14 )]
 position = Vector2( 1117, -182 )
 
-[node name="Box" parent="Tilemaps/Items" instance=ExtResource( 10 )]
+[node name="Box" parent="Items" instance=ExtResource( 10 )]
 position = Vector2( -152, -16 )
 
-[node name="ReturnZone" parent="Tilemaps/Items" instance=ExtResource( 16 )]
+[node name="ReturnZone" parent="Items" instance=ExtResource( 16 )]
 position = Vector2( 1328, 72 )
 script = SubResource( 1 )
 
@@ -172,18 +172,22 @@ show_borders_in_editor = true
 position = Vector2( 1064.97, -188.792 )
 bounds_left = 1050
 bounds_right = 1200
+show_borders_in_editor = false
 
 [node name="Skull3" parent="." instance=ExtResource( 15 )]
 position = Vector2( 1270.03, -210.233 )
 bounds_left = 1250
 bounds_right = 1400
+show_borders_in_editor = false
 
 [node name="Skull4" parent="." instance=ExtResource( 15 )]
 position = Vector2( 1404.38, -305.67 )
 bounds_left = 1250
 bounds_right = 1400
+show_borders_in_editor = false
 
 [node name="Skull5" parent="." instance=ExtResource( 15 )]
 position = Vector2( 1327.94, -429.832 )
 bounds_left = 1250
 bounds_right = 1400
+show_borders_in_editor = false

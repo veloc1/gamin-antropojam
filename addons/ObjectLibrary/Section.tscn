@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/ObjectLibrary/Section.gd" type="Script" id=1]
+
+[node name="Section" type="VBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 640.0
+margin_bottom = 14.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "section name"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_top = 18.0
+margin_right = 640.0
+margin_bottom = 18.0
+columns = 4

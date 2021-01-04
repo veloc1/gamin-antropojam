@@ -1,28 +1,20 @@
 [gd_resource type="TileSet" load_steps=9 format=2]
 
 [sub_resource type="StreamTexture" id=1]
-load_path = "res://.import/brckwll_left_basic.png-4f48bd0dfe3b978dfdb09fbfe4197da3.stex"
 
 [sub_resource type="StreamTexture" id=2]
-load_path = "res://.import/brckwll_left_end.png-f3f374f045f85e136ac3ca4d2b7ee76e.stex"
 
 [sub_resource type="StreamTexture" id=3]
-load_path = "res://.import/brckwll_rght_end.png-000b7b10ff7c9556677033f479c7fbb1.stex"
 
 [sub_resource type="StreamTexture" id=4]
-load_path = "res://.import/column_brckwll_dwn.png-9c770127a81957e2b75196ef4e3421c1.stex"
 
 [sub_resource type="StreamTexture" id=5]
-load_path = "res://.import/column_brckwll_mid.png-48e36b1c10aa83e5b6e4eb2757554c98.stex"
 
 [sub_resource type="StreamTexture" id=6]
-load_path = "res://.import/column_brckwll_up.png-51cdcb763a3d1d85dafe56c3403dc34e.stex"
 
 [sub_resource type="StreamTexture" id=7]
-load_path = "res://.import/torch_brckwll_2.png-266538ab042107962ed369df04290170.stex"
 
 [sub_resource type="StreamTexture" id=8]
-load_path = "res://.import/torch_brckwll_3.png-e86a5ee9bd2bfadb1cd860c065649827.stex"
 
 [resource]
 0/name = "brckwll_left_basic.png 0"
