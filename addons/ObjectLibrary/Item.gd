@@ -26,7 +26,7 @@ func set_image(image):
 
 func on_hover():
 	modulate.a = 0.5
-	texture.rect_scale = Vector2.ONE * 1.2
+	# texture.rect_scale = Vector2.ONE * 1.2
 
 func on_unhover():
 	modulate.a = 1
