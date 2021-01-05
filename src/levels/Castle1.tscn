@@ -91,11 +91,13 @@ position = Vector2( 552, 24 )
 position = Vector2( 354.683, 64.0776 )
 bounds_left = 240
 bounds_right = 464
+show_borders_in_editor = false
 
 [node name="Skull2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 365.133, -10.9725 )
 bounds_left = 240
 bounds_right = 464
+show_borders_in_editor = false
 
 [node name="Key" parent="." instance=ExtResource( 4 )]
 position = Vector2( 664, -8 )
@@ -187,6 +189,7 @@ limit_bottom = 272
 
 [node name="Elevator" parent="." instance=ExtResource( 14 )]
 position = Vector2( 208, 112 )
+height = 1
 paddles_count = 5
 button_name = NodePath("../Button")
 

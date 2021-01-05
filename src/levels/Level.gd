@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name Level
+
 var Effects = preload("res://src/effects/Effects.tscn")
 
 export(Color) var bg_color = Color("72ae30")

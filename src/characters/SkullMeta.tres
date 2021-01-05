@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=5 format=2]
+
+[ext_resource path="res://addons/ObjectLibrary/Meta.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/characters/skull/skull-sheet.png" type="Texture" id=2]
+[ext_resource path="res://src/characters/Skull.tscn" type="PackedScene" id=3]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
+
+[resource]
+script = ExtResource( 1 )
+descriptive_name = "Skull"
+icon = SubResource( 1 )
+order = 0
+scene = ExtResource( 3 )
+category = "Enemies"

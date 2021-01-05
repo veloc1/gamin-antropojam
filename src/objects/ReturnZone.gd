@@ -10,7 +10,7 @@ func _process(_delta):
 
 func on_body_entered(body):
 	if body.is_in_group("player"):
-		pass
+		body.position = $RespawnPoint.global_position
 
 func _draw():
 	if Engine.editor_hint:
