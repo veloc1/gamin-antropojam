@@ -17,6 +17,10 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 		velocity = move_and_slide(velocity, Vector2.UP)
 
+func _process(_delta):
+	$Sprite.global_position.x = round(position.x)
+	$Sprite.global_position.y = round(position.y)
+
 func on_interaction(player_obj):
 	player = player_obj
 	

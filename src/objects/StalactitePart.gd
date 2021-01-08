@@ -16,6 +16,8 @@ func _physics_process(_delta):
 		if is_on_floor():
 			is_falling = false
 			set_collision_layer_bit(2, true)
+			position.x = round(position.x)
+			position.y = round(position.y)
 
 func fall():
 	is_falling = true

@@ -1,5 +1,5 @@
 extends IdleState
-class_name JumpState
+class_name DoubleJumpState
 
 var lerp_value_acceleration = 0.1
 var lerp_value_decceleration = 0.03
@@ -9,10 +9,10 @@ func _ready():
 
 func jump():
 	if can_jump():
-		change_state("double_jump")
+		_actual_jump()
 
 func can_jump():
-	return movement.is_double_jump_enabled
+	return false
 
 func move_left():
 	look_left()
@@ -37,11 +37,12 @@ func _physics_process(_delta):
 	else:
 		set_active(true)
 
-
 func get_animation_name():
-	return "jump"
+	return "double_jump"
 
 func _actual_jump():
+	Events.emit_signal("double_jump", body.position, animation.flip_h)
+	
 	set_velocity(get_velocity().x, jump_speed)
 	ghost_jump_timer.stop()
 	set_active(true)

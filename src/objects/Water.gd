@@ -8,7 +8,6 @@ func _ready():
 	connect("body_exited", self, "on_body_exited")
 	
 	set_tiles()
-	print(get_children())
 
 func on_body_entered(body):
 	if body.is_in_group("player"):
@@ -31,14 +30,14 @@ func set_tiles():
 	var tile = 0 # water tile
 	var tile_x = 0
 	for x in range(-dims.x, dims.x, 32):
-		var y = (-dims.y) / 32
-		$TileMap.set_cell(x / 32, y, tile, false, false, false, Vector2(tile_x, 0))
+		var y = round((-dims.y) / 32.0)
+		$TileMap.set_cell(round(x / 32.0), y, tile, false, false, false, Vector2(tile_x, 0))
 		tile_x += 1
 		if tile_x > 3: # 4 autotiles
 			tile_x = 0
 	for x in range(-dims.x, dims.x, 32):
 		for y in range(-dims.y + 32, dims.y, 32):
-			$TileMap.set_cell(x / 32, y / 32, tile, false, false, false, Vector2(4, 0))
+			$TileMap.set_cell(round(x / 32.0), round(y / 32.0), tile, false, false, false, Vector2(4, 0))
 
 func _process(_delta):
 	var new_dims = Vector2($CollisionShape2D.shape.extents.x, $CollisionShape2D.shape.extents.y)

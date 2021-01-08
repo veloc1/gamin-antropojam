@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/components/Component.gd"
 }, {
+"base": "IdleState",
+"class": "DoubleJumpState",
+"language": "GDScript",
+"path": "res://src/components/movement/states/DoubleJump.gd"
+}, {
 "base": "State",
 "class": "IdleState",
 "language": "GDScript",
@@ -99,6 +104,7 @@ _global_script_class_icons={
 "AttackState": "",
 "AttackedState": "",
 "Component": "",
+"DoubleJumpState": "",
 "IdleState": "",
 "Interact": "",
 "Inventory": "",

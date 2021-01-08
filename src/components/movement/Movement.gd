@@ -19,6 +19,7 @@ func _ready():
 	states["idle"]=  IdleState
 	states["walk"] = WalkState
 	states["jump"] = JumpState
+	states["double_jump"] = DoubleJumpState
 	states["attack"] = AttackState
 	states["attacked"] = AttackedState
 

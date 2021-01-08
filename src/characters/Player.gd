@@ -55,20 +55,28 @@ func _physics_process(_delta):
 			attack.look_right()
 			interact.look_right()
 			camera.look_right()
+			$OnEdgeSensorArea.look_right()
 		elif action_left:
 			movement.move_left()
 			attack.look_left()
 			interact.look_left()
 			camera.look_left()
+			$OnEdgeSensorArea.look_left()
 		else:
 			movement.still()
 	
 		if not movement.is_active():
 			movement.idle()
+			if $OnEdgeSensorArea.on_edge() and is_on_floor():
+				$AnimatedSprite.play("on_edge")
 
 # *** INTERACTIONS ***
 
 func attacked(from):
+	if $InvincibilityTimer.time_left > 0:
+		return
+	$InvincibilityTimer.start()
+	
 	movement.attacked(from.global_position.x < global_position.x)
 
 	health.damage()
