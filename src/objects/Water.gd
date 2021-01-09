@@ -1,11 +1,15 @@
 tool
 extends Area2D
 
+const Splash = preload("res://src/effects/Splash.tscn")
+
 var old_shape_dims
 
 func _ready():
 	connect("body_entered", self, "on_body_entered")
 	connect("body_exited", self, "on_body_exited")
+	
+	connect("area_exited", self, "on_area_exited")
 	
 	set_tiles()
 
@@ -13,11 +17,20 @@ func on_body_entered(body):
 	if body.is_in_group("player"):
 		body.enter_to_area(self)
 		play_sound()
+		
+		body.set_in_water(true)
+		
+		var splash = Splash.instance()
+		splash.position.x = body.position.x
+		splash.position.y = body.position.y + 6
+		get_parent().add_child(splash)
 
 func on_body_exited(body):
 	if body.is_in_group("player"):
 		body.exit_from_area(self)
 		play_sound()
+		
+		body.set_in_water(false)
 
 func play_sound():
 	Sounds.play_sound("splash")
@@ -53,3 +66,8 @@ func _draw():
 		#var dims = $CollisionShape2D.shape.extents
 		#var p = $CollisionShape2D.position
 		#draw_rect(Rect2(-dims.x + p.x, -dims.y + p.y, dims.x * 2, dims.y * 2), Color.red)
+
+
+func on_area_exited(area):
+	if area.is_in_group("bubble"):
+		area.get_parent().queue_free()

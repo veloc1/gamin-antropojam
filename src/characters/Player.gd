@@ -8,6 +8,7 @@ onready var camera = $Camera
 
 var is_input_active = true
 var carried_box = null
+var _is_in_water = false
 
 func _ready():
 	#DebugInfo.add_property_monitor("Player pos", self, ":global_position")
@@ -56,12 +57,14 @@ func _physics_process(_delta):
 			interact.look_right()
 			camera.look_right()
 			$OnEdgeSensorArea.look_right()
+			$BubblesEmitter.look_right()
 		elif action_left:
 			movement.move_left()
 			attack.look_left()
 			interact.look_left()
 			camera.look_left()
 			$OnEdgeSensorArea.look_left()
+			$BubblesEmitter.look_left()
 		else:
 			movement.still()
 	
@@ -180,6 +183,12 @@ func _start_putdown_box():
 		$AnimationPlayer.play("putdown_box_left")
 	else:
 		$AnimationPlayer.play("putdown_box_right")
+
+func is_in_water():
+	return _is_in_water
+
+func set_in_water(in_water):
+	_is_in_water = in_water
 
 func _get_gravity_vector():
 	return Physics2DServer.area_get_param(get_world_2d().space, Physics2DServer.AREA_PARAM_GRAVITY_VECTOR)

@@ -8,7 +8,9 @@
 resource_local_to_scene = true
 extents = Vector2( 64, 32 )
 
-[node name="Water" type="Area2D"]
+[node name="Water" type="Area2D" groups=[
+"water",
+]]
 z_index = 5
 z_as_relative = false
 gravity = 55.0

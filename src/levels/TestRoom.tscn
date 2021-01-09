@@ -475,7 +475,7 @@ bounds_right = 530
 show_borders_in_editor = true
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( -416, -48 )
+position = Vector2( 384, -224 )
 
 [editable path="Blocks/Water"]
 
