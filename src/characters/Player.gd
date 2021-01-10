@@ -72,6 +72,8 @@ func _physics_process(_delta):
 			movement.idle()
 			if $OnEdgeSensorArea.on_edge() and is_on_floor():
 				$AnimatedSprite.play("on_edge")
+			else:
+				$AnimatedSprite.play("idle")
 
 # *** INTERACTIONS ***
 
