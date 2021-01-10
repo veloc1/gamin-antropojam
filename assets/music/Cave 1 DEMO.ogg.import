@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Cave 1 DEMO.ogg-8b71de58c96a5eacdac16946a699200d.oggstr"
+
+[deps]
+
+source_file="res://assets/music/Cave 1 DEMO.ogg"
+dest_files=[ "res://.import/Cave 1 DEMO.ogg-8b71de58c96a5eacdac16946a699200d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
