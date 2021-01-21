@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://src/levels/tilesets/BlocksTileSet.tres" type="TileSet" id=1]
 [ext_resource path="res://src/levels/Level.gd" type="Script" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://src/objects/ReturnZone.tscn" type="PackedScene" id=25]
 [ext_resource path="res://assets/sprites/blocks/beach sand.png" type="Texture" id=27]
 [ext_resource path="res://src/objects/Water.tscn" type="PackedScene" id=28]
+[ext_resource path="res://src/characters/Hound.tscn" type="PackedScene" id=29]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Castle_bg"
@@ -473,6 +474,9 @@ position = Vector2( 496, -48 )
 bounds_left = 320
 bounds_right = 530
 show_borders_in_editor = true
+
+[node name="Hound" parent="Enemies" instance=ExtResource( 29 )]
+position = Vector2( 496.135, -240.406 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 position = Vector2( 384, -224 )
