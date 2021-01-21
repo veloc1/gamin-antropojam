@@ -138,6 +138,7 @@ animations = [ {
 "frames": [ SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "double_jump",
+<<<<<<< HEAD
 "speed": 8.0
 }, {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 9 ), SubResource( 10 ) ],
@@ -166,10 +167,43 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+=======
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 9 ), SubResource( 10 ) ],
+>>>>>>> 53e00bbac47400b671ea68f617f7c7633be8ff49
 "loop": false,
 "name": "pickup",
 "speed": 6.0
 }, {
+<<<<<<< HEAD
+=======
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": false,
+"name": "putdown",
+"speed": 6.0
+}, {
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": false,
+"name": "attack",
+"speed": 18.0
+}, {
+"frames": [ SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "walk",
+"speed": 7.0
+}, {
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 22 ) ],
+"loop": true,
+"name": "on_edge",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": false,
+"name": "pickup",
+"speed": 6.0
+}, {
+>>>>>>> 53e00bbac47400b671ea68f617f7c7633be8ff49
 "frames": [ SubResource( 28 ), SubResource( 29 ) ],
 "loop": false,
 "name": "stun",
