@@ -33,11 +33,12 @@ func on_player_double_jump(player_pos, to_left):
 	effect.play("jump")
 
 func on_player_double_jump_water(bubble_emitter):
-	for _i in range(3):
+	for _i in range(5):
 		bubble_emitter.emit_bubble(
-			Vector2(rand_range(-5, 5), rand_range(-5, 5)),
+			Vector2(rand_range(-3, 3), rand_range(-3, 3)),
 			Vector2(rand_range(-5, 5), rand_range(-3, 0)),
-			rand_range(0, 5)
+			rand_range(0, 5),
+			rand_range(0, 2)
 		)
 
 func on_use_with_no_item(player_pos, to_left):

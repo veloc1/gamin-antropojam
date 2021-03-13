@@ -15,9 +15,9 @@ func _process(delta):
 		t += delta
 		if t > emit_time:
 			t = 0
-			emit_bubble(Vector2(0, 0), Vector2(0, 0), 0)
+			emit_bubble(Vector2(0, 0), Vector2(0, 0), 0, 0)
 
-func emit_bubble(offset, additional_impact, phase):
+func emit_bubble(offset, additional_impact, phase, initial_frame):
 	var b = Bubbles.instance()
 	# b.position.x = global_position.x
 	# b.position.y = global_position.y
@@ -28,6 +28,8 @@ func emit_bubble(offset, additional_impact, phase):
 	b.additional_velocity = additional_impact
 
 	b.phase = phase
+
+	b.initial_frame = initial_frame
 
 	get_parent().get_parent().add_child(b)
 

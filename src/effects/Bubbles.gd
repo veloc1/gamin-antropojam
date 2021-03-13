@@ -6,11 +6,13 @@ var t = 0.0
 var original_x = 0
 var additional_velocity = Vector2(0, 0)
 var phase = 0
+var initial_frame = 0
 
 var initial_placement_checked = false
 
 func _ready():
 	play("default")
+	frame = initial_frame
 	original_x = position.x
 	# t = rand_range(-1.0, 0.0)
 
