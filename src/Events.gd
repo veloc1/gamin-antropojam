@@ -14,3 +14,6 @@ signal block_destroyed(position)
 # *** EFFECTS ***
 
 signal start_screenshake()
+signal effects_double_jump(pos, to_left)
+signal effects_double_jump_water(bubbles_emitter)
+

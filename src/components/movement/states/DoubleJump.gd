@@ -41,8 +41,8 @@ func get_animation_name():
 	return "double_jump"
 
 func _actual_jump():
-	Events.emit_signal("double_jump", body.position, animation.flip_h)
-	
+	Events.emit_signal("double_jump")
+
 	set_velocity(get_velocity().x, jump_speed)
 	ghost_jump_timer.stop()
 	set_active(true)

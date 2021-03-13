@@ -5,7 +5,8 @@ var DoubleJumpEffect = preload("res://src/effects/DoubleJumpEffect.tscn")
 var Exclamation = preload("res://src/effects/Exclamation.tscn")
 
 func _ready():
-	Events.connect("double_jump", self, "on_player_double_jump")
+	Events.connect("effects_double_jump", self, "on_player_double_jump")
+	Events.connect("effects_double_jump_water", self, "on_player_double_jump_water")
 	Events.connect("block_destroyed", self, "on_block_destroyed")
 	Events.connect("use_no_item", self, "on_use_with_no_item")
 
@@ -21,7 +22,7 @@ func on_block_destroyed(pos):
 func on_player_double_jump(player_pos, to_left):
 	var effect = DoubleJumpEffect.instance()
 	get_parent().add_child(effect)
-	
+
 	var x = player_pos.x
 	if to_left:
 		x += 7
@@ -31,10 +32,18 @@ func on_player_double_jump(player_pos, to_left):
 	effect.flip_h = to_left
 	effect.play("jump")
 
+func on_player_double_jump_water(bubble_emitter):
+	for _i in range(3):
+		bubble_emitter.emit_bubble(
+			Vector2(rand_range(-5, 5), rand_range(-5, 5)),
+			Vector2(rand_range(-5, 5), rand_range(-3, 0)),
+			rand_range(0, 5)
+		)
+
 func on_use_with_no_item(player_pos, to_left):
 	var effect = Exclamation.instance()
 	get_parent().add_child(effect)
-	
+
 	var x = player_pos.x
 	if to_left:
 		x -= 12
