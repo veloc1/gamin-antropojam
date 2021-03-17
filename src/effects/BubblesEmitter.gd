@@ -15,14 +15,23 @@ func _process(delta):
 		t += delta
 		if t > emit_time:
 			t = 0
-			var b = Bubbles.instance()
-			# b.position.x = global_position.x
-			# b.position.y = global_position.y
-			
-			b.position.x = get_parent().position.x
-			b.position.y = get_parent().position.y
-			
-			get_parent().get_parent().add_child(b)
+			emit_bubble(Vector2(0, 0), Vector2(0, 0), 0, 0)
+
+func emit_bubble(offset, additional_impact, phase, initial_frame):
+	var b = Bubbles.instance()
+	# b.position.x = global_position.x
+	# b.position.y = global_position.y
+
+	b.position.x = get_parent().position.x + offset.x
+	b.position.y = get_parent().position.y + offset.y
+
+	b.additional_velocity = additional_impact
+
+	b.phase = phase
+
+	b.initial_frame = initial_frame
+
+	get_parent().get_parent().add_child(b)
 
 func look_left():
 	if position.x < 0:
@@ -31,4 +40,4 @@ func look_left():
 func look_right():
 	if position.x > 0:
 		position.x = -position.x
-	
+

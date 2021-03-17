@@ -8,18 +8,18 @@ var old_shape_dims
 func _ready():
 	connect("body_entered", self, "on_body_entered")
 	connect("body_exited", self, "on_body_exited")
-	
+
 	connect("area_exited", self, "on_area_exited")
-	
+
 	set_tiles()
 
 func on_body_entered(body):
 	if body.is_in_group("player"):
 		body.enter_to_area(self)
 		play_sound()
-		
+
 		body.set_in_water(true)
-		
+
 		var splash = Splash.instance()
 		splash.position.x = body.position.x
 		splash.position.y = body.position.y + 6
@@ -29,17 +29,17 @@ func on_body_exited(body):
 	if body.is_in_group("player"):
 		body.exit_from_area(self)
 		play_sound()
-		
+
 		body.set_in_water(false)
 
 func play_sound():
-	Sounds.play_sound("splash")
+	Sounds.play_sound("Splash")
 
 func set_tiles():
 	$TileMap.clear()
-	
+
 	var dims = $CollisionShape2D.shape.extents
-	
+
 	var tile = 0 # water tile
 	var tile_x = 0
 	for x in range(-dims.x, dims.x, 32):
@@ -57,7 +57,7 @@ func _process(_delta):
 	if old_shape_dims and (old_shape_dims.x != new_dims.x or old_shape_dims.y != new_dims.y):
 		set_tiles()
 	old_shape_dims = new_dims
-	
+
 	update()
 
 func _draw():

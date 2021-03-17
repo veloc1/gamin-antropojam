@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/rocks_right.png-22a0538aa99e5a023fae1c46d73d15b1.stex"
+path="res://.import/cave_blocks.png-eb781bbfe783b141c375c30ecb0596ae.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/blocks/bg/forest/rocks_right.png"
-dest_files=[ "res://.import/rocks_right.png-22a0538aa99e5a023fae1c46d73d15b1.stex" ]
+source_file="res://assets/sprites/blocks/bg/cave/cave_blocks.png"
+dest_files=[ "res://.import/cave_blocks.png-eb781bbfe783b141c375c30ecb0596ae.stex" ]
 
 [params]
 

@@ -9,9 +9,9 @@ export(Color) var bg_color = Color("72ae30")
 func _ready():
 	var effects = Effects.instance()
 	add_child(effects)
-	
+
 	Events.connect("game_over", self, "on_game_over")
-	
+
 	VisualServer.set_default_clear_color(bg_color)
 
 func _process(_delta):
