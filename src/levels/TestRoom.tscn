@@ -25,7 +25,7 @@
 [ext_resource path="res://src/objects/ExitToLevel.tscn" type="PackedScene" id=23]
 [ext_resource path="res://src/levels/tilesets/CaveBg.tres" type="TileSet" id=24]
 [ext_resource path="res://src/objects/ReturnZone.tscn" type="PackedScene" id=25]
-[ext_resource path="res://assets/sprites/blocks/beach sand.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/blocks/bg/beach/beach_sand_blocks.png" type="Texture" id=27]
 [ext_resource path="res://src/objects/Water.tscn" type="PackedScene" id=28]
 [ext_resource path="res://src/characters/Hound.tscn" type="PackedScene" id=29]
 
