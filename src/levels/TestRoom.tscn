@@ -297,7 +297,5 @@ position = Vector2( 496.135, -240.406 )
 position = Vector2( 456, -257 )
 
 [editable path="Blocks/Water"]
-
 [editable path="Blocks/ReturnZone"]
-
 [editable path="Items/ExitToLevel"]

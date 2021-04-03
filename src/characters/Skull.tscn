@@ -35,10 +35,12 @@ shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 4 )
+frame = 1
 playing = true
 flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Diyng = SubResource( 5 )
+
 [connection signal="body_entered" from="." to="." method="_on_skull_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

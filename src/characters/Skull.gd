@@ -29,8 +29,8 @@ func _process(delta):
 func _draw():
 	if Engine.editor_hint and show_borders_in_editor:
 		draw_line(
-			Vector2(-position.x + bounds_left, 0), 
-			Vector2(-position.x + bounds_right, 0), 
+			Vector2(-position.x + bounds_left, 0),
+			Vector2(-position.x + bounds_right, 0),
 			Color(0.8, 0.5, 0.5, 0.5),
 			36
 		)

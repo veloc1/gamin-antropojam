@@ -17,11 +17,11 @@ func add_method_monitor(name, target, method_name):
 		"name": name,
 		"object": target,
 		"method": method_name
-	})	
+	})
 
 func _process(_delta):
 	var text = ""
-	
+
 	text += formatted("FPS", Engine.get_frames_per_second())
 	text += formatted("Static Memory", String.humanize_size(OS.get_static_memory_usage()))
 	for monitor in monitors:
@@ -32,7 +32,7 @@ func _process(_delta):
 				text += formatted(monitor["name"], property)
 			if "method" in monitor:
 				text += formatted(monitor["name"], node.call(monitor["method"]))
-				
+
 	$Label.text = text
 
 func formatted(name, value):

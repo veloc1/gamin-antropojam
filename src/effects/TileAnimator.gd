@@ -17,18 +17,18 @@ func _init(tileset_name, tileset_autotile_coords, anim_wait_time):
 
 func _ready():
 	tilemap = get_parent()
-	
+
 	tile_id = tilemap.tile_set.find_tile_by_name(ts_name)
-	
+
 	if tile_id < 0:
 		queue_free()
-		
+
 	var cells = tilemap.get_used_cells_by_id(tile_id)
 	for c in cells:
 		var ac = tilemap.get_cell_autotile_coord(c.x, c.y)
 		if ac == autotile_coords[0]:
 			tiles.append(c)
-	
+
 	timer = Timer.new()
 	add_child(timer)
 	timer.wait_time = wait_time
@@ -38,12 +38,12 @@ func _ready():
 func on_timeout():
 	for t in tiles:
 		tilemap.set_cell(
-			t.x, 
-			t.y, 
-			tile_id, 
-			false, 
-			false, 
-			false, 
+			t.x,
+			t.y,
+			tile_id,
+			false,
+			false,
+			false,
 			autotile_coords[current_tile]
 		)
 
@@ -54,7 +54,7 @@ func on_timeout():
 #func set_animation(tmap, t_names):
 #	tilemap = tmap
 #	tile_names = t_names
-#	
+#
 #	var tile_id = tilemap.tile_set.find_tile_by_name(tile_names[0])
 #	tiles = tilemap.get_used_cells_by_id(tile_id)
 #

@@ -40,6 +40,7 @@ margin_bottom = 68.0
 text = "Exit"
 
 [node name="Camera" parent="." instance=ExtResource( 2 )]
+
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Resolution" to="." method="_on_resolution_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

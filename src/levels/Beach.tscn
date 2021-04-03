@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://src/levels/tilesets/BeachBlocks.tres" type="TileSet" id=2]
 [ext_resource path="res://src/levels/tilesets/RocksTileSet.tres" type="TileSet" id=3]
 [ext_resource path="res://src/objects/Water.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/sprites/blocks/bg/beach/Mist.png" type="Texture" id=5]
+[ext_resource path="res://src/effects/BeachParallax.gd" type="Script" id=6]
 [ext_resource path="res://src/objects/Sun.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/characters/Player.tscn" type="PackedScene" id=9]
 
@@ -13,6 +15,42 @@ extents = Vector2( 146, 60 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
+bg_color = Color( 0.729412, 0.764706, 0.298039, 1 )
+
+[node name="Parallax" type="ParallaxBackground" parent="."]
+layer = 0
+script = ExtResource( 6 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax"]
+motion_scale = Vector2( 0.8, 1 )
+
+[node name="Sun" parent="Parallax/ParallaxLayer" instance=ExtResource( 8 )]
+position = Vector2( 173, -42 )
+frame = 2
+
+[node name="MistLayer" type="ParallaxLayer" parent="Parallax"]
+z_as_relative = false
+motion_mirroring = Vector2( 320, 0 )
+
+[node name="Sprite" type="Sprite" parent="Parallax/MistLayer"]
+modulate = Color( 1, 1, 1, 0.756863 )
+position = Vector2( 0, 66 )
+z_index = 10
+z_as_relative = false
+texture = ExtResource( 5 )
+centered = false
+
+[node name="MistLayer2" type="ParallaxLayer" parent="Parallax"]
+z_as_relative = false
+motion_mirroring = Vector2( 320, 0 )
+
+[node name="Sprite" type="Sprite" parent="Parallax/MistLayer2"]
+modulate = Color( 0.807843, 0.807843, 0.807843, 0.631373 )
+position = Vector2( 0, 34 )
+z_index = 10
+z_as_relative = false
+texture = ExtResource( 5 )
+centered = false
 
 [node name="Tilemaps" type="Node2D" parent="."]
 
@@ -27,14 +65,6 @@ tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 655359, 0, 8, 589824, 0, 9, 589825, 0, 9, 589826, 0, 9, 589827, 0, 9, 589828, 0, 9, 589829, 0, 9, 589830, 0, 11, 589836, 0, 8, 589837, 0, 9, 589838, 0, 9, 589839, 0, 9, 589840, 0, 9, 589841, 0, 9, 589842, 0, 9, 589843, 0, 11, 720895, 0, 65544, 655360, 0, 131081, 655361, 0, 131081, 655362, 0, 131081, 655363, 0, 131081, 655364, 0, 131081, 655365, 0, 131081, 655366, 0, 65542, 655367, 0, 9, 655368, 0, 11, 655371, 0, 8, 655372, 0, 65541, 655373, 0, 131081, 655374, 0, 131081, 655375, 0, 131081, 655376, 0, 131081, 655377, 0, 131081, 655378, 0, 131081, 655379, 0, 131083, 786431, 0, 65544, 720896, 0, 131081, 720897, 0, 131081, 720898, 0, 131081, 720899, 0, 131078, 720900, 0, 196617, 720901, 0, 196617, 720902, 0, 196617, 720903, 0, 196617, 720904, 0, 196619, 720907, 0, 65544, 720908, 0, 131081, 720909, 0, 131081, 720910, 0, 131081, 720911, 0, 131081, 720912, 0, 131081, 720913, 0, 131078, 720914, 0, 196617, 720915, 0, 196619, 851967, 0, 196616, 786432, 0, 196617, 786433, 0, 196617, 786434, 0, 196617, 786435, 0, 196619, 786442, 0, 8, 786443, 0, 65541, 786444, 0, 131081, 786445, 0, 131081, 786446, 0, 131081, 786447, 0, 131081, 786448, 0, 131081, 786449, 0, 131083, 851978, 0, 65544, 851979, 0, 131081, 851980, 0, 131081, 851981, 0, 131081, 851982, 0, 131081, 851983, 0, 131078, 851984, 0, 196617, 851985, 0, 196619, 983038, 0, 8, 983039, 0, 9, 917504, 0, 9, 917505, 0, 9, 917506, 0, 9, 917507, 0, 9, 917508, 0, 9, 917509, 0, 9, 917510, 0, 11, 917512, 0, 8, 917513, 0, 9, 917514, 0, 65541, 917515, 0, 131081, 917516, 0, 131081, 917517, 0, 131081, 917518, 0, 131081, 917519, 0, 131083, 1048574, 0, 65544, 1048575, 0, 131081, 983040, 0, 131081, 983041, 0, 131081, 983042, 0, 131081, 983043, 0, 131081, 983044, 0, 131081, 983045, 0, 131081, 983046, 0, 65542, 983047, 0, 9, 983048, 0, 65541, 983049, 0, 131081, 983050, 0, 131081, 983051, 0, 131081, 983052, 0, 131081, 983053, 0, 131081, 983054, 0, 131081, 983055, 0, 131083, 1114110, 0, 65544, 1114111, 0, 131081, 1048576, 0, 131081, 1048577, 0, 131081, 1048578, 0, 131081, 1048579, 0, 131081, 1048580, 0, 131081, 1048581, 0, 131081, 1048582, 0, 131081, 1048583, 0, 131081, 1048584, 0, 131081, 1048585, 0, 131081, 1048586, 0, 131081, 1048587, 0, 131081, 1048588, 0, 131081, 1048589, 0, 131081, 1048590, 0, 131081, 1048591, 0, 131083, 1179646, 0, 196616, 1179647, 0, 196617, 1114112, 0, 196617, 1114113, 0, 196617, 1114114, 0, 196617, 1114115, 0, 196617, 1114116, 0, 196617, 1114117, 0, 196617, 1114118, 0, 196617, 1114119, 0, 131077, 1114120, 0, 131081, 1114121, 0, 131081, 1114122, 0, 131081, 1114123, 0, 131081, 1114124, 0, 131081, 1114125, 0, 131081, 1114126, 0, 131078, 1114127, 0, 196619, 1179655, 0, 196616, 1179656, 0, 196617, 1179657, 0, 196617, 1179658, 0, 196617, 1179659, 0, 196617, 1179660, 0, 196617, 1179661, 0, 196617, 1179662, 0, 196619 )
-
-[node name="Parallax" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax"]
-motion_scale = Vector2( 0.8, 1 )
-
-[node name="Sun" parent="Parallax/ParallaxLayer" instance=ExtResource( 8 )]
-position = Vector2( 173, -42 )
 
 [node name="Blocks" type="Node2D" parent="."]
 

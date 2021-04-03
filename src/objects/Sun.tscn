@@ -28,4 +28,5 @@ animations = [ {
 
 [node name="Sun" type="AnimatedSprite"]
 frames = SubResource( 5 )
+frame = 3
 playing = true

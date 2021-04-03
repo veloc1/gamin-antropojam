@@ -4,14 +4,13 @@
 [ext_resource path="res://src/objects/FragilePlatform.gd" type="Script" id=2]
 [ext_resource path="res://assets/sprites/effects/block_blast/brick_medium.png" type="Texture" id=3]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.54279, 7.89574 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 7.57475, 0.554445 )
 
-[sub_resource type="ParticlesMaterial" id=4]
+[sub_resource type="ParticlesMaterial" id=3]
 emission_shape = 2
 emission_box_extents = Vector3( 4, 4, 1 )
 flag_disable_z = true
@@ -22,8 +21,7 @@ initial_velocity_random = 0.16
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 
-[sub_resource type="Animation" id=3]
-resource_name = "destroy"
+[sub_resource type="Animation" id=4]
 length = 10.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("StaticBody2D:position")
@@ -80,7 +78,7 @@ amount = 3
 lifetime = 2.0
 one_shot = true
 explosiveness = 1.0
-process_material = SubResource( 4 )
+process_material = SubResource( 3 )
 texture = ExtResource( 3 )
 
 [node name="DestroyTimer" type="Timer" parent="."]
@@ -88,4 +86,4 @@ wait_time = 0.35
 one_shot = true
 
 [node name="DestroyAnimation" type="AnimationPlayer" parent="."]
-anims/destroy = SubResource( 3 )
+anims/destroy = SubResource( 4 )

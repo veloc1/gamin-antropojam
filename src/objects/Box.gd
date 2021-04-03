@@ -23,11 +23,11 @@ func _process(_delta):
 
 func on_interaction(player_obj):
 	player = player_obj
-	
+
 	player.pickup_box(self)
-	
+
 	is_carried = true
-	
+
 	_disable()
 
 func putdown(to_left):
@@ -37,7 +37,7 @@ func putdown(to_left):
 		position.x = player.position.x - 16
 	is_carried = false
 	player = null
-	
+
 	call_deferred("_enable")
 
 func get_texture():
@@ -46,11 +46,11 @@ func get_texture():
 func _disable():
 	set_collision_layer_bit(0, false)
 	set_collision_mask_bit(0, false)
-	
+
 	$Sprite.hide()
 
 func _enable():
 	set_collision_layer_bit(0, true)
 	set_collision_mask_bit(0, true)
-	
+
 	$Sprite.show()

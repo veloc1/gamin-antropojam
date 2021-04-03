@@ -15,7 +15,7 @@ func _ready():
 func set_item(item):
 	set_title(item.descriptive_name)
 	set_image(item.icon)
-	
+
 	self.item = item
 
 func set_title(title):

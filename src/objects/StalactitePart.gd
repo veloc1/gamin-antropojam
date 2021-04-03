@@ -11,8 +11,8 @@ func _ready():
 func _physics_process(_delta):
 	if is_falling:
 		velocity.y += acceleration
-		
-		move_and_slide(velocity, Vector2.UP) 
+
+		move_and_slide(velocity, Vector2.UP)
 		if is_on_floor():
 			is_falling = false
 			set_collision_layer_bit(2, true)

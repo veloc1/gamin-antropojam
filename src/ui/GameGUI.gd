@@ -3,7 +3,7 @@ extends CanvasLayer
 func _ready():
 	var v = SaveLoad.get_video_magnifier()
 	scale = Vector2(v, v)
-	
+
 	Events.connect("player_health_changed", self, "on_player_health_changed")
 
 func on_spheres_changed(count):
