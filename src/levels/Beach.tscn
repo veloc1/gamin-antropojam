@@ -22,11 +22,13 @@ layer = 0
 script = ExtResource( 6 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax"]
+z_as_relative = false
 motion_scale = Vector2( 0.8, 1 )
 
 [node name="Sun" parent="Parallax/ParallaxLayer" instance=ExtResource( 8 )]
-position = Vector2( 173, -42 )
-frame = 2
+position = Vector2( 238, 39 )
+frame = 0
+speed_scale = 0.1
 
 [node name="MistLayer" type="ParallaxLayer" parent="Parallax"]
 z_as_relative = false
