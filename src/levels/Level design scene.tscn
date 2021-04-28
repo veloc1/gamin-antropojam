@@ -105,11 +105,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 0/autotile/z_index_map = [  ]
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 1 )
-0/shape_one_way = false
-0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
@@ -249,10 +244,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 0/autotile/z_index_map = [  ]
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape_one_way = false
-0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = -1
 
@@ -274,10 +265,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 0/autotile/z_index_map = [  ]
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
-0/shape_offset = Vector2( 0, 0 )
-0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape_one_way = false
-0/shape_one_way_margin = 0.0
 0/shapes = [  ]
 0/z_index = 0
 1/name = "fish portal.png 1"
@@ -288,10 +275,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 1/tile_mode = 0
 1/occluder_offset = Vector2( 0, 0 )
 1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape_one_way = false
-1/shape_one_way_margin = 0.0
 1/shapes = [  ]
 1/z_index = 0
 2/name = "fish portal.png 2"
@@ -302,10 +285,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 2/tile_mode = 0
 2/occluder_offset = Vector2( 0, 0 )
 2/navigation_offset = Vector2( 0, 0 )
-2/shape_offset = Vector2( 0, 0 )
-2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-2/shape_one_way = false
-2/shape_one_way_margin = 0.0
 2/shapes = [  ]
 2/z_index = 0
 
@@ -594,7 +573,11 @@ show_borders_in_editor = true
 position = Vector2( -528, -1048 )
 
 [editable path="Blocks/Water"]
+
 [editable path="Blocks/ReturnZone"]
+
 [editable path="Blocks/Water2"]
+
 [editable path="Blocks/Water4"]
+
 [editable path="Items/ExitToLevel"]

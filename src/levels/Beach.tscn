@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://src/levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://src/levels/tilesets/BeachBlocks.tres" type="TileSet" id=2]
@@ -10,7 +10,6 @@
 [ext_resource path="res://src/objects/Sun.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/characters/Player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/characters/Merchant.tscn" type="PackedScene" id=10]
-[ext_resource path="res://src/ui/DialogLabel.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
@@ -29,36 +28,35 @@ script = ExtResource( 1 )
 bg_color = Color( 0.729412, 0.764706, 0.298039, 1 )
 
 [node name="Parallax" type="ParallaxBackground" parent="."]
-layer = 0
-script = ExtResource( 6 )
+layer = -1
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax"]
 motion_scale = Vector2( 0.8, 1 )
 
 [node name="Sun" parent="Parallax/ParallaxLayer" instance=ExtResource( 8 )]
-position = Vector2( 173, -42 )
+position = Vector2( 238, 39 )
+z_index = -2
+frame = 0
 
-[node name="MistLayer" type="ParallaxLayer" parent="Parallax"]
-z_as_relative = false
+[node name="ParallaxMist" type="ParallaxBackground" parent="."]
+layer = 0
+script = ExtResource( 6 )
+
+[node name="MistLayer" type="ParallaxLayer" parent="ParallaxMist"]
 motion_mirroring = Vector2( 320, 0 )
 
-[node name="Sprite" type="Sprite" parent="Parallax/MistLayer"]
+[node name="Sprite" type="Sprite" parent="ParallaxMist/MistLayer"]
 modulate = Color( 1, 1, 1, 0.756863 )
 position = Vector2( 0, 66 )
-z_index = 10
-z_as_relative = false
 texture = ExtResource( 5 )
 centered = false
 
-[node name="MistLayer2" type="ParallaxLayer" parent="Parallax"]
-z_as_relative = false
+[node name="MistLayer2" type="ParallaxLayer" parent="ParallaxMist"]
 motion_mirroring = Vector2( 320, 0 )
 
-[node name="Sprite" type="Sprite" parent="Parallax/MistLayer2"]
+[node name="Sprite" type="Sprite" parent="ParallaxMist/MistLayer2"]
 modulate = Color( 0.807843, 0.807843, 0.807843, 0.631373 )
 position = Vector2( 0, 34 )
-z_index = 10
-z_as_relative = false
 texture = ExtResource( 5 )
 centered = false
 
@@ -106,15 +104,7 @@ shape = SubResource( 3 )
 
 [node name="Merchant" parent="." instance=ExtResource( 10 )]
 position = Vector2( 568, 132 )
-frame = 0
-
-[node name="DialogLabel" parent="." instance=ExtResource( 11 )]
-margin_left = 186.0
-margin_top = -28.0
-margin_right = 470.0
-margin_bottom = 133.0
-bbcode_text = "Lorem ipsum dolor sit amet, [wave]consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+frame = 4
 
 [editable path="Blocks/Water"]
 [editable path="Limiters/CameraLimiter"]

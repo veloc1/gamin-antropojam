@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://assets/sprites/characters/trader/trader sheet.png" type="Texture" id=1]
 [ext_resource path="res://src/characters/Merchant.gd" type="Script" id=2]
@@ -17,19 +17,19 @@ region = Rect2( 0, 0, 16, 24 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 0, 16, 24 )
+region = Rect2( 32, 0, 16, 24 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 24, 16, 24 )
+region = Rect2( 32, 24, 16, 24 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 0, 16, 24 )
+region = Rect2( 16, 0, 16, 24 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 24, 16, 24 )
+region = Rect2( 16, 24, 16, 24 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
@@ -40,22 +40,40 @@ animations = [ {
 }, {
 "frames": [ SubResource( 4 ), SubResource( 5 ) ],
 "loop": false,
-"name": "hands",
+"name": "laugh",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 6 ), SubResource( 7 ) ],
 "loop": false,
-"name": "laugh",
+"name": "hands",
 "speed": 5.0
 } ]
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 10, 73 )
 
 [node name="Merchant" type="AnimatedSprite"]
 frames = SubResource( 8 )
 animation = "idle"
-frame = 1
 playing = true
 script = ExtResource( 2 )
 
 [node name="HandsAnimationTimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="PlayerListener" type="Area2D" parent="."]
+position = Vector2( -102, -3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerListener"]
+shape = SubResource( 9 )
+
+[node name="PlayerListener2" type="Area2D" parent="."]
+position = Vector2( 90, -2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerListener2"]
+shape = SubResource( 9 )
+
+[node name="DialogTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true

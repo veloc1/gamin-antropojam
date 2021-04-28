@@ -1,20 +1,46 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/ui/DialogLabel.gd" type="Script" id=1]
 [ext_resource path="res://assets/fonts/monogram.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/sprites/ui/DialogBubble.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 2 )
 
-[node name="DialogLabel" type="RichTextLabel"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-custom_fonts/normal_font = SubResource( 1 )
-bbcode_enabled = true
-tab_size = 2
+[node name="DialogLabel" type="MarginContainer"]
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+show_behind_parent = true
+margin_right = 10.0
+margin_bottom = 21.0
+texture = ExtResource( 3 )
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Tween" type="Tween" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 10.0
+margin_bottom = 21.0
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
+
+[node name="DialogLabel" type="Label" parent="MarginContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 6.0
+margin_bottom = 17.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
