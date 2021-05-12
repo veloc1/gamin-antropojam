@@ -23,11 +23,21 @@ func add_item(name):
 func has_item(name):
 	return get_item(name) != null
 
+func has_items(name, count):
+	var item = get_item(name)
+	return item != null and item.count >= count
+
 func get_item(name):
 	for i in items:
 		if i.name == name:
 			return i
 	return null
+
+func get_item_count(name):
+	for i in items:
+		if i.name == name:
+			return i.count
+	return 0
 
 func take_item(name):
 	var item = get_item(name)
@@ -37,6 +47,18 @@ func take_item(name):
 		item.count = item.count - 1
 		if item.count <= 0:
 			remove_item(name)
+
+func take_items(name, count):
+	var item = get_item(name)
+	if item == null:
+		print("There is no item " + name)
+	else:
+		if item.count >= count:
+			item.count = item.count - count
+			if item.count <= 0:
+				remove_item(name)
+		else:
+			print("There is not enough " + name)
 
 func remove_item(name):
 	for i in len(items):
@@ -58,4 +80,4 @@ func debug_str():
 		text += "    " + i.name + ": " + str(i.count)
 		text += "\n"
 	return text
-	
+

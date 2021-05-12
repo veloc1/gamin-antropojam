@@ -18,6 +18,7 @@ func _ready():
 	$AnimatedSprite.connect("animation_finished", self, "on_sprite_animation_finished")
 
 	Events.emit_signal("player_health_changed", health.value())
+	Events.emit_signal("player_coins_changed", $Inventory.get_item_count("Coin"))
 
 	Events.connect("double_jump", self, "on_double_jump")
 
@@ -98,7 +99,9 @@ func on_heal_pickup():
 	Events.emit_signal("player_health_changed", health.value())
 
 func pickup(object):
-	$Inventory.add_game_item(object)
+	if object.is_stored_in_inventory:
+		$Inventory.add_game_item(object)
+	Events.emit_signal("player_coins_changed", $Inventory.get_item_count("Coin"))
 
 func pickup_box(box):
 	carried_box = box
@@ -116,6 +119,19 @@ func at_door(door):
 	if $Inventory.has_item("Key"):
 		door.open()
 		$Inventory.take_item("Key")
+
+func buy(item, price):
+	if $Inventory.has_items("Coin", price):
+		$Inventory.take_items("Coin", price)
+		Events.emit_signal("player_coins_changed", $Inventory.get_item_count("Coin"))
+
+		if item.is_stored_in_inventory:
+			$Inventory.add_item(item.item_name)
+
+		item.on_player_pickup(self)
+
+		return true
+	return false
 
 func change_color(new_color):
 	$AnimatedSprite.set_modulate(new_color)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/levels/Level.gd" type="Script" id=1]
 [ext_resource path="res://src/levels/tilesets/BeachBlocks.tres" type="TileSet" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://src/objects/Sun.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/characters/Player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/characters/Merchant.tscn" type="PackedScene" id=10]
+[ext_resource path="res://src/objects/pickables/Coin.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/objects/MerchantStand.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
@@ -36,7 +38,7 @@ motion_scale = Vector2( 0.8, 1 )
 [node name="Sun" parent="Parallax/ParallaxLayer" instance=ExtResource( 8 )]
 position = Vector2( 238, 39 )
 z_index = -2
-frame = 0
+frame = 2
 
 [node name="ParallaxMist" type="ParallaxBackground" parent="."]
 layer = 0
@@ -102,9 +104,21 @@ position = Vector2( 1, -32 )
 [node name="CollisionShape2D" parent="Limiters/CameraLimiter/AreaToLimitCamera" index="0"]
 shape = SubResource( 3 )
 
-[node name="Merchant" parent="." instance=ExtResource( 10 )]
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource( 11 )]
+position = Vector2( 198, 89 )
+
+[node name="MerchantRoom" type="Node2D" parent="."]
+
+[node name="Merchant" parent="MerchantRoom" instance=ExtResource( 10 )]
 position = Vector2( 568, 132 )
-frame = 4
+frame = 2
+
+[node name="MerchantStand" parent="MerchantRoom" instance=ExtResource( 12 )]
+position = Vector2( 506, 120 )
+z_index = -1
+item_name = "Heart"
 
 [editable path="Blocks/Water"]
 [editable path="Limiters/CameraLimiter"]

@@ -49,10 +49,10 @@ func _shake():
 
 func limit_to(limiter):
 	var shape = limiter.get_node("AreaToLimitCamera/CollisionShape2D")
-	limit_left = global_position.x - get_viewport_rect().size.x
-	limit_right = global_position.x + get_viewport_rect().size.x
-	limit_top = global_position.y - get_viewport_rect().size.y
-	limit_bottom = global_position.y + get_viewport_rect().size.y
+	limit_left = int(global_position.x - get_viewport_rect().size.x)
+	limit_right = int(global_position.x + get_viewport_rect().size.x)
+	limit_top = int(global_position.y - get_viewport_rect().size.y)
+	limit_bottom = int(global_position.y + get_viewport_rect().size.y)
 
 	float_limit = {
 		"left": limit_left,
