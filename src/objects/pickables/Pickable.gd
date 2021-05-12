@@ -2,6 +2,7 @@ extends Area2D
 class_name Pickable
 
 export(String) var item_name
+export var is_stored_in_inventory = false
 
 func _ready():
 	connect("body_entered", self, "on_body_entered")

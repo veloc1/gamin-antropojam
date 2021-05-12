@@ -5,6 +5,8 @@ extends Node
 signal double_jump(player_pos, orientation)
 signal use_no_item(player_pos, orientation)
 signal player_health_changed(new_health)
+signal player_coins_changed(new_coins)
+
 signal game_over()
 
 # *** MAP ***

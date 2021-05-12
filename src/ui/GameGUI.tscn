@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/ui/GameGUI.gd" type="Script" id=1]
 [ext_resource path="res://assets/sprites/objects/heart.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/objects/coin/Coint-sheet.png" type="Texture" id=3]
+[ext_resource path="res://assets/fonts/font.tres" type="DynamicFont" id=4]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 3, 3, 10, 10 )
 
 [node name="GameGUI" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -23,3 +29,22 @@ texture = ExtResource( 2 )
 
 [node name="Hearts" type="Node2D" parent="."]
 position = Vector2( 4, 4 )
+
+[node name="Coins" type="Node2D" parent="."]
+position = Vector2( 4, 19 )
+
+[node name="CoinSprite" type="Sprite" parent="Coins"]
+texture = SubResource( 1 )
+centered = false
+
+[node name="CoinsCount" type="Label" parent="Coins"]
+margin_left = 18.0
+margin_top = -3.0
+margin_right = 30.0
+margin_bottom = 10.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 0.968627, 0, 1 )
+text = "30"
+__meta__ = {
+"_edit_use_anchors_": false
+}
