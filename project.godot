@@ -141,11 +141,13 @@ gdscript/warnings/return_value_discarded=false
 
 [display]
 
-window/size/width=640
-window/size/height=480
+window/size/width=384
+window/size/height=216
+window/size/test_width=1152
+window/size/test_height=648
+window/vsync/use_vsync=false
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
-window/stretch/shrink=2.0
 
 [editor_plugins]
 
@@ -154,24 +156,8 @@ enabled=PoolStringArray( "ObjectLibrary" )
 [importer_defaults]
 
 texture={
-"compress/bptc_ldr": 0,
-"compress/hdr_mode": 0,
-"compress/lossy_quality": 0.7,
-"compress/mode": 0,
-"compress/normal_map": 0,
 "detect_3d": false,
-"flags/anisotropic": false,
-"flags/filter": false,
-"flags/mipmaps": false,
-"flags/repeat": 0,
-"flags/srgb": 2,
-"process/HDR_as_SRGB": false,
-"process/fix_alpha_border": true,
-"process/invert_color": false,
-"process/premult_alpha": false,
-"size_limit": 0,
-"stream": false,
-"svg/scale": 1.0
+"flags/filter": false
 }
 
 [input]
@@ -201,10 +187,15 @@ game_action3={
 
 [rendering]
 
+2d/options/use_nvidia_rect_flicker_workaround=true
 quality/intended_usage/framebuffer_allocation=1
 quality/intended_usage/framebuffer_allocation.mobile=1
 2d/snapping/use_gpu_pixel_snap=true
+2d/options/use_software_skinning=false
+quality/spatial_partitioning/use_bvh=false
+quality/subsurface_scattering/quality=0
 environment/default_clear_color=Color( 0.447059, 0.682353, 0.188235, 1 )
 quality/depth/hdr=false
 environment/default_environment="res://default_env.tres"
+quality/dynamic_fonts/use_oversampling=false
 quality/2d/use_pixel_snap=true

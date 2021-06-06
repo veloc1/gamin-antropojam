@@ -45,7 +45,7 @@ layer = 0
 script = ExtResource( 6 )
 
 [node name="MistLayer" type="ParallaxLayer" parent="ParallaxMist"]
-motion_mirroring = Vector2( 320, 0 )
+motion_mirroring = Vector2( 384, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxMist/MistLayer"]
 modulate = Color( 1, 1, 1, 0.756863 )
@@ -54,7 +54,7 @@ texture = ExtResource( 5 )
 centered = false
 
 [node name="MistLayer2" type="ParallaxLayer" parent="ParallaxMist"]
-motion_mirroring = Vector2( 320, 0 )
+motion_mirroring = Vector2( 384, 0 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxMist/MistLayer2"]
 modulate = Color( 0.807843, 0.807843, 0.807843, 0.631373 )
@@ -88,7 +88,7 @@ tile_data = PoolIntArray( -65541, 0, 0, -65540, 0, 1, -65539, 0, 2, -65538, 0, 3
 shape = SubResource( 1 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
-position = Vector2( 187, 54 )
+position = Vector2( 189, 53 )
 
 [node name="Limiters" type="Node2D" parent="."]
 
@@ -109,11 +109,14 @@ shape = SubResource( 3 )
 [node name="Coin" parent="Coins" instance=ExtResource( 11 )]
 position = Vector2( 198, 89 )
 
+[node name="Coin2" parent="Coins" instance=ExtResource( 11 )]
+position = Vector2( 212, 89 )
+
 [node name="MerchantRoom" type="Node2D" parent="."]
 
 [node name="Merchant" parent="MerchantRoom" instance=ExtResource( 10 )]
 position = Vector2( 568, 132 )
-frame = 2
+frame = 3
 
 [node name="MerchantStand" parent="MerchantRoom" instance=ExtResource( 12 )]
 position = Vector2( 506, 120 )

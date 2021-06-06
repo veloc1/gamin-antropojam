@@ -11,14 +11,17 @@ func add_game_item(object: Node2D):
 		print("Object " + object.name + " is not pickable")
 
 func add_item(name):
+	add_items(name, 1)
+
+func add_items(name, count):
 	var item = get_item(name)
 	if item == null:
 		item = InventoryItem.new()
 		item.name = name
-		item.count = 1
+		item.count = count
 		items.append(item)
 	else:
-		item.count = item.count + 1
+		item.count = item.count + count
 
 func has_item(name):
 	return get_item(name) != null
@@ -66,6 +69,20 @@ func remove_item(name):
 			items.remove(i)
 			return
 	return null
+
+func get_save_state():
+	var ret = []
+	for i in items:
+		ret.append({
+			"name": i.name,
+			"count": i.count
+		})
+	return ret
+
+func restore_from_save(new_state):
+	items = []
+	for i in new_state:
+		add_items(i['name'], i['count'])
 
 func debug_print():
 	for i in items:

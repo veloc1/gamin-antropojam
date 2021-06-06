@@ -11,7 +11,7 @@ func _ready():
 	current_scene = root.get_child(root.get_child_count() - 1)
 
 
-func change_scene(path):
+func change_scene(path, spawn_point):
 	# This function will usually be called from a signal callback,
 	# or some other function in the current scene.
 	# Deleting the current scene at this point is
@@ -21,15 +21,15 @@ func change_scene(path):
 	# The solution is to defer the load to a later time, when
 	# we can be sure that no code from the current scene is running:
 
-	call_deferred("_deferred_goto_scene", path)
+	call_deferred("_deferred_goto_scene", path, spawn_point)
 
 
-func _deferred_goto_scene(path):
+func _deferred_goto_scene(path, spawn_point):
 	new_scene_path = path
 
 	effect = TransitEffect.instance()
 	get_parent().add_child(effect)
-	effect.connect("entered", self, "on_transition_entered")
+	effect.connect("entered", self, "on_transition_entered", [spawn_point])
 	effect.connect("exited", self, "on_transition_exited")
 
 	#effect.rect_position = Vector2(-160, -120)
@@ -37,7 +37,7 @@ func _deferred_goto_scene(path):
 	effect.enter_transition()
 
 
-func on_transition_entered():
+func on_transition_entered(spawn_point):
 	# It is now safe to remove the current scene
 	current_scene.free()
 
@@ -52,6 +52,8 @@ func on_transition_entered():
 
 	# Optionally, to make it compatible with the SceneTree.change_scene() API.
 	get_tree().set_current_scene(current_scene)
+
+	current_scene.place_player_to_spawn(spawn_point)
 
 	effect.exit_transition()
 

@@ -1,0 +1,136 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/levels/Level.gd" type="Script" id=1]
+[ext_resource path="res://src/levels/tilesets/ForestBlocks.tres" type="TileSet" id=2]
+[ext_resource path="res://src/characters/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/objects/ExitToLevel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/objects/pickables/Coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/levels/scripts/SaveLoadLevelScript.gd" type="Script" id=6]
+[ext_resource path="res://src/objects/Box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/objects/SpawnPoint.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/objects/pickables/abilities/DoubleJumpAbility.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 17, 16 )
+
+[node name="SaveLoadTestLevel" type="Node2D"]
+script = ExtResource( 1 )
+bg_color = Color( 0.168627, 0.529412, 0.439216, 1 )
+
+[node name="Spawns" type="Node2D" parent="."]
+
+[node name="a" parent="Spawns" instance=ExtResource( 8 )]
+position = Vector2( 48, -17 )
+spawn_name = "a"
+
+[node name="b" parent="Spawns" instance=ExtResource( 8 )]
+position = Vector2( 515, -12 )
+spawn_name = "b"
+
+[node name="Node2D" type="Node2D" parent="."]
+script = ExtResource( 6 )
+
+[node name="Tilesets" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="Tilesets"]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -327645, 0, 1, -327644, 0, 2, -327643, 0, 2, -327642, 0, 2, -327641, 0, 2, -327640, 0, 2, -327639, 0, 2, -327638, 0, 3, -262128, 0, 196609, -262127, 0, 196610, -262126, 0, 196611, -262124, 0, 196609, -262123, 0, 196611, -262109, 0, 65537, -262108, 0, 65538, -262107, 0, 65538, -262106, 0, 65538, -262105, 0, 65538, -262104, 0, 65538, -262103, 0, 65538, -262102, 0, 65539, -131075, 0, 1, -131074, 0, 2, -131073, 0, 2, -196608, 0, 3, -196595, 0, 196609, -196594, 0, 196611, -196573, 0, 65537, -196572, 0, 65538, -196571, 0, 65538, -196570, 0, 65538, -196569, 0, 65538, -196568, 0, 65538, -196567, 0, 65538, -196566, 0, 65539, -65539, 0, 65537, -65538, 0, 65538, -65537, 0, 65538, -131072, 0, 65539, -131050, 0, 196609, -131049, 0, 196610, -131048, 0, 196610, -131047, 0, 196610, -131046, 0, 196611, -131037, 0, 65537, -131036, 0, 65538, -131035, 0, 65538, -131034, 0, 65538, -131033, 0, 65538, -131032, 0, 65538, -131031, 0, 65538, -131030, 0, 65539, -3, 0, 65537, -2, 0, 65538, -1, 0, 65538, -65536, 0, 65539, -65524, 0, 196609, -65523, 0, 196610, -65522, 0, 196610, -65521, 0, 196610, -65520, 0, 196611, -65508, 0, 196609, -65507, 0, 196611, -65501, 0, 65537, -65500, 0, 65538, -65499, 0, 65538, -65498, 0, 65538, -65497, 0, 65538, -65496, 0, 65538, -65495, 0, 65538, -65494, 0, 65539, 65533, 0, 65537, 65534, 0, 65538, 65535, 0, 65538, 0, 0, 65539, 35, 0, 65537, 36, 0, 65538, 37, 0, 65538, 38, 0, 196612, 39, 0, 65538, 40, 0, 65538, 41, 0, 65538, 42, 0, 65539, 131069, 0, 65537, 131070, 0, 65538, 131071, 0, 65538, 65536, 0, 65539, 65538, 0, 1, 65539, 0, 2, 65540, 0, 2, 65541, 0, 2, 65542, 0, 2, 65543, 0, 2, 65544, 0, 2, 65545, 0, 3, 65555, 0, 1, 65556, 0, 2, 65557, 0, 2, 65558, 0, 2, 65559, 0, 2, 65560, 0, 2, 65561, 0, 2, 65562, 0, 2, 65563, 0, 2, 65564, 0, 2, 65565, 0, 2, 65566, 0, 3, 65568, 0, 1, 65569, 0, 2, 65570, 0, 2, 65571, 0, 131078, 65572, 0, 65538, 65573, 0, 65538, 65574, 0, 65538, 65575, 0, 65538, 65576, 0, 65538, 65577, 0, 65538, 65578, 0, 65539, 196605, 0, 65537, 196606, 0, 65538, 196607, 0, 65538, 131072, 0, 6, 131073, 0, 2, 131074, 0, 131078, 131075, 0, 65538, 131076, 0, 65538, 131077, 0, 65538, 131078, 0, 65538, 131079, 0, 65538, 131080, 0, 65538, 131081, 0, 6, 131082, 0, 2, 131083, 0, 2, 131084, 0, 2, 131085, 0, 2, 131086, 0, 2, 131087, 0, 2, 131088, 0, 2, 131089, 0, 2, 131090, 0, 2, 131091, 0, 131078, 131092, 0, 65538, 131093, 0, 65538, 131094, 0, 65538, 131095, 0, 65538, 131096, 0, 65538, 131097, 0, 65538, 131098, 0, 65538, 131099, 0, 65538, 131100, 0, 65538, 131101, 0, 65538, 131102, 0, 6, 131103, 0, 2, 131104, 0, 131078, 131105, 0, 65538, 131106, 0, 65538, 131107, 0, 65538, 131108, 0, 65538, 131109, 0, 65538, 131110, 0, 65538, 131111, 0, 65538, 131112, 0, 65538, 131113, 0, 65538, 131114, 0, 65539, 262141, 0, 65537, 262142, 0, 65538, 262143, 0, 65538, 196608, 0, 65538, 196609, 0, 65538, 196610, 0, 65538, 196611, 0, 65538, 196612, 0, 65538, 196613, 0, 65538, 196614, 0, 65538, 196615, 0, 65538, 196616, 0, 65538, 196617, 0, 65538, 196618, 0, 65538, 196619, 0, 65538, 196620, 0, 65538, 196621, 0, 65538, 196622, 0, 65538, 196623, 0, 65538, 196624, 0, 65538, 196625, 0, 65538, 196626, 0, 65538, 196627, 0, 65538, 196628, 0, 65538, 196629, 0, 65538, 196630, 0, 65538, 196631, 0, 65538, 196632, 0, 65538, 196633, 0, 65538, 196634, 0, 65538, 196635, 0, 65538, 196636, 0, 65538, 196637, 0, 65538, 196638, 0, 65538, 196639, 0, 65538, 196640, 0, 65538, 196641, 0, 65538, 196642, 0, 65538, 196643, 0, 65538, 196644, 0, 65538, 196645, 0, 65538, 196646, 0, 65538, 196647, 0, 65538, 196648, 0, 65538, 196649, 0, 65538, 196650, 0, 65539, 327677, 0, 131073, 327678, 0, 131074, 327679, 0, 131074, 262144, 0, 131074, 262145, 0, 131074, 262146, 0, 131074, 262147, 0, 131074, 262148, 0, 131074, 262149, 0, 131074, 262150, 0, 131074, 262151, 0, 131074, 262152, 0, 131074, 262153, 0, 131074, 262154, 0, 131074, 262155, 0, 131074, 262156, 0, 131074, 262157, 0, 131074, 262158, 0, 131074, 262159, 0, 131074, 262160, 0, 131074, 262161, 0, 131074, 262162, 0, 131074, 262163, 0, 131074, 262164, 0, 131074, 262165, 0, 131074, 262166, 0, 131074, 262167, 0, 131074, 262168, 0, 131074, 262169, 0, 131074, 262170, 0, 131074, 262171, 0, 131074, 262172, 0, 131074, 262173, 0, 131074, 262174, 0, 131074, 262175, 0, 131074, 262176, 0, 131074, 262177, 0, 131074, 262178, 0, 131074, 262179, 0, 131074, 262180, 0, 131074, 262181, 0, 131074, 262182, 0, 131074, 262183, 0, 131074, 262184, 0, 131074, 262185, 0, 131074, 262186, 0, 131075 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 49, 5 )
+
+[node name="ExitToLevel" parent="." instance=ExtResource( 4 )]
+position = Vector2( 322, -4 )
+level_name = "SaveLoadTestLevel"
+spawn_name = "a"
+
+[node name="CollisionShape2D" parent="ExitToLevel" index="0"]
+shape = SubResource( 1 )
+
+[node name="ExitToLevel2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 281, -85 )
+level_name = "SaveLoadTestLevel"
+spawn_name = "b"
+
+[node name="CollisionShape2D" parent="ExitToLevel2" index="0"]
+shape = SubResource( 1 )
+
+[node name="Coin" parent="." instance=ExtResource( 5 )]
+position = Vector2( 81, 8 )
+
+[node name="Coin2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 103, 9 )
+
+[node name="Save" type="Button" parent="."]
+margin_left = 40.0
+margin_top = -64.0
+margin_right = 81.0
+margin_bottom = -44.0
+text = "save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load" type="Button" parent="."]
+margin_left = 96.0
+margin_top = -64.0
+margin_right = 137.0
+margin_bottom = -44.0
+text = "load"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Box" parent="." instance=ExtResource( 7 )]
+position = Vector2( 150, 6 )
+
+[node name="DoubleJumpAbility" parent="." instance=ExtResource( 9 )]
+position = Vector2( 97, -9 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 315.0
+margin_top = -40.0
+margin_right = 355.0
+margin_bottom = -26.0
+text = "a"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 40.0
+margin_top = -40.0
+margin_right = 91.0
+margin_bottom = -9.0
+text = "a spawn
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 498.0
+margin_top = -45.0
+margin_right = 549.0
+margin_bottom = -14.0
+text = "b spawn
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 263.0
+margin_top = -126.0
+margin_right = 303.0
+margin_bottom = -112.0
+text = "b"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[editable path="ExitToLevel"]
+[editable path="ExitToLevel2"]

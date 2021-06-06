@@ -12,6 +12,11 @@ extents = Vector2( 14, 8 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 1 ) ],
 "loop": true,
 "name": "walk",
@@ -30,7 +35,7 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( -1, 1 )
 frames = SubResource( 2 )
-animation = "walk"
+animation = "idle"
 
 [node name="Components" type="Node2D" parent="."]
 

@@ -7,6 +7,7 @@ var player = null
 
 func _ready():
 	add_to_group("interactable")
+	add_to_group("save")
 
 func _physics_process(delta):
 	if is_carried:
@@ -54,3 +55,13 @@ func _enable():
 	set_collision_mask_bit(0, true)
 
 	$Sprite.show()
+
+func get_save_dict():
+	return {
+		"name": name,
+		"position": {
+			"x": position.x,
+			"y": position.y,
+		}
+	}
+
