@@ -119,7 +119,6 @@ position = Vector2( 212, 89 )
 
 [node name="Merchant" parent="MerchantRoom" instance=ExtResource( 10 )]
 position = Vector2( 568, 132 )
-frame = 3
 
 [node name="MerchantStand" parent="MerchantRoom" instance=ExtResource( 12 )]
 position = Vector2( 506, 120 )
