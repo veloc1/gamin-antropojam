@@ -78,6 +78,17 @@ func _physics_process(_delta):
 			else:
 				$AnimatedSprite.play("idle")
 
+
+func _process(_delta):
+	pass
+	$AnimatedSprite.global_position = Vector2(floor(global_position.x) - 12, floor(global_position.y) - 7)
+	#var x_d = fmod(position.x, 1.0)
+	#var y_d = fmod(position.y, 1.0)
+	#$AnimatedSprite.position.x = -sign(x_d) * x_d  - 12
+	#$AnimatedSprite.position.y = -sign(y_d) * y_d - 7
+
+	#print($AnimatedSprite.position.x)
+
 # *** INTERACTIONS ***
 
 func attacked(from):
@@ -99,6 +110,7 @@ func on_heal_pickup():
 	Events.emit_signal("player_health_changed", health.value())
 
 func pickup(object):
+	$PlayerSaveState.track_collected_item(object)
 	if object.is_stored_in_inventory:
 		$Inventory.add_game_item(object)
 	Events.emit_signal("player_coins_changed", $Inventory.get_item_count("Coin"))
@@ -148,6 +160,7 @@ func exit_from_area(_area):
 
 func enable_double_jump():
 	movement.enable_double_jump()
+	$PlayerSaveState.add_ability("double_jump")
 
 # *** SIGNALS ***
 
@@ -172,6 +185,8 @@ func on_sprite_animation_finished():
 
 		movement.still()
 		$AnimatedSprite.play("idle")
+
+# *** MECHANICS ***
 
 func _is_carring():
 	return carried_box != null
@@ -221,3 +236,36 @@ func _get_gravity_vector():
 
 func _get_world_gravity_scale():
 	return Physics2DServer.area_get_param(get_world_2d().space, Physics2DServer.AREA_PARAM_GRAVITY)
+
+func force_camera_position():
+	camera.reset_smoothing()
+
+# *** SAVE | LOAD ***
+func get_health():
+	return health.value()
+
+func get_inventory():
+	return $Inventory.get_save_state()
+
+func get_collected_items():
+	return $PlayerSaveState.get_collected_items()
+
+func get_abilities():
+	return $PlayerSaveState.get_abilities()
+
+func set_health(new_health):
+	health.set_value(new_health)
+	Events.emit_signal("player_health_changed", health.value())
+
+func set_inventory(new_inv):
+	$Inventory.restore_from_save(new_inv)
+	Events.emit_signal("player_coins_changed", $Inventory.get_item_count("Coin"))
+
+func set_collected_items(items):
+	$PlayerSaveState.set_collected_items(items)
+
+func set_abilities(abilities):
+	$PlayerSaveState.set_abilities(abilities)
+	for a in abilities:
+		if a == "double_jump":
+			enable_double_jump()

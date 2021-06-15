@@ -7,8 +7,6 @@ onready var target_limit
 onready var float_limit
 
 func _ready():
-	refresh_zoom()
-
 	Events.connect("start_screenshake", self, "screenshake")
 
 	original_limit = {
@@ -18,19 +16,14 @@ func _ready():
 		"bottom": limit_bottom
 	}
 
-func refresh_zoom():
-	var v = SaveLoad.get_video_magnifier()
-	var z = float(1 / float(v))
-	zoom = Vector2(z, z)
-
-func _process(_delta):
+func _process(delta):
 	if $ScreenshakeTimer.time_left > 0:
 		_shake()
 	else:
 		offset.x = 0
 		offset.y = 0
 
-	process_limit()
+	process_limit(delta)
 
 func screenshake():
 	$ScreenshakeTimer.start()
@@ -75,12 +68,12 @@ func reset_limit():
 	limit_top = original_limit["top"]
 	limit_bottom = original_limit["bottom"]
 
-func process_limit():
+func process_limit(delta):
 	if target_limit:
-		float_limit["left"] = lerp(float_limit["left"], target_limit["left"], 0.05)
-		float_limit["right"] = lerp(float_limit["right"], target_limit["right"], 0.05)
-		float_limit["top"] = lerp(float_limit["top"], target_limit["top"], 0.05)
-		float_limit["bottom"] = lerp(float_limit["bottom"], target_limit["bottom"], 0.05)
+		float_limit["left"] = lerp(float_limit["left"], target_limit["left"], 5 * delta)
+		float_limit["right"] = lerp(float_limit["right"], target_limit["right"], 5 * delta)
+		float_limit["top"] = lerp(float_limit["top"], target_limit["top"], 5 * delta)
+		float_limit["bottom"] = lerp(float_limit["bottom"], target_limit["bottom"], 5 * delta)
 
 		limit_left = float_limit["left"]
 		limit_right = float_limit["right"]

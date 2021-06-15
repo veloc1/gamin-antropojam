@@ -9,9 +9,12 @@ func _ready():
 
 func heal():
 	health += 1
-	
+
 func damage():
 	health -= 1
 
 func value():
 	return health
+
+func set_value(new_health):
+	health = new_health

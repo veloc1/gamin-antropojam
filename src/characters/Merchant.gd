@@ -10,8 +10,8 @@ func _ready():
 	$HandsAnimationTimer.connect("timeout", self, "on_hands_animation_timer")
 	connect("animation_finished", self, "on_animation_finished")
 
-	$PlayerListener.connect("body_entered", self, "on_player_entered")
-	$PlayerListener2.connect("body_entered", self, "on_player_entered")
+	$PlayerListener.connect("body_exited", self, "on_player_exited1")
+	$PlayerListener2.connect("body_exited", self, "on_player_exited2")
 	$DialogTimer.connect("timeout", self, "on_dialog_timer_timeout")
 	player = get_parent().get_parent().get_node("Player")
 
@@ -31,7 +31,23 @@ func on_animation_finished():
 		$HandsAnimationTimer.wait_time = rand_range(2, 5)
 		$HandsAnimationTimer.start()
 
-func on_player_entered(body):
+func on_player_exited1(body):
+	if body.is_in_group("player"):
+		if body.global_position.x < $PlayerListener.global_position.x:
+			player_in_room = false
+		else:
+			player_in_room = true
+		greeet_or_goodbay_player()
+
+func on_player_exited2(body):
+	if body.is_in_group("player"):
+		if body.global_position.x > $PlayerListener2.global_position.x:
+			player_in_room = false
+		else:
+			player_in_room = true
+		greeet_or_goodbay_player()
+
+func greeet_or_goodbay_player():
 	var on_enter_texts = [
 		"He-he",
 		"Hewwo",
@@ -42,30 +58,26 @@ func on_player_entered(body):
 		"See you",
 		"You will return..."
 	]
-	if body.is_in_group("player"):
-		if not player_in_room:
-			player_in_room = true
-
-			say(_choice(on_enter_texts), "left")
-		else:
-			player_in_room = false
-
-			say(_choice(on_exit_texts), "left")
+	if player_in_room:
+		say(_choice(on_enter_texts))
+	else:
+		say(_choice(on_exit_texts))
 
 func on_item_bought():
 	var vars = [
 		"Nice choice"
 	]
-	say(_choice(vars), "left")
+	say(_choice(vars))
 
 func on_not_enough_money():
 	var vars = [
 		"Come back when\nyou have mune'h"
 	]
-	say(_choice(vars), "left")
+	say(_choice(vars))
 
 
-func say(text, direction):
+func say(text):
+	var direction = ""
 	if flip_h:
 		direction = "right"
 	else:

@@ -3,6 +3,7 @@
 [ext_resource path="res://src/objects/ExitToLevel.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
 extents = Vector2( 16, 16 )
 
 [node name="ExitToLevel" type="Area2D"]

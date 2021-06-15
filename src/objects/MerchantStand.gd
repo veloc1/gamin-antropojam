@@ -23,6 +23,7 @@ func on_interaction(player):
 		var is_bought = player.buy(item, price)
 		if is_bought:
 			item.queue_free()
+			item = null
 			$Price.queue_free()
 
 			merchant.on_item_bought()
