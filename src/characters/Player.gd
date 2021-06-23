@@ -81,7 +81,7 @@ func _physics_process(_delta):
 
 func _process(_delta):
 	pass
-	$AnimatedSprite.global_position = Vector2(floor(global_position.x) - 12, floor(global_position.y) - 7)
+	#$AnimatedSprite.global_position = Vector2(floor(global_position.x) - 12, floor(global_position.y) - 7)
 	#var x_d = fmod(position.x, 1.0)
 	#var y_d = fmod(position.y, 1.0)
 	#$AnimatedSprite.position.x = -sign(x_d) * x_d  - 12

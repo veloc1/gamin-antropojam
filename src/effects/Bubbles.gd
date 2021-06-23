@@ -18,7 +18,7 @@ func _ready():
 
 func _process(delta):
 	# we skip area check only on first process call
-	if t > 0.01 and not initial_placement_checked:
+	if t > 0.02 and not initial_placement_checked:
 		remove_if_outside_water()
 		initial_placement_checked = true
 

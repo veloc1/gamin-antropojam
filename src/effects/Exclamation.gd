@@ -4,15 +4,16 @@ func _ready():
 	$Tween.connect("tween_all_completed", self, "on_tween_completed")
 
 func start(go_left):
+	self_modulate = Color(randf(), randf(), randf(), 1)
 	var dx = 10
 	if go_left:
 		dx = -10
-	
+
 	var dr = 4
-	
+
 	$Tween.interpolate_property(
-		self, 
-		"position", 
+		self,
+		"position",
 		position + Vector2(rand_range(-dr, dr), rand_range(-dr, dr)),
 		position + Vector2(dx, -10) + Vector2(rand_range(-dr, dr), rand_range(-dr, dr)),
 		1,

@@ -22,7 +22,7 @@ func on_body_entered(body):
 
 		var splash = Splash.instance()
 		splash.position.x = body.position.x
-		splash.position.y = body.position.y + 6
+		splash.position.y = body.position.y # + 6
 		get_parent().add_child(splash)
 
 func on_body_exited(body):

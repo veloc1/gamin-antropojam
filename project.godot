@@ -188,8 +188,6 @@ game_action3={
 [rendering]
 
 2d/options/use_nvidia_rect_flicker_workaround=true
-quality/intended_usage/framebuffer_allocation=1
-quality/intended_usage/framebuffer_allocation.mobile=1
 2d/snapping/use_gpu_pixel_snap=true
 2d/options/use_software_skinning=false
 quality/spatial_partitioning/use_bvh=false

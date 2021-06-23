@@ -7,7 +7,7 @@
 [ext_resource path="res://assets/sprites/blocks/bg/castle/Castle backround tileset.png" type="Texture" id=5]
 [ext_resource path="res://src/levels/tilesets/ForestTileSet.tres" type="TileSet" id=6]
 [ext_resource path="res://src/levels/BackTileMap.gd" type="Script" id=7]
-[ext_resource path="res://src/objects/pickables/abilities/DoubeJumpAbility.tscn" type="PackedScene" id=8]
+[ext_resource path="res://src/objects/pickables/abilities/DoubleJumpAbility.tscn" type="PackedScene" id=8]
 [ext_resource path="res://src/objects/ModulateBox.tscn" type="PackedScene" id=9]
 [ext_resource path="res://src/objects/pickables/Sphere.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/objects/pickables/Heart.tscn" type="PackedScene" id=11]
