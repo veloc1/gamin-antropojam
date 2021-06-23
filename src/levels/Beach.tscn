@@ -107,7 +107,10 @@ shape = SubResource( 3 )
 [node name="Coins" type="Node2D" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource( 11 )]
-position = Vector2( 198, 89 )
+position = Vector2( 243.991, 55.9566 )
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 11 )]
+position = Vector2( 260.679, 54.9349 )
 
 [node name="Coin2" parent="Coins" instance=ExtResource( 11 )]
 position = Vector2( 212, 89 )
@@ -116,7 +119,6 @@ position = Vector2( 212, 89 )
 
 [node name="Merchant" parent="MerchantRoom" instance=ExtResource( 10 )]
 position = Vector2( 568, 132 )
-frame = 2
 
 [node name="MerchantStand" parent="MerchantRoom" instance=ExtResource( 12 )]
 position = Vector2( 506, 120 )
@@ -124,4 +126,5 @@ z_index = -1
 item_name = "Heart"
 
 [editable path="Blocks/Water"]
+
 [editable path="Limiters/CameraLimiter"]

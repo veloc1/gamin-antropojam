@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/Splash.wav-8bb51a81bbe599a1a4a56be2bf886ed8.sample"
+path="res://.import/splash.wav-aec442672a0e4d054e7bece27fc91f17.sample"
 
 [deps]
 
-source_file="res://assets/sounds/Splash.wav"
-dest_files=[ "res://.import/Splash.wav-8bb51a81bbe599a1a4a56be2bf886ed8.sample" ]
+source_file="res://assets/sounds/splash.wav"
+dest_files=[ "res://.import/splash.wav-aec442672a0e4d054e7bece27fc91f17.sample" ]
 
 [params]
 
