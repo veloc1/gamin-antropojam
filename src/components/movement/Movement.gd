@@ -8,6 +8,8 @@ export (int) var gravity = 1200
 export (int) var move_speed = 100
 export (int) var jump_speed = -150
 
+export (bool) var is_flipped = false
+
 var move_speed_modifier = 1
 
 var states = {}
@@ -38,7 +40,7 @@ func set_state(name, params=null):
 		var b = get_node(kinematic_body)
 		var speed = move_speed * move_speed_modifier
 		var jump = jump_speed * move_speed_modifier
-		current_state.setup(self, spr, b, speed, jump, params)
+		current_state.setup(self, spr, b, speed, jump, is_flipped, params)
 
 		current_state.name = name
 

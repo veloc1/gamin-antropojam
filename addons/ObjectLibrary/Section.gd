@@ -15,7 +15,7 @@ func set_items(items):
 		var preview = Item.instance()
 		grid.add_child(preview)
 		preview.set_plugin(plugin)
-		
+
 		preview.set_item(item)
 
 func set_plugin(plugin):

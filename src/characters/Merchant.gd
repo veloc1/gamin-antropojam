@@ -16,7 +16,7 @@ func _ready():
 	player = get_parent().get_parent().get_node("Player")
 
 func _process(_delta):
-	var is_player_to_left = player.position.x < position.x
+	var is_player_to_left = player.global_position.x < global_position.x
 	if is_player_to_left:
 		flip_h = false
 	else:
@@ -50,13 +50,13 @@ func on_player_exited2(body):
 func greeet_or_goodbay_player():
 	var on_enter_texts = [
 		"He-he",
-		"Hewwo",
-		"What's new?",
+		#"Hewwo",
+		#"What's new?",
 		"^_^"
 	]
 	var on_exit_texts = [
 		"See you",
-		"You will return..."
+		#"You will return..."
 	]
 	if player_in_room:
 		say(_choice(on_enter_texts))

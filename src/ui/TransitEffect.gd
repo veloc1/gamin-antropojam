@@ -9,7 +9,7 @@ var is_enter = false
 
 func _ready():
 	$TextureRect.material.set_shader_param("line", -1.0)
-	refresh_zoom()
+	#refresh_zoom()
 
 func refresh_zoom():
 	var v = SaveLoad.get_video_magnifier()

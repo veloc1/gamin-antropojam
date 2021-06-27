@@ -13,11 +13,9 @@ shader_param/is_enter = true
 [sub_resource type="ImageTexture" id=2]
 flags = 3
 flags = 3
-size = Vector2( 320, 240 )
+size = Vector2( 384, 216 )
 
 [node name="TransitEffect" type="CanvasLayer"]
-scale = Vector2( 2, 2 )
-transform = Transform2D( 2, 0, 0, 2, 0, 0 )
 script = ExtResource( 2 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
