@@ -20,7 +20,7 @@
 [ext_resource path="res://src/objects/pickables/Sphere.tscn" type="PackedScene" id=20]
 [ext_resource path="res://src/objects/Spikes.tscn" type="PackedScene" id=21]
 [ext_resource path="res://src/objects/Water.tscn" type="PackedScene" id=22]
-[ext_resource path="res://src/objects/pickables/abilities/DoubeJumpAbility.tscn" type="PackedScene" id=23]
+[ext_resource path="res://src/objects/pickables/abilities/DoubleJumpAbility.tscn" type="PackedScene" id=23]
 [ext_resource path="res://src/objects/ModulateBox.tscn" type="PackedScene" id=24]
 [ext_resource path="res://src/objects/ReturnZone.tscn" type="PackedScene" id=25]
 [ext_resource path="res://src/objects/Key.tscn" type="PackedScene" id=26]
@@ -28,6 +28,7 @@
 [ext_resource path="res://src/objects/Button.tscn" type="PackedScene" id=28]
 [ext_resource path="res://src/objects/Elevator.tscn" type="PackedScene" id=29]
 [ext_resource path="res://assets/sprites/objects/portals/fish portal.png" type="Texture" id=30]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )

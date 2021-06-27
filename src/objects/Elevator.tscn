@@ -43,7 +43,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 8.71541, 1.8639 )
+extents = Vector2( 11, 2 )
 
 [node name="Elevator" type="Node2D"]
 script = ExtResource( 1 )
@@ -74,6 +74,7 @@ rotate = false
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Path2D/PathFollow2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/KinematicBody2D"]
+position = Vector2( -1, 0 )
 shape = SubResource( 6 )
 one_way_collision = true
 one_way_collision_margin = 0.0

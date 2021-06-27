@@ -23,7 +23,7 @@ func _ready():
 func _process(delta):
 	if is_on:
 		for p in $Path2D.get_children():
-			p.unit_offset += delta / 15
+			p.unit_offset += delta / (paddles_count * 5)
 
 func on():
 	var sprites = get_node("sprites")

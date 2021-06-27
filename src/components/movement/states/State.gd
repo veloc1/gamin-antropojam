@@ -8,16 +8,17 @@ var _is_active = false
 var run_speed: int
 var jump_speed: int
 var params
+var is_flipped = false
 
 func _ready():
 	if animation.animation != get_animation_name():
 		animation.play(get_animation_name())
 
 func look_right():
-	animation.flip_h = false
+	animation.flip_h = is_flipped
 
 func look_left():
-	animation.flip_h = true
+	animation.flip_h = !is_flipped
 
 func setup(
 	parent_movement,
@@ -25,6 +26,7 @@ func setup(
 	kinematic_body: KinematicBody2D,
 	move_speed,
 	jump_value,
+	is_sprite_flipped,
 	params_dict
 ):
 	animation = animation_sprite
@@ -32,6 +34,7 @@ func setup(
 	movement = parent_movement
 	run_speed = move_speed
 	jump_speed = jump_value
+	is_flipped = is_sprite_flipped
 	params = params_dict
 
 func change_state(name, params_dict=null):

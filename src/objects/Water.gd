@@ -56,9 +56,9 @@ func _process(_delta):
 	var new_dims = Vector2($CollisionShape2D.shape.extents.x, $CollisionShape2D.shape.extents.y)
 	if old_shape_dims and (old_shape_dims.x != new_dims.x or old_shape_dims.y != new_dims.y):
 		set_tiles()
-	old_shape_dims = new_dims
+		old_shape_dims = new_dims
 
-	update()
+		update()
 
 func _draw():
 	if Engine.editor_hint:
