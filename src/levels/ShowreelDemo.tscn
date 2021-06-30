@@ -124,11 +124,11 @@ centered = false
 script = ExtResource( 12 )
 
 [node name="BG" type="ParallaxLayer" parent="Mist"]
-motion_scale = Vector2( 0.9, 1 )
+motion_scale = Vector2( 0.9, 0 )
+motion_offset = Vector2( 0, -108 )
 motion_mirroring = Vector2( 384, 0 )
 
 [node name="Sprite" type="Sprite" parent="Mist/BG"]
-position = Vector2( 0, -460 )
 texture = ExtResource( 19 )
 centered = false
 
@@ -260,6 +260,7 @@ position = Vector2( 617, 0 )
 
 [node name="Merchant" parent="MerchantRoom" instance=ExtResource( 4 )]
 position = Vector2( 766, 196 )
+frame = 1
 
 [node name="CameraLimiter" parent="MerchantRoom" instance=ExtResource( 6 )]
 position = Vector2( 730, 149 )
@@ -293,7 +294,10 @@ shape = SubResource( 7 )
 position = Vector2( 276, 199 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
-position = Vector2( -322, -345 )
+position = Vector2( 109, -298 )
+
+[node name="Camera" parent="Player" index="8"]
+editor_draw_screen = true
 
 [editable path="Blocks/Water"]
 [editable path="Portals/SimplePortal"]
@@ -301,3 +305,4 @@ position = Vector2( -322, -345 )
 [editable path="Portals/SimplePortal3"]
 [editable path="MerchantRoom/CameraLimiter"]
 [editable path="BossRoom/CameraLimiter"]
+[editable path="Player"]

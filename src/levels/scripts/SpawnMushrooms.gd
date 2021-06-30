@@ -1,6 +1,7 @@
 extends Node2D
 
 const Mushroom = preload("res://src/characters/Mushroom.tscn")
+const Mushroom2 = preload("res://src/characters/Mushroom2.tscn")
 const MushroomExplosion = preload("res://src/effects/MushroomExplosion.tscn")
 
 func _ready():
@@ -30,7 +31,12 @@ func create_explosion(x, y):
 	get_tree().create_timer(0.3).connect("timeout", self, "create_mushroom", [x, y])
 
 func create_mushroom(x, y):
-	var m = Mushroom.instance()
+	var m = null
+	if rand_range(0, 10) > 6:
+		m = Mushroom2.instance()
+	else:
+		m = Mushroom.instance()
+
 	get_parent().get_parent().add_child(m)
 
 	m.position.x = x
