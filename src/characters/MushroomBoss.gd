@@ -12,7 +12,7 @@ func _ready():
 	$AnimatedSprite.play("idle")
 	state = "idle"
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_released("ui_page_down"):
 		$AnimatedSprite.play("summon")
 

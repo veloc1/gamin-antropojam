@@ -313,7 +313,7 @@ shape = SubResource( 7 )
 position = Vector2( 276, 199 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
-position = Vector2( -339, -355 )
+position = Vector2( 555, -292 )
 
 [node name="Camera" parent="Player" index="8"]
 editor_draw_screen = true
