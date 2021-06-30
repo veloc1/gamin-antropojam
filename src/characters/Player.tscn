@@ -296,7 +296,7 @@ extents = Vector2( 8, 8 )
 extents = Vector2( 8, 8 )
 
 [sub_resource type="RectangleShape2D" id=36]
-extents = Vector2( 5.50769, 10 )
+extents = Vector2( 2, 10 )
 
 [node name="Player" type="KinematicBody2D" groups=[
 "player",
@@ -406,7 +406,7 @@ wait_time = 0.3
 one_shot = true
 
 [node name="OnEdgeSensorArea" type="Area2D" parent="."]
-position = Vector2( 14, 24 )
+position = Vector2( 12, 24 )
 collision_mask = 3
 script = ExtResource( 2 )
 

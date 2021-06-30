@@ -2,7 +2,7 @@ extends Node2D
 
 const Bubbles = preload("res://src/effects/Bubbles.tscn")
 
-const emit_time = 1
+const emit_time = 0.4
 
 var t = 0.0
 var player

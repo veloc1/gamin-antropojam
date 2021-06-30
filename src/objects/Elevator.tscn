@@ -77,7 +77,7 @@ rotate = false
 position = Vector2( -1, 0 )
 shape = SubResource( 6 )
 one_way_collision = true
-one_way_collision_margin = 12.4
+one_way_collision_margin = 4.0
 
 [node name="Sprite" type="Sprite" parent="Path2D/PathFollow2D/KinematicBody2D"]
 texture = ExtResource( 2 )
