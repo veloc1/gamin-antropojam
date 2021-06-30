@@ -118,6 +118,7 @@ motion_offset = Vector2( 0, -108 )
 motion_mirroring = Vector2( 384, 0 )
 
 [node name="Sprite" type="Sprite" parent="ForestBG/Clouds"]
+position = Vector2( 0, -69 )
 texture = ExtResource( 13 )
 centered = false
 
@@ -127,6 +128,7 @@ motion_offset = Vector2( 0, -108 )
 motion_mirroring = Vector2( 384, 0 )
 
 [node name="Sprite" type="Sprite" parent="ForestBG/BigTrees"]
+position = Vector2( 0, -173 )
 texture = ExtResource( 14 )
 centered = false
 
@@ -317,7 +319,7 @@ shape = SubResource( 7 )
 position = Vector2( 276, 199 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
-position = Vector2( 926, 783 )
+position = Vector2( 141, 184 )
 
 [node name="Camera" parent="Player" index="8"]
 editor_draw_screen = true
