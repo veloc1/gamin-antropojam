@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/beach sky back.png-53b3d553fe27ec85ac36ef1136c6da35.stex"
+path="res://.import/beach_bg.png-1a2dfab5965748a916098487e71e2067.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/blocks/bg/beach/beach sky back.png"
-dest_files=[ "res://.import/beach sky back.png-53b3d553fe27ec85ac36ef1136c6da35.stex" ]
+source_file="res://assets/sprites/blocks/bg/beach/beach_bg.png"
+dest_files=[ "res://.import/beach_bg.png-1a2dfab5965748a916098487e71e2067.stex" ]
 
 [params]
 
