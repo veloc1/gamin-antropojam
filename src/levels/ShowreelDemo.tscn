@@ -130,6 +130,7 @@ motion_offset = Vector2( 0, -108 )
 motion_mirroring = Vector2( 384, 0 )
 
 [node name="Sprite" type="Sprite" parent="ForestBG/BigTrees"]
+self_modulate = Color( 0.329412, 0.301961, 0.231373, 1 )
 position = Vector2( 0, -173 )
 texture = ExtResource( 14 )
 centered = false
@@ -138,6 +139,7 @@ centered = false
 motion_mirroring = Vector2( 384, 0 )
 
 [node name="Sprite" type="Sprite" parent="ForestBG/Trees"]
+self_modulate = Color( 0.698039, 0.658824, 0.447059, 1 )
 texture = ExtResource( 18 )
 centered = false
 
@@ -145,12 +147,13 @@ centered = false
 script = ExtResource( 12 )
 
 [node name="BG" type="ParallaxLayer" parent="Mist"]
-visible = false
+self_modulate = Color( 0.027451, 0.0117647, 0.0117647, 1 )
 motion_scale = Vector2( 0.9, 0 )
 motion_offset = Vector2( 0, -108 )
 motion_mirroring = Vector2( 384, 0 )
 
 [node name="Sprite" type="Sprite" parent="Mist/BG"]
+self_modulate = Color( 0.556863, 0.862745, 0.345098, 1 )
 texture = ExtResource( 19 )
 centered = false
 
@@ -159,7 +162,8 @@ motion_scale = Vector2( 0.9, 1 )
 motion_mirroring = Vector2( 384, 0 )
 
 [node name="Sprite" type="Sprite" parent="Mist/MistLayer"]
-modulate = Color( 1, 1, 1, 0.75 )
+modulate = Color( 1, 1, 1, 0.74902 )
+self_modulate = Color( 1, 1, 1, 0.556863 )
 position = Vector2( 0, -302 )
 texture = ExtResource( 11 )
 centered = false
@@ -299,7 +303,7 @@ position = Vector2( 617, 0 )
 
 [node name="Merchant" parent="MerchantRoom" instance=ExtResource( 4 )]
 position = Vector2( 766, 196 )
-frame = 2
+frame = 4
 
 [node name="CameraLimiter" parent="MerchantRoom" instance=ExtResource( 6 )]
 position = Vector2( 730, 149 )
@@ -336,12 +340,19 @@ position = Vector2( 276, 199 )
 position = Vector2( -338, -363 )
 
 [node name="Camera" parent="Player" index="8"]
+offset_v = -1.0
 editor_draw_screen = true
 
 [editable path="Blocks/Water"]
+
 [editable path="Portals/SimplePortal"]
+
 [editable path="Portals/SimplePortal2"]
+
 [editable path="Portals/SimplePortal3"]
+
 [editable path="MerchantRoom/CameraLimiter"]
+
 [editable path="BossRoom/CameraLimiter"]
+
 [editable path="Player"]

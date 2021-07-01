@@ -38,7 +38,7 @@ motion_scale = Vector2( 0.8, 1 )
 [node name="Sun" parent="Parallax/ParallaxLayer" instance=ExtResource( 8 )]
 position = Vector2( 238, 39 )
 z_index = -2
-frame = 0
+frame = 1
 
 [node name="ParallaxMist" type="ParallaxBackground" parent="."]
 layer = 0
