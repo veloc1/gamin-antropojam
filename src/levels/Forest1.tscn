@@ -4,9 +4,9 @@
 [ext_resource path="res://src/levels/Level.gd" type="Script" id=2]
 [ext_resource path="res://src/objects/pickables/abilities/DoubleJumpAbility.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/levels/tilesets/Objects.tres" type="TileSet" id=4]
-[ext_resource path="res://assets/sprites/blocks/bg/forest/Back mid trees 1.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/levels/forest/bg_trees.png" type="Texture" id=5]
 [ext_resource path="res://src/characters/Player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/sprites/blocks/bg/forest/Sky cloudy.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/levels/forest/bg_sky.png" type="Texture" id=7]
 [ext_resource path="res://src/levels/tilesets/ForestTileSet.tres" type="TileSet" id=8]
 [ext_resource path="res://src/effects/ForestParallax.gd" type="Script" id=9]
 [ext_resource path="res://src/objects/Box.tscn" type="PackedScene" id=10]
@@ -16,6 +16,7 @@
 [ext_resource path="res://src/objects/Key.tscn" type="PackedScene" id=14]
 [ext_resource path="res://src/characters/Skull.tscn" type="PackedScene" id=15]
 [ext_resource path="res://src/objects/ReturnZone.tscn" type="PackedScene" id=16]
+
 
 [sub_resource type="GDScript" id=1]
 script/source = "tool

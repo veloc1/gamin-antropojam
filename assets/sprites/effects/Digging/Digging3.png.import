@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Digging3.png-c173fea7bc699ef2b7471f5e0b37e988.stex"
+path="res://.import/Digging3.png-83fcf35341cf0cbc9ce3722f4f24238d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/effects/Digging/Digging3.png"
-dest_files=[ "res://.import/Digging3.png-c173fea7bc699ef2b7471f5e0b37e988.stex" ]
+source_file="res://assets/sprites/effects/digging/Digging3.png"
+dest_files=[ "res://.import/Digging3.png-83fcf35341cf0cbc9ce3722f4f24238d.stex" ]
 
 [params]
 

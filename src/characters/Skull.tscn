@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/sprites/characters/skull/skull-sheet.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/characters/skull.png" type="Texture" id=1]
 [ext_resource path="res://src/characters/Skull.gd" type="Script" id=3]
 
 [sub_resource type="CircleShape2D" id=1]

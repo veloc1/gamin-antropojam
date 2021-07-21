@@ -1,6 +1,7 @@
 [gd_resource type="TileSet" load_steps=2 format=2]
 
-[ext_resource path="res://assets/sprites/blocks/front/Water tileset.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/levels/blocks_water.png" type="Texture" id=1]
+
 
 [resource]
 0/name = "Water"

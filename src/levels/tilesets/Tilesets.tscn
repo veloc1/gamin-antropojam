@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/sprites/blocks/bg/forest/Back mid trees 1.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/levels/forest/bg_trees.png" type="Texture" id=1]
+
 
 [sub_resource type="TileSet" id=1]
 0/name = "Back mid trees 1.png 0"
