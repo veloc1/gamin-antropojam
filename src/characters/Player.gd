@@ -9,6 +9,7 @@ onready var camera = $Camera
 var is_input_active = true
 var carried_box = null
 var _is_in_water = false
+var is_controls_inverted = false
 
 func _ready():
 	#DebugInfo.add_property_monitor("Player pos", self, ":global_position")
@@ -55,19 +56,35 @@ func _physics_process(_delta):
 				)
 
 		if action_right:
-			movement.move_right()
-			attack.look_right()
-			interact.look_right()
-			camera.look_right()
-			$OnEdgeSensorArea.look_right()
-			$BubblesEmitter.look_right()
+			if is_controls_inverted:
+				movement.move_left()
+				attack.look_left()
+				interact.look_left()
+				camera.look_left()
+				$OnEdgeSensorArea.look_left()
+				$BubblesEmitter.look_left()
+			else:
+				movement.move_right()
+				attack.look_right()
+				interact.look_right()
+				camera.look_right()
+				$OnEdgeSensorArea.look_right()
+				$BubblesEmitter.look_right()
 		elif action_left:
-			movement.move_left()
-			attack.look_left()
-			interact.look_left()
-			camera.look_left()
-			$OnEdgeSensorArea.look_left()
-			$BubblesEmitter.look_left()
+			if is_controls_inverted:
+				movement.move_right()
+				attack.look_right()
+				interact.look_right()
+				camera.look_right()
+				$OnEdgeSensorArea.look_right()
+				$BubblesEmitter.look_right()
+			else:
+				movement.move_left()
+				attack.look_left()
+				interact.look_left()
+				camera.look_left()
+				$OnEdgeSensorArea.look_left()
+				$BubblesEmitter.look_left()
 		else:
 			movement.still()
 
@@ -156,6 +173,16 @@ func enter_to_area(area: Area2D):
 func exit_from_area(_area):
 	movement.set_gravity(_get_world_gravity_scale())
 	movement.modify_speed(1)
+
+func invert_controls(duration):
+	is_controls_inverted = true
+
+	$InvertControlsTimer.wait_time = duration
+	$InvertControlsTimer.connect("timeout", self, "on_invert_controls_reset")
+	$InvertControlsTimer.start()
+
+func on_invert_controls_reset():
+	is_controls_inverted = false
 
 # *** ABILITIES ***
 

@@ -294,7 +294,19 @@ show_borders_in_editor = true
 position = Vector2( 496.135, -240.406 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 456, -257 )
+position = Vector2( -921, -55 )
+
+[node name="Skull" parent="." instance=ExtResource( 12 )]
+position = Vector2( -1053, -97 )
+bounds_left = -1000
+bounds_right = -700
+show_borders_in_editor = true
+
+[node name="Key" parent="." instance=ExtResource( 14 )]
+position = Vector2( -702, -84 )
+
+[node name="Key2" parent="." instance=ExtResource( 14 )]
+position = Vector2( -998, -85 )
 
 [editable path="Blocks/Water"]
 [editable path="Blocks/ReturnZone"]

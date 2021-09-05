@@ -2,7 +2,7 @@ extends Node2D
 
 const Mushroom = preload("res://src/characters/Mushroom.tscn")
 const Mushroom2 = preload("res://src/characters/Mushroom2.tscn")
-const MushroomExplosion = preload("res://src/effects/MushroomExplosion.tscn")
+const MushroomExplosion = preload("res://src/effects/MushroomSporesExplosion.tscn")
 
 func _ready():
 	pass
