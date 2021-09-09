@@ -1,6 +1,6 @@
 [gd_scene load_steps=53 format=2]
 
-[ext_resource path="res://assets/sprites/characters/crab/Crab sheet.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/characters/crab.png" type="Texture" id=1]
 [ext_resource path="res://src/characters/player/OnEdgeSensorArea.gd" type="Script" id=2]
 [ext_resource path="res://src/effects/BubblesEmitter.tscn" type="PackedScene" id=3]
 [ext_resource path="res://src/characters/Player.gd" type="Script" id=4]
@@ -292,10 +292,10 @@ tracks/1/keys = {
 [sub_resource type="RectangleShape2D" id=35]
 extents = Vector2( 8, 8 )
 
-[sub_resource type="RectangleShape2D" id=37]
+[sub_resource type="RectangleShape2D" id=36]
 extents = Vector2( 8, 8 )
 
-[sub_resource type="RectangleShape2D" id=36]
+[sub_resource type="RectangleShape2D" id=37]
 extents = Vector2( 2, 10 )
 
 [node name="Player" type="KinematicBody2D" groups=[
@@ -399,11 +399,13 @@ disabled = true
 position = Vector2( 16, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PutdownBoxDetector"]
-shape = SubResource( 37 )
+shape = SubResource( 36 )
 
 [node name="InvincibilityTimer" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
+
+[node name="InvertControlsTimer" type="Timer" parent="."]
 
 [node name="OnEdgeSensorArea" type="Area2D" parent="."]
 position = Vector2( 12, 24 )
@@ -411,7 +413,7 @@ collision_mask = 3
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OnEdgeSensorArea"]
-shape = SubResource( 36 )
+shape = SubResource( 37 )
 
 [node name="BubblesEmitter" parent="." instance=ExtResource( 3 )]
 position = Vector2( -7, 4 )

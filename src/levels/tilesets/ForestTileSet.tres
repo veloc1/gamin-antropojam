@@ -1,6 +1,7 @@
 [gd_resource type="TileSet" load_steps=2 format=2]
 
-[ext_resource path="res://assets/sprites/blocks/bg/forest/Tree tileset.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/levels/forest/fg_tree_tiles.png" type="Texture" id=1]
+
 
 [resource]
 0/name = "Tree tileset.png 0"

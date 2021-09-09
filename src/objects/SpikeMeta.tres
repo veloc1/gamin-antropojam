@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=5 format=2]
 
 [ext_resource path="res://addons/ObjectLibrary/Meta.gd" type="Script" id=1]
-[ext_resource path="res://assets/sprites/blocks/spikes.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/objects/spikes.png" type="Texture" id=2]
 [ext_resource path="res://src/objects/Spikes.tscn" type="PackedScene" id=3]
 
 [sub_resource type="AtlasTexture" id=1]

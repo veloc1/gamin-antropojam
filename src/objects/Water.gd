@@ -33,7 +33,7 @@ func on_body_exited(body):
 		body.set_in_water(false)
 
 func play_sound():
-	Sounds.play_sound("splash2")
+	Sounds.play_sound("splash")
 
 func set_tiles():
 	$TileMap.clear()
